@@ -1,0 +1,19 @@
+.Form {
+  font-size: 20px;
+  position: relative;
+  top: -5%;
+  right: 0%;
+  background: white;
+  background-size: cover;
+  font-family: fantasy;
+  border: 1px solid white;
+  padding: 15px;
+  min-height: 500px;
+  min-width: 600px;
+  border-radius: 20px;
+}
+
+.Form .FormTitle {
+  color: lightcoral;
+}
+/*# sourceMappingURL=Form.css.map */
