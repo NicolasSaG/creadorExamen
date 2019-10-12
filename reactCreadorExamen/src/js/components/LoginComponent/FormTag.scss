@@ -1,2 +1,46 @@
 .FormDiv {
+  font-size: 20px;
+
+  position: relative;
+  top: -5%;
+  right: 0%;
+  background-image: url(./Imagenes/hoja_de_libreta.jpg);
+
+  background-size: cover;
+
+  font-family: fantasy;
+  border: 1px solid white;
+  padding: 15px;
+  min-height: 500px;
+  min-width: 600px;
+  border-radius: 20px;
+  input {
+    text-align: center;
+    border-radius: 20px;
+    border-style: 1px;
+  }
+  .titulo-form {
+    color: rgb(93, 179, 164);
+    position: relative;
+    top: -10px;
+  }
+  .nomb {
+    position: relative;
+    top: 50px;
+  }
+  .cont {
+    position: relative;
+    top: 100px;
+  }
+  .boton {
+    position: relative;
+    top: 150px;
+  }
+  button {
+    background: lightgray;
+    border-style: none;
+    color: black;
+    cursor: pointer;
+    border-radius: 20px;
+  }
 }

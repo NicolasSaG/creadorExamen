@@ -1,1 +1,50 @@
-/* No CSS *//*# sourceMappingURL=FormTag.css.map */
+.FormDiv {
+  font-size: 20px;
+  position: relative;
+  top: -5%;
+  right: 0%;
+  background-image: url(./Imagenes/hoja_de_libreta.jpg);
+  background-size: cover;
+  font-family: fantasy;
+  border: 1px solid white;
+  padding: 15px;
+  min-height: 500px;
+  min-width: 600px;
+  border-radius: 20px;
+}
+
+.FormDiv input {
+  text-align: center;
+  border-radius: 20px;
+  border-style: 1px;
+}
+
+.FormDiv .titulo-form {
+  color: #5db3a4;
+  position: relative;
+  top: -10px;
+}
+
+.FormDiv .nomb {
+  position: relative;
+  top: 50px;
+}
+
+.FormDiv .cont {
+  position: relative;
+  top: 100px;
+}
+
+.FormDiv .boton {
+  position: relative;
+  top: 150px;
+}
+
+.FormDiv button {
+  background: lightgray;
+  border-style: none;
+  color: black;
+  cursor: pointer;
+  border-radius: 20px;
+}
+/*# sourceMappingURL=FormTag.css.map */
