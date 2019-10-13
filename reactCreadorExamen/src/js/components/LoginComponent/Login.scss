@@ -1,15 +1,13 @@
 .LoginPage {
-  border: 2px solid blue;
-  align-content: center;
-  text-align: center;
-  align-items: center;
+  min-height: 84vh;
+
   padding: 50px;
   background-image: url(./Imagenes/Escuela_Superior_de_Computo.jpg);
   background-size: cover;
 
   .LoginPageForm {
-    align-self: auto;
-    border: 1px dotted black;
+    width: 500px;
+    margin: auto;
     align-content: center;
   }
 }

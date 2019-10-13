@@ -1,21 +1,13 @@
 .LoginPage {
-  border: 2px solid blue;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  text-align: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  min-height: 84vh;
   padding: 50px;
   background-image: url(./Imagenes/Escuela_Superior_de_Computo.jpg);
   background-size: cover;
 }
 
 .LoginPage .LoginPageForm {
-  -ms-flex-item-align: auto;
-      -ms-grid-row-align: auto;
-      align-self: auto;
-  border: 1px dotted black;
+  width: 500px;
+  margin: auto;
   -ms-flex-line-pack: center;
       align-content: center;
 }
