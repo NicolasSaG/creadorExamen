@@ -1,19 +1,41 @@
 .Form {
   font-size: 20px;
-  position: relative;
-  top: -5%;
-  right: 0%;
-  background: white;
-  background-size: cover;
   font-family: fantasy;
-  border: 1px solid white;
-  padding: 15px;
-  min-height: 500px;
-  min-width: 600px;
+  border: 10px solid tan;
+  padding: 0px;
+  min-height: 200px;
+  min-width: 200px;
   border-radius: 20px;
+  max-width: 400px;
+  max-height: 1000px;
+  text-align: center;
 }
 
 .Form .FormTitle {
   color: lightcoral;
+}
+
+.Form .FormUsername {
+  color: black;
+}
+
+.Form .FormUsername input {
+  border-radius: 20px;
+  text-align: center;
+}
+
+.Form .FormPassword {
+  color: black;
+}
+
+.Form .FormPassword input {
+  border-radius: 20px;
+  text-align: center;
+}
+
+.Form .FormButton {
+  list-style: none;
+  position: relative;
+  left: -10px;
 }
 /*# sourceMappingURL=Form.css.map */

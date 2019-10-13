@@ -5,6 +5,7 @@ import "./Form.css";
 class Form extends Component {
   render(args) {
     //todo cambiar form para la pagina correcta :3
+    //?className FormUsername o FormUserName?
     return (
       <div className="Form">
         <form action="Pagina2" method="GET">
