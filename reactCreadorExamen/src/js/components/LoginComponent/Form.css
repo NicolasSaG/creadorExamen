@@ -54,4 +54,8 @@
   left: -10px;
   top: 320px;
 }
+
+.Form .FormButton input {
+  cursor: pointer;
+}
 /*# sourceMappingURL=Form.css.map */

@@ -9,11 +9,16 @@ class Form extends Component {
     return (
       <div className="Form">
         <form action="Pagina2" method="GET">
-          <h2 className="FormTitle">¿Quién Eres?</h2>
+          <h2 className="FormTitle">Log In</h2>
           <ul>
             <li className="FormUsername">
               Nombre de Usuario:
-              <input type="text" name="userArgument" placeholder="Usuario" />
+              <input
+                type="text"
+                name="userArgument"
+                placeholder="Usuario"
+                required
+              />
             </li>
             <li className="FormPassword">
               Contraseña:
@@ -22,6 +27,7 @@ class Form extends Component {
                 name="passwordArgument"
                 id="3"
                 placeholder="Contraseña"
+                required
               />
             </li>
             <li className="FormButton">
