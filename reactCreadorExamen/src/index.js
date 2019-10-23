@@ -1,7 +1,10 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { render } from "react-dom";
+import "bootstrap/dist/css/bootstrap.css";
+import { Router, browserHistory } from "react-router";
+import routes from "./routes";
 
-//import App from "./PaginaLogIn.js/index.js";
-import PaginaLogIn from "./PaginaLogIn.js";
-
-ReactDOM.render(<PaginaLogIn />, document.getElementById("root"));
+render(
+  <Router history={browserHistory} routes={routes} />,
+  document.getElementById("root")
+);
