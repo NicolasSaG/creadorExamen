@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-//import { Link } from "react-router";
+import { Link } from "react-router";
 //import { connect } from "react-redux"
 
 class NavigationBar extends Component {
@@ -40,14 +40,14 @@ class NavigationBar extends Component {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item active">
-              <a className="nav-link" href="/">
-                Home <span className="sr-only">(current)</span>
-              </a>
+              <Link to="/" className="nav-link">
+                home
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                preguntas
-              </a>
+              <Link to="/greetings" className="nav-link">
+                greetings
+              </Link>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">
