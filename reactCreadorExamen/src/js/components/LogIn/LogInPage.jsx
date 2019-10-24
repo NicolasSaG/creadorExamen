@@ -1,19 +1,19 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import Form from "./Form.jsx";
+import LogInForm from "./LogInForm.jsx";
 import "./Login.css";
 
-class Login extends Component {
+class LogInPage extends Component {
   render() {
     return (
       <div className="LoginPage">
         <header className="LoginPageHeader"></header>
         <div className="LoginPageForm">
-          <Form />
+          <LogInForm />
         </div>
       </div>
     );
   }
 }
 
-export default Login;
+export default LogInPage;
