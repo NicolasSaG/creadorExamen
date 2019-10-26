@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Form.css";
-
+import axios from "axios";
 class LogInForm extends Component {
   constructor(props) {
     super(props);
@@ -23,7 +23,10 @@ class LogInForm extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log(this.state);
+     axios
+    .post('http://10.0.0.10:8080/creadorExamen/Login', {user:this.state}, {headers:{'Content-Type': 'application/x-www-form-urlencoded', 'Accept': 'application/json'}})
+    .then(response => alert(response.data))
+    .catch(err => console.log('err', err));
   }
 
   render() {
