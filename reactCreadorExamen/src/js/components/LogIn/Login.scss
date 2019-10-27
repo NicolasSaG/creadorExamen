@@ -1,0 +1,20 @@
+.LoginPage {
+  min-height: 84vh;
+
+  padding: 50px;
+  background-image: url(./Imagenes/Escuela_Superior_de_Computo.jpg);
+  background-size: cover;
+
+  .LoginPageHeader {
+    color: wheat;
+    //border: 1px solid black;
+    min-width: 100px;
+    align-content: center;
+    background: red;
+  }
+  .LoginPageForm {
+    width: 500px;
+    margin: auto;
+    align-content: center;
+  }
+}

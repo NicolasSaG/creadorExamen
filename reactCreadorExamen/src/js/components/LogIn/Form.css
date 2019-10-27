@@ -1,0 +1,65 @@
+.Form {
+  font-size: 20px;
+  font-family: fantasy;
+  padding: 0px;
+  min-height: 500px;
+  min-width: 200px;
+  border-radius: 20px;
+  max-width: 450px;
+  max-height: 1000px;
+  text-align: center;
+  margin: auto;
+  background-image: url(./Imagenes/Hoja_Libreta2.jpg);
+  background-size: cover;
+  font-family: cursive;
+}
+
+.Form .FormTitle {
+  color: #57a9d8;
+  position: relative;
+  top: 20px;
+}
+
+.Form .FormUsername {
+  color: black;
+  list-style: none;
+  position: relative;
+  top: 93px;
+}
+
+.Form .FormUsername input {
+  border-radius: 20px;
+  text-align: center;
+  border: none;
+  background: transparent;
+}
+
+.Form .FormPassword {
+  color: black;
+  list-style: none;
+  position: relative;
+  top: 198px;
+}
+
+.Form .FormPassword input {
+  border: none;
+  background: transparent;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.Form .FormButton {
+  list-style: none;
+  position: relative;
+  left: -10px;
+  top: 320px;
+}
+<<<<<<< HEAD:reactCreadorExamen/src/js/components/LoginComponent/Form.css
+
+.Form .FormButton input {
+  cursor: pointer;
+}
+/*# sourceMappingURL=Form.css.map */
+=======
+/*# sourceMappingURL=Form.css.map */
+>>>>>>> sesion:reactCreadorExamen/src/js/components/LogIn/Form.css

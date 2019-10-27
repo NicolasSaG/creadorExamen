@@ -23,7 +23,6 @@ factoryConfiguration.json
 .mtj.tmp/
 
 # Package Files #
-*.jar
 *.war
 *.nar
 *.ear
@@ -55,3 +54,4 @@ sketch
 
 # End of https://www.gitignore.io/api/java,react,java-web,code-java
 
+/creadorExamen/build/
