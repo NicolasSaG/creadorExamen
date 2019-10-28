@@ -23,10 +23,19 @@ class LogInForm extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-     axios
-    .post('http://10.0.0.10:8080/creadorExamen/Login', {user:this.state}, {headers:{'Content-Type': 'application/x-www-form-urlencoded', 'Accept': 'application/json'}})
-    .then(response => alert(response.data))
-    .catch(err => console.log('err', err));
+    axios
+      .post(
+        "http://localhost:8080/creadorExamen/Login",
+        { user: this.state },
+        {
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+            Accept: "application/json"
+          }
+        }
+      )
+      .then(response => alert(response.data))
+      .catch(err => console.log("err", err));
   }
 
   render() {
