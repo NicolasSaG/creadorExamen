@@ -5,7 +5,8 @@ class LogInForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: ""
+      username: "",
+      password: ""
     };
 
     this.handleChangeUsername = this.handleChangeUsername.bind(this);
@@ -34,7 +35,12 @@ class LogInForm extends Component {
           }
         }
       )
-      .then(response => alert(response.data))
+      .then(
+        response =>
+          response.data == "exito"
+            ? localStorage.setItem("username", this.state.username) //redirigir login exitoso
+            : alert(response.data) //mostrar usuario no existe
+      )
       .catch(err => console.log("err", err));
   }
 
@@ -50,7 +56,8 @@ class LogInForm extends Component {
                 type="text"
                 name="username"
                 value={this.state.username}
-                onChange={this.handleChangeUsername}
+                onCh
+                ange={this.handleChangeUsername}
                 placeholder="username"
               />
             </li>
