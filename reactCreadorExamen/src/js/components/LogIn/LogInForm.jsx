@@ -1,65 +1,93 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import classnames from "classnames";
 import "./Form.css";
+import validateInput from "../../validations/signup";
 
 class LogInForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
       username: "",
-      password: ""
+      password: "",
+      errors: {}
     };
 
-    this.handleChangeUsername = this.handleChangeUsername.bind(this);
-    this.handleChangePassword = this.handleChangePassword.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChangeUsername(event) {
+  handleChange(event) {
     this.setState({ [event.target.name]: event.target.value });
   }
 
-  handleChangePassword(event) {
-    this.setState({ [event.target.name]: event.target.value });
+  isValid() {
+    const { errors, isValid } = validateInput(this.state);
+    if (!isValid) {
+      this.setState({ errors });
+    }
+    return isValid;
   }
 
   handleSubmit(event) {
+    this.setState({ errors: {} });
     event.preventDefault();
-    this.props.userSignupRequest(this.state);
+
+    if (this.isValid()) {
+      this.props
+        .userSignupRequest(this.state)
+        .then(
+          () => {},
+          ({ data }) => this.setState({ errors: data, isLoading: false })
+        );
+    }
   }
 
   render() {
+    const { errors } = this.state;
     return (
-      <div className="Form">
-        <form onSubmit={this.handleSubmit}>
-          <h2 className="FormTitle">Log In</h2>
-          <ul>
-            <li className="FormUsername">
-              Usuario:
-              <input
-                type="text"
-                name="username"
-                value={this.state.username}
-                onChange={this.handleChangeUsername}
-                placeholder="username"
-              />
-            </li>
-            <li className="FormPassword">
-              Contraseña:
-              <input
-                type="password"
-                name="password"
-                onChange={this.handleChangePassword}
-                id="3"
-                placeholder="password"
-              />
-            </li>
-            <li className="FormButton">
-              <input type="submit" value="Iniciar sesión" />
-            </li>
-          </ul>
-        </form>
-      </div>
+      <form onSubmit={this.handleSubmit}>
+        <h2 className="text-center">Iniciar Sesion</h2>
+        <div className="form-group">
+          <label className="control-label">username</label>
+          <input
+            type="text"
+            name="username"
+            value={this.state.username}
+            onChange={this.handleChange}
+            placeholder="username"
+            className={classnames("form-control without-opacity", {
+              "is-invalid": errors.username
+            })}
+          />
+          {errors.username && (
+            <span className="help-block">{errors.username}</span>
+          )}
+        </div>
+        <div className="form-group">
+          <label className="control-label">password</label>
+          <input
+            type="password"
+            name="password"
+            onChange={this.handleChange}
+            id="3"
+            placeholder="password"
+            className={classnames("form-control without-opacity", {
+              "is-invalid": errors.password
+            })}
+          />
+          {errors.password && (
+            <span className="help-block">{errors.password}</span>
+          )}
+        </div>
+        <div className="form-group text-center">
+          <input
+            type="submit"
+            value="Iniciar sesión"
+            className="btn btn-primary without-opacity "
+          />
+        </div>
+      </form>
     );
   }
 }

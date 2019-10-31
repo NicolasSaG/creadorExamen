@@ -1,7 +1,6 @@
 import axios from "axios";
 
 export function userSignupRequest(userData) {
-  alert(userData);
   return dispatch => {
     return axios
       .post(

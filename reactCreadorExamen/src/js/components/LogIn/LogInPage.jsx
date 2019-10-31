@@ -9,10 +9,13 @@ class LogInPage extends Component {
   render() {
     const { userSignupRequest } = this.props;
     return (
-      <div className="LoginPage">
-        <header className="LoginPageHeader"></header>
+      <div className="LoginPage centrala">
         <div className="LoginPageForm">
-          <LogInForm userSignupRequest={userSignupRequest} />
+          <div className="row ">
+            <div className="col-md-12 col-md-offset-4 white-edition  pdg-cool">
+              <LogInForm userSignupRequest={userSignupRequest} />
+            </div>
+          </div>
         </div>
       </div>
     );
