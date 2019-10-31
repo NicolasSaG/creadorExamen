@@ -1,6 +1,7 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import "./Form.css";
-import axios from "axios";
+
 class LogInForm extends Component {
   constructor(props) {
     super(props);
@@ -24,24 +25,7 @@ class LogInForm extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    axios
-      .post(
-        "http://localhost:8080/creadorExamen/Login",
-        { user: this.state },
-        {
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-            Accept: "application/json"
-          }
-        }
-      )
-      .then(
-        response =>
-          response.data == "exito"
-            ? localStorage.setItem("username", this.state.username) //redirigir login exitoso
-            : alert(response.data) //mostrar usuario no existe
-      )
-      .catch(err => console.log("err", err));
+    this.props.userSignupRequest(this.state);
   }
 
   render() {
@@ -79,5 +63,9 @@ class LogInForm extends Component {
     );
   }
 }
+
+LogInForm.propTypes = {
+  userSignupRequest: PropTypes.func.isRequired
+};
 
 export default LogInForm;
