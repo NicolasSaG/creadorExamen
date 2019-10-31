@@ -58,3 +58,7 @@
 .Form .FormButton input {
   cursor: pointer;
 }
+
+.with-errors {
+  color: #dc3545;
+}

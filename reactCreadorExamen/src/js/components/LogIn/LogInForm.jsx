@@ -49,7 +49,13 @@ class LogInForm extends Component {
       <form onSubmit={this.handleSubmit}>
         <h2 className="text-center">Iniciar Sesion</h2>
         <div className="form-group">
-          <label className="control-label">username</label>
+          <label
+            className={classnames("control-label without-opacity", {
+              "with-errors": errors.username
+            })}
+          >
+            username
+          </label>
           <input
             type="text"
             name="username"
@@ -61,11 +67,17 @@ class LogInForm extends Component {
             })}
           />
           {errors.username && (
-            <span className="help-block">{errors.username}</span>
+            <span className="help-block with-errors">{errors.username}</span>
           )}
         </div>
         <div className="form-group">
-          <label className="control-label">password</label>
+          <label
+            className={classnames("control-label without-opacity", {
+              "with-errors": errors.password
+            })}
+          >
+            password
+          </label>
           <input
             type="password"
             name="password"
@@ -77,7 +89,7 @@ class LogInForm extends Component {
             })}
           />
           {errors.password && (
-            <span className="help-block">{errors.password}</span>
+            <span className="help-block with-errors">{errors.password}</span>
           )}
         </div>
         <div className="form-group text-center">
