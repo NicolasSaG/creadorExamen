@@ -60,7 +60,7 @@ public class Login extends HttpServlet {
         try {
             Object obj = new JSONParser().parse(data);
             JSONObject jo = (JSONObject) obj; 
-            Map user = ((Map)jo.get("user")); 
+            Map user = ((Map)jo.get("userData")); 
             username = user.get("username").toString();
             password = user.get("password").toString();
         } catch (ParseException ex) {
