@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<question text="Relacione los presidentes mostrados abajo con su respectiva nacion" answer="op1-3;op2-4;op3-1;op4-2">
+<question id="1" text="Relacione los presidentes mostrados abajo con su respectiva nacion" answer="op1-3;op2-4;op3-1;op4-2">
 	<drags>
 		<option img="presidente2.jpg">Fidel Castro</option>
 		<option img="presidente4.jpg">George W. Bush</option>
