@@ -56,8 +56,7 @@ class LogInForm extends Component {
                 type="text"
                 name="username"
                 value={this.state.username}
-                onCh
-                ange={this.handleChangeUsername}
+                onChange={this.handleChangeUsername}
                 placeholder="username"
               />
             </li>

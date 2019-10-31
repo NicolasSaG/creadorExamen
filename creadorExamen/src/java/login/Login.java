@@ -27,7 +27,7 @@ public class Login extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.addHeader("Access-Control-Allow-Origin", "*");
-        response.setContentType("text/plain");
+        response.setContentType("text/html");
         response.getWriter().println("datooos get");
     }
 
