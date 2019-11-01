@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
 import "./Form.css";
-import validateInput from "../../validations/signup";
+import validateInput from "../../validations/signin";
 
 class LogInForm extends Component {
   constructor(props) {
@@ -35,7 +35,7 @@ class LogInForm extends Component {
 
     if (this.isValid()) {
       this.props
-        .userSignupRequest(this.state)
+        .userSigninRequest(this.state)
         .then(
           () => {},
           ({ data }) => this.setState({ errors: data, isLoading: false })
@@ -105,7 +105,7 @@ class LogInForm extends Component {
 }
 
 LogInForm.propTypes = {
-  userSignupRequest: PropTypes.func.isRequired
+  userSigninRequest: PropTypes.func.isRequired
 };
 
 export default LogInForm;

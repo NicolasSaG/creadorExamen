@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export function userSignupRequest(userData) {
+export function userSigninRequest(userData) {
   return dispatch => {
     return axios
       .post(
