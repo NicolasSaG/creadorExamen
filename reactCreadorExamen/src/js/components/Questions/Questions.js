@@ -20,7 +20,7 @@ class Questions extends Component {
   render() {
     return (
       <div>
-        <h1>Tabla</h1>
+        <h1>Tabla de preguntas</h1>
       </div>
     );
   }

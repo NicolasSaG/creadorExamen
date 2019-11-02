@@ -8,6 +8,13 @@ export function setCurrentUser(user) {
   };
 }
 
+export function logout() {
+  return dispatch => {
+    localStorage.removeItem("littleToken");
+    dispatch(setCurrentUser({}));
+  };
+}
+
 export function login(userData) {
   return dispatch => {
     return axios
