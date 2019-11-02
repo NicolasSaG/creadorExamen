@@ -1,8 +1,12 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
+
+import { connect } from "react-redux";
+import { login } from "../../actions/loginAction";
+
+import validateInput from "../../validations/login";
 import "./Form.css";
-import validateInput from "../../validations/signin";
 
 class LogInForm extends Component {
   constructor(props) {
@@ -10,7 +14,8 @@ class LogInForm extends Component {
     this.state = {
       username: "",
       password: "",
-      errors: {}
+      errors: {},
+      isLoading: false
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -30,21 +35,25 @@ class LogInForm extends Component {
   }
 
   handleSubmit(event) {
-    this.setState({ errors: {} });
     event.preventDefault();
-
     if (this.isValid()) {
+      this.setState({ errors: {}, isLoading: true });
+
       this.props
-        .userSigninRequest(this.state)
+        .login(this.state)
         .then(
-          () => {},
-          ({ data }) => this.setState({ errors: data, isLoading: false })
+          res => this.context.router.push("greetings"),
+          err =>
+            this.setState({
+              errors: "No existe un usuario con esa contrasena",
+              isLoading: false
+            })
         );
     }
   }
 
   render() {
-    const { errors } = this.state;
+    const { errors, username, password, isLoading } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
         <h2 className="text-center">Iniciar Sesion</h2>
@@ -97,6 +106,7 @@ class LogInForm extends Component {
             type="submit"
             value="Iniciar sesión"
             className="btn btn-primary without-opacity "
+            disabled={isLoading}
           />
         </div>
       </form>
@@ -105,7 +115,14 @@ class LogInForm extends Component {
 }
 
 LogInForm.propTypes = {
-  userSigninRequest: PropTypes.func.isRequired
+  login: PropTypes.func.isRequired
 };
 
-export default LogInForm;
+LogInForm.contextTypes = {
+  router: PropTypes.object.isRequired
+};
+
+export default connect(
+  null,
+  { login }
+)(LogInForm);
