@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.file.Files;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -23,16 +24,13 @@ public class QuestionsServlet extends HttpServlet{
 	PrintWriter out = response.getWriter();
         String ruta= request.getRealPath("/");
         
-        try{
         SAXBuilder builder = new SAXBuilder();
         File questionsdoc = new File(ruta+"questions.xml");
-        Document doc = builder.build(questionsdoc);
-        String xmlQ=doc.toString();
+        //Document doc = builder.build(questionsdoc);
+        byte[] b=Files.readAllBytes(questionsdoc.toPath());
+        String xmlQ= new String(b);
         JSONObject jsonQ=XML.toJSONObject(xmlQ);
         String jsonQString=jsonQ.toString(4);
-        System.out.println(jsonQString);
-        }catch(JDOMException e){}
-        
-        
+        out.println(jsonQString);
         }
 }
