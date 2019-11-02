@@ -4,10 +4,22 @@ import "bootstrap/dist/css/bootstrap.css";
 import { Router, browserHistory } from "react-router";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
-import { createStore, applyMiddleware } from "redux";
+import { createStore, applyMiddleware, compose } from "redux";
 import routes from "./routes";
+import rootReducer from "./rootReducer";
+import { setCurrentUser } from "./js/actions/loginAction";
 
-const store = createStore((state = {}) => state, applyMiddleware(thunk));
+const store = createStore(
+  rootReducer,
+  compose(
+    applyMiddleware(thunk),
+    window.devToolsExtension ? window.devToolsExtension() : f => f
+  )
+);
+
+if (localStorage.littleToken) {
+  store.dispatch(setCurrentUser(localStorage.littleToken));
+}
 
 render(
   <Provider store={store}>

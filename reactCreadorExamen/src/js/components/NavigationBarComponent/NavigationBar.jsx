@@ -45,7 +45,7 @@ class NavigationBar extends Component {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/greetings" className="nav-link">
+              <Link to="/welcome" className="nav-link">
                 welcome
               </Link>
             </li>

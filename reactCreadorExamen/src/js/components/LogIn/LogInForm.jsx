@@ -39,16 +39,14 @@ class LogInForm extends Component {
     if (this.isValid()) {
       this.setState({ errors: {}, isLoading: true });
 
-      this.props
-        .login(this.state)
-        .then(
-          res => this.context.router.push("greetings"),
-          err =>
-            this.setState({
-              errors: "No existe un usuario con esa contrasena",
-              isLoading: false
-            })
-        );
+      this.props.login(this.state).then(
+        res => this.context.router.push("welcome"),
+        err =>
+          this.setState({
+            errors: { form: "No existe un usuario con esa contrasena" },
+            isLoading: false
+          })
+      );
     }
   }
 
@@ -57,6 +55,7 @@ class LogInForm extends Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <h2 className="text-center">Iniciar Sesion</h2>
+        {errors.form && <div className="alert alert-danger">{errors.form}</div>}
         <div className="form-group">
           <label
             className={classnames("control-label without-opacity", {
