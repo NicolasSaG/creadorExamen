@@ -20,7 +20,8 @@ public class QuestionsServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 	throws ServletException, IOException
 	{
-	response.setContentType("text/html;charset=UTF-8");
+        response.addHeader("Access-Control-Allow-Origin", "*");
+	response.setContentType("text/plain;charset=UTF-8");
 	PrintWriter out = response.getWriter();
         String ruta= request.getRealPath("/");
         
@@ -29,8 +30,9 @@ public class QuestionsServlet extends HttpServlet{
         //Document doc = builder.build(questionsdoc);
         byte[] b=Files.readAllBytes(questionsdoc.toPath());
         String xmlQ= new String(b);
+        //out.print(xml);
         JSONObject jsonQ=XML.toJSONObject(xmlQ);
         String jsonQString=jsonQ.toString(4);
-        out.println(jsonQString);
+        out.print(jsonQString);
         }
 }
