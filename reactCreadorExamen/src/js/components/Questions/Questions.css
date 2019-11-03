@@ -1,0 +1,53 @@
+#Reder-ReactComponent-Questions {
+  background-color: rgb(248, 248, 248);
+  min-height: 93vh;
+}
+#Reder-ReactComponent-Questions h1 {
+  position: relative;
+  left: 5%;
+}
+#QuestionsArea {
+  color: black;
+}
+#QuestionsArea {
+  overflow-y: scroll;
+  background-color: aliceblue;
+  min-height: 10rem;
+  max-height: 38rem;
+  margin: 0% 5% 0% 5%;
+  border: 2px solid black;
+  padding: 0px 0px 0px 70px;
+}
+
+#QuestionsArea table,
+#QuestionsArea th,
+#QuestionsArea tr,
+#QuestionsArea td {
+  border: 1px solid black;
+  min-width: 600px;
+}
+#CreateNewElem {
+  position: relative;
+  min-width: 15%;
+  left: 80%;
+  bottom: 20px;
+  box-shadow: none;
+  background-color: lightblue;
+}
+#QuestionsArea th {
+  background-color: lightblue;
+  text-align: center;
+}
+#QuestionsArea h2 {
+  text-align: center;
+}
+
+#Mod {
+  color: yellowgreen;
+}
+#Del {
+  color: red;
+}
+.td {
+  text-align: center;
+}

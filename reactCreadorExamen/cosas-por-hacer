@@ -8,3 +8,5 @@
 []Revisar si el formato está bien para ./reactCreadorExamen/src/js/componets/LoginComponent/Form.jsx
 []Instalar npm install --save-dev file-loader para poder cargar imagenes a la pagina. ya que webpack
     no reconoce imagenes a menos que instales eso. ya webpack config ya lo modifiqié para que funcione
+
+[]Revisar Questions.js para poder hacer la parte de los servidores

@@ -54,6 +54,11 @@ class NavigationBar extends Component {
                 logout
               </a>
             </li>
+            <li className="nav-item">
+              <Link to="/SalaDePreguntas" className="nav-link">
+                Estudio
+              </Link>
+            </li>
           </ul>
         </div>
       </nav>
