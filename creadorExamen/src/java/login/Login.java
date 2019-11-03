@@ -26,7 +26,9 @@ public class Login extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
         response.addHeader("Access-Control-Allow-Origin", "*");
+        
         response.setContentType("text/html");
         response.getWriter().println("datooos get");
     }
@@ -44,7 +46,7 @@ public class Login extends HttpServlet {
             throws ServletException, IOException {
         String username = "", password = "";
         HttpSession session = request.getSession();
-        response.addHeader("Access-Control-Allow-Origin", "*");
+        response.addHeader("Access-Control-Allow-Origin", "*"); 
         response.setContentType("text/plain");
         
         //convertir body de request en string
@@ -88,9 +90,9 @@ public class Login extends HttpServlet {
                     } 
                 }
                 if(userExists){
-                    response.getWriter().println("http://localhost:3000/welcome");
+                    response.getWriter().print("{\"username\":\""+username+"\"}");
                 }else{
-                    response.getWriter().println("http://localhost:3000/greetings");
+                    response.setStatus(401);
                 }
         }
         catch(JDOMException e){
