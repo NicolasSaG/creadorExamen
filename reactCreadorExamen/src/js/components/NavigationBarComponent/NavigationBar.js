@@ -7,6 +7,7 @@ class NavigationBar extends Component {
   logout(event) {
     event.preventDefault();
     this.props.logout();
+    this.context.router.push("/");
   }
 
   createUserLinks = () => {
@@ -23,6 +24,11 @@ class NavigationBar extends Component {
               <Link to="/questions" className="nav-link">
                 questions
               </Link>
+            </li>
+            <li className="nav-item">
+              <a href="#" className="nav-link">
+                new question
+              </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="/" onClick={this.logout.bind(this)}>
@@ -52,6 +58,10 @@ class NavigationBar extends Component {
 NavigationBar.propTypes = {
   auth: PropTypes.object.isRequired,
   logout: PropTypes.func.isRequired
+};
+
+NavigationBar.contextTypes = {
+  router: PropTypes.object.isRequired
 };
 
 function mapStateToProps(state) {
