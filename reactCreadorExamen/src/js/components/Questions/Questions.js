@@ -1,71 +1,68 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import "./Questions.css";
+import axios from "axios";
+
 class Questions extends Component {
   constructor(props) {
     super(props);
-  }
-  render() {
-    return (
-      <div id="Reder-ReactComponent-Questions">
-        <h1>Página de Preguntas</h1>
-        <button
-          type="button"
-          id="CreateNewElem"
-          onClick={event => this.handleButton(event)}
-        >
-          Crear Nueva Pregunta
-        </button>
-        <div className="QuestionsArea">{this.QuestionsArea(1)}</div>
-      </div>
-    );
-  }
-  handleButton(event) {
-    event.preventDefault();
-    console.log("dasdwq");
-    window.location = "CrearPregunta";
+
+    this.state = {
+      questions: {}
+    };
+    this.getTable();
   }
 
-  createTable(numQuestions) {
-    const elem = (
-      <tr key="elem">
-        <td>dasdwqe</td>
-        <td className="td">
-          <a id="Mod" href="#">
-            Modificar Pregunta
-          </a>
-          |
-          <a id="Del" href="#">
-            Eliminar Pregunta
-          </a>
-          |
-          <a id="See" href="#">
-            Ver Pregunta
-          </a>
+  getTable() {
+    axios.get("http://localhost:8080/creadorExamen/QuestionsServlet").then(
+      res => {
+        var aux = res.data;
+        this.setState({ questions: aux });
+        //console.log(this.state.questions);
+      },
+      err => alert("2")
+    );
+  }
+
+  createTable() {
+    let table = [];
+    table.push(
+      <thead>
+        <tr>
+          <th className="td-id">id</th>
+          <th className="td-name">Nombre</th>
+          <th className="td-actions"></th>
+        </tr>
+      </thead>
+    );
+
+    let tt = [];
+    this.state.questions.questions.question.forEach(element => {
+      let children = [];
+      children.push(<td className="td-id">{element.id}</td>);
+      children.push(<td className="td-name">{element.text}</td>);
+      children.push(
+        <td className="td-actions">
+          <button className="btn btn-primary btn-cool">ver</button>
+          <button className="btn btn-info btn-cool">modificar</button>
+          <button className="btn btn-danger btn-cool">eliminar</button>
         </td>
-      </tr>
-    );
-    const array = [];
+      );
 
-    for (let id = 0; id != numQuestions; id++) {
-      array.push(elem);
-    }
-    const id = "Elements";
-    return <tbody key={id}>{array}</tbody>;
+      tt.push(<tr>{children}</tr>);
+    });
+    table.push(<tbody>{tt}</tbody>);
+    return table;
   }
-  QuestionsArea(numQuestions) {
-    //Aqui debería ir la petición al serviddor de xml de numero de  preguntas
+
+  render() {
+    const { open } = this.state;
     return (
-      <div id="QuestionsArea">
-        <h2>Área de Preguntas</h2>
-        <table id="table">
-          <thead>
-            <tr>
-              <th>Nombre de la Pregunta</th>
-              <th>Acciones</th>
-            </tr>
-          </thead>
-          {this.createTable(numQuestions)}
+      <div>
+        <table className="table table-striped table-hover">
+          {Object.keys(this.state.questions).length === 0
+            ? console.log("no data")
+            : this.createTable()}
         </table>
       </div>
     );

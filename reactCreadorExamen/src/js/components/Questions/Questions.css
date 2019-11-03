@@ -48,6 +48,27 @@
 #Del {
   color: red;
 }
+
 .td {
   text-align: center;
+}
+
+.tdchido {
+  width: 8%;
+}
+
+.td-actions {
+  width: 22%;
+}
+
+.td-name {
+  width: 70%;
+}
+
+.btn-cool {
+  width: 33%;
+}
+
+table {
+  word-wrap: break-word;
 }
