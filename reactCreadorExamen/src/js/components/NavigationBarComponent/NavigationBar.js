@@ -26,9 +26,9 @@ class NavigationBar extends Component {
               </Link>
             </li>
             <li className="nav-item">
-              <a href="#" className="nav-link">
+              <Link to="/newQuestion" className="nav-link">
                 new question
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="/" onClick={this.logout.bind(this)}>

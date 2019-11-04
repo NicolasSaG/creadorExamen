@@ -1,0 +1,31 @@
+.NewQuestion {
+  border: 1px solid black;
+  background-color: white;
+  position: relative;
+  min-height: 92vh;
+  min-width: 200px;
+  max-width: 100%;
+}
+.NewQuestion h4 {
+  text-align: center;
+}
+
+.NewQuestion form {
+  border: 1px solid rgba(63, 63, 63, 0.205);
+  max-height: 600px;
+  min-height: 600px;
+  max-width: 40%;
+  min-width: 500px;
+  position: relative;
+  left: 30%;
+  top: 5%;
+  padding: 0% 5% 0% 5%;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.068);
+}
+
+.NewQuestion input {
+  min-width: 397px;
+}
+.NewQuestion textarea {
+  resize: none;
+}
