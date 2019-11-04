@@ -8,6 +8,10 @@
         <servlet-name>QuestionsServlet</servlet-name>
         <servlet-class>questions.QuestionsServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CreateQuestion</servlet-name>
+        <servlet-class>questions.CreateQuestion</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -16,10 +20,13 @@
         <servlet-name>QuestionsServlet</servlet-name>
         <url-pattern>/QuestionsServlet</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CreateQuestion</servlet-name>
+        <url-pattern>/CreateQuestion</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
-    
 </web-app>

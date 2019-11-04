@@ -2,6 +2,7 @@ package login;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 
 import java.util.List;
@@ -15,6 +16,8 @@ import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
 import org.jdom.input.SAXBuilder;
+import org.jdom.output.Format;
+import org.jdom.output.XMLOutputter;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
 import org.json.simple.parser.JSONParser;
@@ -83,7 +86,7 @@ public class Login extends HttpServlet {
                     Element elemento = (Element)lista.get(i);
                     String xmlUsername = elemento.getAttributeValue("username");
                     String xmlPassword = elemento.getAttributeValue("password");    
-                   
+                    
                     if(username.compareTo(xmlUsername) == 0 && password.compareTo(xmlPassword) == 0){
                         userExists = true;
                         session.setAttribute("username", xmlUsername);
