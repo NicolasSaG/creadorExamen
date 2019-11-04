@@ -53,12 +53,12 @@
   text-align: center;
 }
 
-.tdchido {
-  width: 8%;
+.td-id {
+  width: 2%;
 }
 
 .td-actions {
-  width: 22%;
+  width: 28%;
 }
 
 .td-name {
@@ -71,4 +71,17 @@
 
 table {
   word-wrap: break-word;
+}
+
+.size70 {
+  width: 70%;
+}
+.centrala2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.coloriwis {
+  background-color: #213123;
 }

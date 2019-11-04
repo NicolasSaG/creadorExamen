@@ -26,6 +26,7 @@ class LogInForm extends Component {
     this.setState({ [event.target.name]: event.target.value });
   }
 
+  //funcion que valida que los estados no esten vacios
   isValid() {
     const { errors, isValid } = validateInput(this.state);
     if (!isValid) {
@@ -38,7 +39,8 @@ class LogInForm extends Component {
     event.preventDefault();
     if (this.isValid()) {
       this.setState({ errors: {}, isLoading: true });
-
+      //enviar peticion a servidor
+      //si todo marcho bien, enviar a /welcome, sino no existe un usario con esos datos
       this.props.login(this.state).then(
         res => this.context.router.push("welcome"),
         err =>
@@ -121,6 +123,7 @@ LogInForm.contextTypes = {
   router: PropTypes.object.isRequired
 };
 
+//conectar con la store global
 export default connect(
   null,
   { login }

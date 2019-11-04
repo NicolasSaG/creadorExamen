@@ -82,16 +82,18 @@ public class Login extends HttpServlet {
                 for(int i = 0; i < lista.size(); i++){
                     Element elemento = (Element)lista.get(i);
                     String xmlUsername = elemento.getAttributeValue("username");
-                    String xmlPassword = elemento.getAttributeValue("password");             
+                    String xmlPassword = elemento.getAttributeValue("password");    
+                   
                     if(username.compareTo(xmlUsername) == 0 && password.compareTo(xmlPassword) == 0){
                         userExists = true;
                         session.setAttribute("username", xmlUsername);
                         break;
                     } 
                 }
-                if(userExists){
+                if(userExists){  //si se encuetra el usuario retornar un json a react con el nombre de usuario
                     response.getWriter().print("{\"username\":\""+username+"\"}");
                 }else{
+                    //enviar error 401 cuando no tienes las credenciales para acceder al lugar
                     response.setStatus(401);
                 }
         }
