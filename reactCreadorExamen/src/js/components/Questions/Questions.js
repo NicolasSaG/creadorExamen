@@ -59,6 +59,7 @@ class Questions extends Component {
     const { open } = this.state;
     return (
       <div>
+        <br></br>
         <table className="table table-striped table-hover">
           {Object.keys(this.state.questions).length === 0
             ? console.log("no data")
