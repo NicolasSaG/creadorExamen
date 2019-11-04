@@ -6,7 +6,11 @@ class Question extends Component {
     super(props);
 
     this.state = {
-      question: {}
+      interactionId: "",
+      text: "",
+      dragObjects: {},
+      targetObjects: {},
+      answer: ""
     };
   }
 
