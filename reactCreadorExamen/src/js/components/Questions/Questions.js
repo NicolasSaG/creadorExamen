@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import "./Questions.css";
+import axios from "axios";
 class Questions extends Component {
   constructor(props) {
     super(props);
+    this.state = { preguntas: "" };
   }
   render() {
     return (
@@ -53,8 +55,41 @@ class Questions extends Component {
     const id = "Elements";
     return <tbody key={id}>{array}</tbody>;
   }
+  fetchData(infor) {
+    {
+      console.log("fetching data");
+      axios
+        .get(
+          "http://localhost:8080/creadorExamen/QuestionsServlet",
+          { infor },
+          {
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded",
+              Accept: "application/json"
+            }
+          }
+        )
+        .then(resp => {
+          const token = resp.data;
+          const trato = token.getElementbyid("object");
+          console.log(trato + "_trato");
+          console.log(token + "fetched data");
+          localStorage.setItem("informacion", token);
+        });
+    }
+  }
+
+  setCurrentInfo(info) {
+    return {
+      type: "info",
+      info: info
+    };
+  }
   QuestionsArea(numQuestions) {
     //Aqui debería ir la petición al serviddor de xml de numero de  preguntas
+    let contenedor = "";
+    this.fetchData(contenedor);
+    console.log(contenedor + "auxilio");
     return (
       <div id="QuestionsArea">
         <h2>Área de Preguntas</h2>
