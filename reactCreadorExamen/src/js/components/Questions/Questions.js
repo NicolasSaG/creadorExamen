@@ -11,10 +11,26 @@ class Questions extends Component {
     this.state = {
       questions: {},
       open: false,
-      selectedQuestion: {}
+      selectedQuestion: {},
+      openModPreg: false,
+      openModBorrar: false
     };
     this.getTable();
   }
+  onOpenModPregunta = i => {
+    console.log(i);
+    this.setState({
+      openModPreg: true,
+      selectedQuestion: i
+    });
+  };
+  onOpenModBorrar = i => {
+    console.log(i);
+    this.setState({
+      openModBorrar: true,
+      selectedQuestion: i
+    });
+  };
   onOpenModal = i => {
     this.setState({
       open: true,
@@ -22,6 +38,12 @@ class Questions extends Component {
     });
   };
 
+  onCloseModPregunta = () => {
+    this.setState({ openModPreg: false });
+  };
+  onCloseModBorrar = () => {
+    this.setState({ openModBorrar: false });
+  };
   onCloseModal = () => {
     this.setState({ open: false });
   };
@@ -62,8 +84,18 @@ class Questions extends Component {
             ver
           </button>
 
-          <button className="btn btn-info btn-cool">modificar</button>
-          <button className="btn btn-danger btn-cool">eliminar</button>
+          <button
+            className="btn btn-info btn-cool"
+            onClick={() => this.onOpenModPregunta(element)}
+          >
+            modificar
+          </button>
+          <button
+            className="btn btn-danger btn-cool"
+            onClick={() => this.onOpenModBorrar(element)}
+          >
+            eliminar
+          </button>
         </td>
       );
 
@@ -85,11 +117,12 @@ class Questions extends Component {
         </table>
         <div>
           {Object.keys(this.state.selectedQuestion).length === 0 ? (
-            console.log("algo rato")
+            console.log("algo raro")
           ) : (
             <Modal
               isOpen={this.state.open}
               contentLabel="Minimal Modal Example"
+              ariaHideApp={false}
             >
               <h3>pregunta: {this.state.selectedQuestion.text}</h3>
               <p>answer: {this.state.selectedQuestion.answer}</p>
@@ -170,6 +203,177 @@ class Questions extends Component {
                 </div>
               </div>
               <button onClick={this.onCloseModal}>Cerrar pregunta</button>
+            </Modal>
+          )}
+        </div>
+        <div>
+          {Object.keys(this.state.selectedQuestion).length === 0 ? (
+            console.log("Se cambiará la pregunta" + this.state.selectedQuestion)
+          ) : (
+            <Modal
+              isOpen={this.state.openModPreg}
+              contentLabel="Mod Pregunta"
+              ariaHideApp={false}
+            >
+              <form onSubmit={this.handleSubmit}>
+                <h1 className="text-center">Modificar Pregunta</h1>
+                <div className="form-group">
+                  <label className="control-label">interaction id</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    name="interactionId"
+                    onChange={this.handleChange}
+                    defaultValue={this.state.selectedQuestion.id}
+                  />
+                </div>
+                <div className="form-group">
+                  <label className="control-label ">pregunta</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    name="text"
+                    onChange={this.handleChange}
+                    defaultValue={this.state.selectedQuestion.text}
+                  />
+                </div>
+
+                <div className="row">
+                  <div className="col">
+                    <div className="form-group">
+                      <div className="text-center">
+                        <label className="control-label ">
+                          drag object name
+                        </label>
+                      </div>
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="dragObject1"
+                        onChange={this.handleChange}
+                        defaultValue={
+                          this.state.selectedQuestion.drags.option[0].content
+                        }
+                      />
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="dragObject2"
+                        onChange={this.handleChange}
+                        defaultValue={
+                          this.state.selectedQuestion.drags.option[1].content
+                        }
+                      />
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="dragObject3"
+                        onChange={this.handleChange}
+                        defaultValue={
+                          this.state.selectedQuestion.drags.option[2].content
+                        }
+                      />
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="dragObject4"
+                        onChange={this.handleChange}
+                        defaultValue={
+                          this.state.selectedQuestion.drags.option[3].content
+                        }
+                      />
+                    </div>
+                  </div>
+                  <div className="col">
+                    <div className="form-group">
+                      <div className="text-center">
+                        <label className="control-label">
+                          target object name
+                        </label>
+                      </div>
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="targetObject1"
+                        onChange={this.handleChange}
+                        defaultValue={
+                          this.state.selectedQuestion.targets.option[0].content
+                        }
+                      />
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="targetObject2"
+                        onChange={this.handleChange}
+                        defaultValue={
+                          this.state.selectedQuestion.targets.option[1].content
+                        }
+                      />
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="targetObject3"
+                        onChange={this.handleChange}
+                        defaultValue={
+                          this.state.selectedQuestion.targets.option[2].content
+                        }
+                      />
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="targetObject4"
+                        onChange={this.handleChange}
+                        defaultValue={
+                          this.state.selectedQuestion.targets.option[3].content
+                        }
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="form-group  text-right">
+                  <input
+                    type="submit"
+                    value="Modificar Pregunta"
+                    className="btn btn-primary"
+                  />
+                  <button className="btn btn-info">Options</button>
+                  <button className="btn btn-info">Assets</button>
+                  <button
+                    onClick={this.onCloseModPregunta}
+                    className="btn btn-danger"
+                  >
+                    Cancelar
+                  </button>
+                </div>
+              </form>
+            </Modal>
+          )}
+        </div>
+        <div>
+          {Object.keys(this.state.selectedQuestion).length === 0 ? (
+            console.log("BorrarPegunta")
+          ) : (
+            <Modal
+              isOpen={this.state.openModBorrar}
+              contentLabel="BorrarPreg"
+              ariaHideApp={false}
+              className="BorrarPopUp"
+            >
+              Estas Seguro de Borrar la Pregunta Con id{" "}
+              {this.state.selectedQuestion.id}
+              <form action="ServletBorrar" method="get">
+                <input
+                  type="submit"
+                  value="Borrar Pregunta"
+                  className="btn btn-primary"
+                />
+                <button
+                  onClick={this.onCloseModBorrar}
+                  className="btn btn-danger"
+                >
+                  Cancelar
+                </button>
+              </form>
             </Modal>
           )}
         </div>
