@@ -85,3 +85,24 @@ table {
 .coloriwis {
   background-color: #213123;
 }
+.cabiarPreguntaForm {
+  position: relative;
+}
+.cancelarModPre {
+  color: red;
+  position: relative;
+}
+
+.BorrarPopUp {
+  min-width: 500px;
+  max-width: 600px;
+  min-height: 200px;
+  max-height: 300px;
+  background-color: white;
+  position: absolute;
+  top: 15%;
+  left: 37%;
+  border: 1px solid black;
+  text-align: center;
+  padding: 5%;
+}

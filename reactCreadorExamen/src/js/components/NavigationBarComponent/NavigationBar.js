@@ -24,22 +24,22 @@ class NavigationBar extends Component {
           </li>
           <li className="nav-item">
             <Link to="/welcome" className="nav-link">
-              welcome
+              Inicio
             </Link>
           </li>
           <li className="nav-item">
             <Link to="/questions" className="nav-link">
-              preguntas
+              Preguntas
             </Link>
           </li>
           <li className="nav-item">
             <Link to="/newquestion" className="nav-link">
-              nueva pregunta
+              Nueva Pregunta
             </Link>
           </li>
           <li className="nav-item">
             <a className="nav-link" href="/" onClick={this.logout.bind(this)}>
-              logout
+              Logout
             </a>
           </li>
         </ul>
@@ -78,7 +78,4 @@ function mapStateToProps(state) {
 }
 
 //conectar con la store de redux
-export default connect(
-  mapStateToProps,
-  { logout }
-)(NavigationBar);
+export default connect(mapStateToProps, { logout })(NavigationBar);
