@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import "./Questions.css";
+//import "./Questions.css";
+import "./../../../css/Questions.css";
 import PropTypes from "prop-types";
 
 import { connect } from "react-redux";
@@ -184,7 +185,4 @@ Question.contextTypes = {
   router: PropTypes.object.isRequired
 };
 
-export default connect(
-  null,
-  { sendQuestion }
-)(Question);
+export default connect(null, { sendQuestion })(Question);

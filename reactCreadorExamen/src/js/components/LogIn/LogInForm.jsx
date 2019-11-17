@@ -6,7 +6,8 @@ import { connect } from "react-redux";
 import { login } from "../../actions/loginAction";
 
 import validateInput from "../../validations/login";
-import "./Form.css";
+//import "./Form.css";
+import "./../../../css/Form.css";
 
 class LogInForm extends Component {
   constructor(props) {
@@ -124,7 +125,4 @@ LogInForm.contextTypes = {
 };
 
 //conectar con la store global
-export default connect(
-  null,
-  { login }
-)(LogInForm);
+export default connect(null, { login })(LogInForm);
