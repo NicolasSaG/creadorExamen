@@ -367,6 +367,11 @@ class Questions extends Component {
                   value="Borrar Pregunta"
                   className="btn btn-primary"
                 />
+                <input
+                  type="hidden"
+                  name="idPreg"
+                  defaultValue={this.state.selectedQuestion.id}
+                />
                 <button
                   onClick={this.onCloseModBorrar}
                   className="btn btn-danger"
