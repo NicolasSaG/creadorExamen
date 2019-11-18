@@ -30,14 +30,14 @@ import org.json.simple.parser.JSONParser;
 
 /**
  *
- * @author 
+ * @author
  */
-public class ServletModPreg extends HttpServlet {
+public class BorrarPreg extends HttpServlet {
    @Override
    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
       response.addHeader("Access-Control-Allow-Origin", "*");
       response.setContentType("text/html");
-      response.getWriter().println("Servlet Para modificación de preguntas");
+      response.getWriter().println("Servlet Para Borrar Preguntas");
    }
 
    @Override
@@ -51,37 +51,13 @@ public class ServletModPreg extends HttpServlet {
 
       // File preguntas = new File(ruta+"questions.xml");
 
-      String interactionId = request.getParameter("id");
+      String interactionId = request.getParameter("idPreg");
 
-      String text = request.getParameter("text");
 
-      String dragObject1 = request.getParameter("dragObject1");
-      String dragObject2 = request.getParameter("dragObject2");
-      String dragObject3 = request.getParameter("dragObject3");
-      String dragObject4 = request.getParameter("dragObject4");
-      ArrayList<String> drags = new ArrayList<String>();
-      drags.add(dragObject1);
-      drags.add(dragObject2);
-      drags.add(dragObject3);
-      drags.add(dragObject4);
-
-      String targetObject1 = request.getParameter("targetObject1");
-      String targetObject2 = request.getParameter("targetObject2");
-      String targetObject3 = request.getParameter("targetObject3");
-      String targetObject4 = request.getParameter("targetObject4");
-      ArrayList<String> target = new ArrayList<String>();
-      target.add(targetObject1);
-      target.add(targetObject2);
-      target.add(targetObject3);
-      target.add(targetObject4);
       
-      
-      String answer = "";
 
+      PrintWriter out = response.getWriter();
  
-
-
-
       try {
          File inputFile = new File(ruta);
          SAXBuilder saxBuilder = new SAXBuilder();
@@ -101,48 +77,19 @@ public class ServletModPreg extends HttpServlet {
              String no = identifi.getValue();
              if(no.equals(interactionId))
                    break;
-             
          }
          
-         //Element rootElem = rootElement.getChild("question");
+         List<Element> contenido = rootElem.getChildren();
          
-         
-         
-         Attribute atributo = rootElem.getAttribute("id");
-         atributo.setValue(interactionId);
-         atributo = rootElem.getAttribute("text");
-         
-         atributo.setValue(text);
-         
-         List<Element> list = rootElem.getChildren();
-         
-
-         for (int temp = 0; temp < list.size(); temp++) {
-            
-            Element pregunta = list.get(temp);
-            List<Element> objetos = pregunta.getChildren();
-            for(int seleccion = 0; seleccion < objetos.size(); seleccion++ ){
-                Element dragsTargets = objetos.get(seleccion);
-                String sal= dragsTargets.toString();
-            
-                if(temp == 0){
-                    //si son drags
-
-                    dragsTargets.setText(drags.get(seleccion));   
-                }
-                else if(temp == 1){
-                    //si son targets
-
-                    //out.println(seleccion);
-                    dragsTargets.setText(target.get(seleccion));
-                }
-                    
-            }
-                
-            
-                
+         for(int i = 0; i!=contenido.size();i++){
+             Element basura = contenido.get(i);
+             basura.removeContent();
          }
+         rootElem.removeContent();
          
+         
+         
+         out.println("Se borrado la pregunta");
 
          try {
                 FileWriter writer = new FileWriter(ruta);
@@ -162,3 +109,4 @@ public class ServletModPreg extends HttpServlet {
 
    }
 }
+

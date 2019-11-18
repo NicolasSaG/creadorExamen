@@ -12,6 +12,14 @@
         <servlet-name>CreateQuestion</servlet-name>
         <servlet-class>questions.CreateQuestion</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletModPreg</servlet-name>
+        <servlet-class>questions.ServletModPreg</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>BorrarPreg</servlet-name>
+        <servlet-class>questions.BorrarPreg</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -23,6 +31,14 @@
     <servlet-mapping>
         <servlet-name>CreateQuestion</servlet-name>
         <url-pattern>/CreateQuestion</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletModPreg</servlet-name>
+        <url-pattern>/ServletModPreg</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BorrarPreg</servlet-name>
+        <url-pattern>/BorrarPreg</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
