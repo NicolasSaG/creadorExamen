@@ -4,6 +4,7 @@ import ReactDOM from "react-dom";
 import "./../../../css/Questions.css";
 import axios from "axios";
 import Modal from "react-modal";
+import { isArray } from "util";
 
 class Questions extends Component {
   constructor(props) {
@@ -55,7 +56,7 @@ class Questions extends Component {
         var aux = res.data;
         this.setState({ questions: aux });
       },
-      err => alert("2")
+      err => alert("error al obtener preguntas")
     );
   }
 
@@ -72,28 +73,71 @@ class Questions extends Component {
     );
 
     let tt = [];
-    this.state.questions.questions.question.forEach(element => {
+    if (isArray(this.state.questions.questions.question)) {
+      this.state.questions.questions.question.forEach(element => {
+        let children = [];
+        children.push(<td className="td-id">{element.id}</td>);
+        children.push(<td className="td-name">{element.text}</td>);
+        children.push(
+          <td className="td-actions">
+            <button
+              className="btn btn-primary btn-cool"
+              onClick={() => this.onOpenModal(element)} //pasar pregunta seleccionada
+            >
+              ver
+            </button>
+
+            <button
+              className="btn btn-info btn-cool"
+              onClick={() => this.onOpenModPregunta(element)}
+            >
+              modificar
+            </button>
+            <button
+              className="btn btn-danger btn-cool"
+              onClick={() => this.onOpenModBorrar(element)}
+            >
+              eliminar
+            </button>
+          </td>
+        );
+
+        tt.push(<tr>{children}</tr>);
+      });
+    } else {
       let children = [];
-      children.push(<td className="td-id">{element.id}</td>);
-      children.push(<td className="td-name">{element.text}</td>);
+      children.push(
+        <td className="td-id">{this.state.questions.questions.question.id}</td>
+      );
+      children.push(
+        <td className="td-name">
+          {this.state.questions.questions.question.text}
+        </td>
+      );
       children.push(
         <td className="td-actions">
           <button
             className="btn btn-primary btn-cool"
-            onClick={() => this.onOpenModal(element)} //pasar pregunta seleccionada
+            onClick={() =>
+              this.onOpenModal(this.state.questions.questions.question)
+            } //pasar pregunta seleccionada
           >
             ver
           </button>
 
           <button
             className="btn btn-info btn-cool"
-            onClick={() => this.onOpenModPregunta(element)}
+            onClick={() =>
+              this.onOpenModPregunta(this.state.questions.questions.question)
+            }
           >
             modificar
           </button>
           <button
             className="btn btn-danger btn-cool"
-            onClick={() => this.onOpenModBorrar(element)}
+            onClick={() =>
+              this.onOpenModBorrar(this.state.questions.questions.question)
+            }
           >
             eliminar
           </button>
@@ -101,7 +145,8 @@ class Questions extends Component {
       );
 
       tt.push(<tr>{children}</tr>);
-    });
+    }
+
     table.push(<tbody>{tt}</tbody>);
     return table;
   }
