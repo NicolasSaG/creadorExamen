@@ -105,46 +105,51 @@ class Questions extends Component {
         tt.push(<tr>{children}</tr>);
       });
     } else {
-      let children = [];
-      children.push(
-        <td className="td-id">{this.state.questions.questions.question.id}</td>
-      );
-      children.push(
-        <td className="td-name">
-          {this.state.questions.questions.question.text}
-        </td>
-      );
-      children.push(
-        <td className="td-actions">
-          <button
-            className="btn btn-primary btn-cool"
-            onClick={() =>
-              this.onOpenModal(this.state.questions.questions.question)
-            } //pasar pregunta seleccionada
-          >
-            ver
-          </button>
+      if (this.state.questions.questions.question === undefined) {
+      } else {
+        let children = [];
+        children.push(
+          <td className="td-id">
+            {this.state.questions.questions.question.id}
+          </td>
+        );
+        children.push(
+          <td className="td-name">
+            {this.state.questions.questions.question.text}
+          </td>
+        );
+        children.push(
+          <td className="td-actions">
+            <button
+              className="btn btn-primary btn-cool"
+              onClick={() =>
+                this.onOpenModal(this.state.questions.questions.question)
+              } //pasar pregunta seleccionada
+            >
+              ver
+            </button>
 
-          <button
-            className="btn btn-info btn-cool"
-            onClick={() =>
-              this.onOpenModPregunta(this.state.questions.questions.question)
-            }
-          >
-            modificar
-          </button>
-          <button
-            className="btn btn-danger btn-cool"
-            onClick={() =>
-              this.onOpenModBorrar(this.state.questions.questions.question)
-            }
-          >
-            eliminar
-          </button>
-        </td>
-      );
+            <button
+              className="btn btn-info btn-cool"
+              onClick={() =>
+                this.onOpenModPregunta(this.state.questions.questions.question)
+              }
+            >
+              modificar
+            </button>
+            <button
+              className="btn btn-danger btn-cool"
+              onClick={() =>
+                this.onOpenModBorrar(this.state.questions.questions.question)
+              }
+            >
+              eliminar
+            </button>
+          </td>
+        );
 
-      tt.push(<tr>{children}</tr>);
+        tt.push(<tr>{children}</tr>);
+      }
     }
 
     table.push(<tbody>{tt}</tbody>);
