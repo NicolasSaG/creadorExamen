@@ -33,8 +33,8 @@ class NavigationBar extends Component {
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/newquestion" className="nav-link">
-              Nueva Pregunta
+            <Link to="/type" className="nav-link">
+              Nueva Pregunta 
             </Link>
           </li>
           <li className="nav-item">
