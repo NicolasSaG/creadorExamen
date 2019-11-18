@@ -78,26 +78,36 @@ public class ServletModPreg extends HttpServlet {
       
       String answer = "";
 
-      String documento = "";
-      try {
-         documento = new String(Files.readAllBytes(Paths.get(ruta)));
-      } catch (IOException e) {
-         e.printStackTrace();
-      }
-      PrintWriter out = response.getWriter();
-      out.println(documento + "\nSe enviaron los paramentros:");
-      out.println(
-            interactionId + "\n" + text + dragObject1 + "\n" + dragObject2 + "\n" + dragObject3 + "\n" + dragObject4);
-      out.println("aouxilio1");
+ 
+
+
+
       try {
          File inputFile = new File(ruta);
          SAXBuilder saxBuilder = new SAXBuilder();
          Document document = saxBuilder.build(inputFile);
          Element rootElement = document.getRootElement();
 
-         // get first supercar
+         
+         List<Element> todasLasPreguntas = rootElement.getChildren();
+         
+         
          Element rootElem = rootElement.getChild("question");
-
+         Attribute identifi;
+         //localizar la pregunta desada
+         for(int i = 0;i!=todasLasPreguntas.size();i++){
+             rootElem = todasLasPreguntas.get(i);
+             identifi = rootElem.getAttribute("id");
+             String no = identifi.getValue();
+             if(no.equals(interactionId))
+                   break;
+             
+         }
+         
+         //Element rootElem = rootElement.getChild("question");
+         
+         
+         
          Attribute atributo = rootElem.getAttribute("id");
          atributo.setValue(interactionId);
          atributo = rootElem.getAttribute("text");
@@ -108,21 +118,21 @@ public class ServletModPreg extends HttpServlet {
          
 
          for (int temp = 0; temp < list.size(); temp++) {
+            
             Element pregunta = list.get(temp);
-            out.print(temp);
             List<Element> objetos = pregunta.getChildren();
             for(int seleccion = 0; seleccion < objetos.size(); seleccion++ ){
                 Element dragsTargets = objetos.get(seleccion);
                 String sal= dragsTargets.toString();
-                out.println(sal);
+            
                 if(temp == 0){
                     //si son drags
-                    out.println("se modificará u na drag");
+
                     dragsTargets.setText(drags.get(seleccion));   
                 }
                 else if(temp == 1){
                     //si son targets
-                    out.println("se modificará u na target");
+
                     //out.println(seleccion);
                     dragsTargets.setText(target.get(seleccion));
                 }
@@ -133,7 +143,6 @@ public class ServletModPreg extends HttpServlet {
                 
          }
          
-         out.println("Se han modificado las preguntas");
 
          try {
                 FileWriter writer = new FileWriter(ruta);
