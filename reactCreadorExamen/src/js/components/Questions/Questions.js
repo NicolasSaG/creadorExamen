@@ -216,15 +216,15 @@ class Questions extends Component {
               contentLabel="Mod Pregunta"
               ariaHideApp={false}
             >
-              <form onSubmit={this.handleSubmit}>
+              <form
+                action="http://localhost:8080/creadorExamen/ServletModPreg"
+                method="post"
+              >
                 <h1 className="text-center">Modificar Pregunta</h1>
                 <div className="form-group">
-                  <label className="control-label">interaction id</label>
                   <input
-                    type="text"
-                    className="form-control"
-                    name="interactionId"
-                    onChange={this.handleChange}
+                    type="hidden"
+                    name="id"
                     defaultValue={this.state.selectedQuestion.id}
                   />
                 </div>
@@ -362,7 +362,10 @@ class Questions extends Component {
             >
               Estas Seguro de Borrar la Pregunta Con id{" "}
               {this.state.selectedQuestion.id}
-              <form action="ServletBorrar" method="get">
+              <form
+                action="http://localhost:8080/creadorExamen/BorrarPreg"
+                method="post"
+              >
                 <input
                   type="submit"
                   value="Borrar Pregunta"
