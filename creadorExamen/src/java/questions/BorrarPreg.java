@@ -79,18 +79,23 @@ public class BorrarPreg extends HttpServlet {
                    break;
          }
          
+         
+         rootElement.removeContent(rootElem);
+         
+         /*
          List<Element> contenido = rootElem.getChildren();
          
          for(int i = 0; i!=contenido.size();i++){
              Element basura = contenido.get(i);
-             basura.removeContent();
+             rootElem.removeContent(basura);
+             
          }
          rootElem.removeContent();
          
-         
+         */
          
          out.println("Se borrado la pregunta");
-
+          //out.print(document);
          try {
                 FileWriter writer = new FileWriter(ruta);
                 XMLOutputter outputter = new XMLOutputter();
