@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import "./NewQuestion.css";
+//import "./NewQuestion.css";
+import "./../../../css/NewQuestion.css";
 class NewQuestion extends Component {
   render() {
     return (
