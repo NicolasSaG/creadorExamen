@@ -108,21 +108,21 @@ public class CreateQuestion extends HttpServlet {
             //crear draaags
             Element newDrag = new Element("drags");
             Element option;
-            option = new Element("option").setText(targetObject1);
+            option = new Element("option").setText(dragObject1);
             option.setAttribute("img", "img1.jpg");
             newDrag.addContent(option);
             
-            option = new Element("option").setText(targetObject2);
+            option = new Element("option").setText(dragObject2);
             option.setAttribute("img", "img2.jpg");
             newDrag.addContent(option);
             
             
-            option = new Element("option").setText(targetObject3);
+            option = new Element("option").setText(dragObject3);
             option.setAttribute("img", "img3.jpg");
             newDrag.addContent(option);
             
             
-            option = new Element("option").setText(targetObject4);
+            option = new Element("option").setText(dragObject4);
             option.setAttribute("img", "img4.jpg");
             newDrag.addContent(option);
             newQuestion.addContent(newDrag);
