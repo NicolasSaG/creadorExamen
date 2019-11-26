@@ -34,7 +34,12 @@ class NavigationBar extends Component {
           </li>
           <li className="nav-item">
             <Link to="/type" className="nav-link">
-              Nueva Pregunta 
+              Nueva Pregunta
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/exams" className="nav-link">
+              Examenes
             </Link>
           </li>
           <li className="nav-item">

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<exams> 
+    <exam id="1" text="Exame1">
+        <pregunta>1</pregunta>
+        <pregunta>2</pregunta>
+        <pregunta>3</pregunta>
+    </exam>
+    <exam id="2" text="Examen2">
+        <pregunta>1</pregunta>
+        <pregunta>2</pregunta>
+        <pregunta>3</pregunta>
+    </exam>
+        
+    <exam id="3" text="Examen3">
+        <pregunta>1</pregunta>
+        <pregunta>2</pregunta>
+        <pregunta>3</pregunta>
+    </exam>
+
+</exams>

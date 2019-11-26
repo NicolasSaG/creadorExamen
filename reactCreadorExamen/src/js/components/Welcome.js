@@ -5,11 +5,7 @@ class Welcome extends Component {
     return (
       <div>
         <h1>Bienvenido(a) {localStorage.getItem("littleToken")}</h1>
-        <h3>Misión</h3>
-        <p>
-          Este proyecto nace con la iniciativa de proporcionar una plataforma
-          sencilla de usar, para la creación de distintas clases de preguntas.
-        </p>
+
         <h3>Como Usar</h3>
         <ul>
           <li>
@@ -32,11 +28,6 @@ class Welcome extends Component {
               navegación
             </p>
           </li>
-        </ul>
-        <h3>Pagina Creada por:</h3>
-        <ul>
-          <li>Nico :V</li>
-          <li>Jiménez Villa Victor Hugo.</li>
         </ul>
       </div>
     );
