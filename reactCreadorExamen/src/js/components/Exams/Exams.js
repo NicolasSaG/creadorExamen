@@ -176,6 +176,14 @@ class Exams extends Component {
                     name="id"
                     defaultValue={this.state.selectedExam.id}
                   />
+                  Título del Exámen
+                  <input
+                    type="text"
+                    className="group-control texto-caja"
+                    name="texto"
+                    onChange={this.handleChange}
+                    defaultValue={this.state.selectedExam.text}
+                  />
                 </div>
                 <div className="row">
                   <div className="col">

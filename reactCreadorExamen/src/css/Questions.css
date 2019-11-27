@@ -112,3 +112,7 @@ table {
   position: relative;
   left: 320px;
 }
+
+.texto-caja {
+  min-width: 700px;
+}
