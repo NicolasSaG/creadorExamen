@@ -1,47 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<questions> 
-    <question id="1" text="junta lo que tenga que ver" answer="op1-3;op2-4;op3-1;op4-2">
-            <drags>
-                    <option img="anonimo.png">an####s</option>
-                    <option img="iron-man.png">iron man</option>
-                    <option img="scream.png">Scream</option>
-                    <option img="walter-white.png">Walter White</option>
-            </drags>
-            <targets>
-                    <option img="rascacielos.png">rascacielos</option>
-                    <option img="neumatico.png">neumatico</option>
-                    <option img="bong.png">bong</option>
-                    <option img="gordo-cop.png">police</option>
-            </targets>
-    </question>
-    <question id="2" text="pregunta 2222" answer="op1-3;op2-4;op3-1;op4-2">
-	<drags>
-		<option img="presidente2.jpg">Fidel Castro</option>
-		<option img="presidente4.jpg">George W. Bush</option>
-		<option img="presidente3.jpg">Vicente Fox</option>
-		<option img="presidente1.jpg">Ricardo Lagos</option>
-	</drags>
-	<targets>
-		<option img="nacion3.jpg">Mexico</option>
-		<option img="nacion1.jpg">Chile</option>
-		<option img="nacion2.jpg">Cuba</option>
-		<option img="nacion4.jpg">Estados Unidos</option>
-	</targets>
-    </question>
+<exams> 
+    <exam id="1" text="Exame1">
+        <pregunta>1</pregunta>
+        <pregunta>2</pregunta>
+        <pregunta>3</pregunta>
+    </exam>
+    <exam id="2" text="Examen2">
+        <pregunta>1</pregunta>
+        <pregunta>2</pregunta>
+        <pregunta>3</pregunta>
+    </exam>
+        
+    <exam id="3" text="Examen3">
+        <pregunta>1</pregunta>
+        <pregunta>2</pregunta>
+        <pregunta>3</pregunta>
+    </exam>
 
-    <question id="3" text="aweaweadasd" answer="op1-3;op2-4;op3-1;op4-2">
-            <drags>
-                    <option img="presidente2.jpg">Fidel Castro</option>
-                    <option img="presidente4.jpg">George W. Bush</option>
-                    <option img="presidente3.jpg">Vicente Fox</option>
-                    <option img="presidente1.jpg">Ricardo Lagos</option>
-            </drags>
-            <targets>
-                    <option img="nacion3.jpg">Mexico</option>
-                    <option img="nacion1.jpg">Chile</option>
-                    <option img="nacion2.jpg">Cuba</option>
-                    <option img="nacion4.jpg">Estados Unidos</option>
-            </targets>
-    </question>
-
-</questions>
+</exams>
