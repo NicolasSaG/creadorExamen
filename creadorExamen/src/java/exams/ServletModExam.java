@@ -52,7 +52,7 @@ public class ServletModExam extends HttpServlet {
       // File preguntas = new File(ruta+"questions.xml");
 
       String interactionId = request.getParameter("id");
-      
+      String Titulo = request.getParameter("texto");
       
       
       String Pregunta0 = request.getParameter("Pregunta0");
@@ -102,7 +102,13 @@ public class ServletModExam extends HttpServlet {
          
          //aquí ya se va a tener el examen que se quiere
          
+         Attribute atributo = rootElem.getAttribute("id");
+         atributo.setValue(interactionId);
+         atributo = rootElem.getAttribute("text");
+         
+         atributo.setValue(Titulo);
 
+         
          
          List<Element> list = rootElem.getChildren();
          
