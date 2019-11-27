@@ -20,6 +20,10 @@
         <servlet-name>BorrarPreg</servlet-name>
         <servlet-class>questions.BorrarPreg</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ExamServlet</servlet-name>
+        <servlet-class>exams.ExamServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>BorrarPreg</servlet-name>
         <url-pattern>/BorrarPreg</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ExamServlet</servlet-name>
+        <url-pattern>/ExamServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
