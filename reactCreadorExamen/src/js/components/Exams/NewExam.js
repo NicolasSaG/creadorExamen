@@ -16,25 +16,38 @@ class NewExam extends Component {
     this.state = {
       questions: {},
       open: false,
+      examName: "",
+      examId: "",
       selectedQuestion: {},
       questionsForExamen: []
     };
     this.getTable();
     this.onSubmit = this.onSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({ [event.target.name]: event.target.value });
   }
 
   onSubmit(event) {
     event.preventDefault();
     //enviar datos de examen a servidor
     //si todo marcho bien, enviar a /examenes
-    this.props.sendExam(this.state.questionsForExamen).then(
-      res => this.context.router.push("exams"),
-      err =>
-        this.setState({
-          errors: { form: "problema al crear examen" },
-          isLoading: false
-        })
-    );
+    this.props
+      .sendExam(
+        this.state.questionsForExamen,
+        this.state.examName,
+        this.state.examId
+      )
+      .then(
+        res => this.context.router.push("exams"),
+        err =>
+          this.setState({
+            errors: { form: "problema al crear examen" },
+            isLoading: false
+          })
+      );
   }
 
   onOpenModal = i => {
@@ -158,15 +171,20 @@ class NewExam extends Component {
     return (
       <div>
         <br></br>
-        <form onSubmit={this.onSubmit}>
-          <table className="table table-striped table-hover">
-            {Object.keys(this.state.questions).length === 0
-              ? console.log("no data")
-              : this.createTable()}
-          </table>
-          <input type="submit" value="Crear examen"></input>
-        </form>
-
+        nombre de examen
+        <input type="text" name="examName" onChange={this.handleChange}></input>
+        id de examn
+        <input type="text" name="examId" onChange={this.handleChange}></input>
+        <table className="table table-striped table-hover">
+          {Object.keys(this.state.questions).length === 0
+            ? console.log("no data")
+            : this.createTable()}
+        </table>
+        <input
+          type="button"
+          value="Crear examen"
+          onClick={this.onSubmit}
+        ></input>
         <div>
           {Object.keys(this.state.selectedQuestion).length === 0 ? (
             console.log("error en pregunta seleccionada")
