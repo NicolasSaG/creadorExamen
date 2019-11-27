@@ -2,6 +2,7 @@ import React, { Component } from "react";
 //import "./Questions.css";
 import "./../../../css/Questions.css";
 import PropTypes from "prop-types";
+import classnames from "classnames";
 
 import { connect } from "react-redux";
 import { sendQuestionHotSpot } from "../../actions/questionAction";
@@ -52,7 +53,7 @@ class HotSpot extends Component {
       this.setState({ errors: {}, isLoading: true });
       //enviar datos de pregunta a servidor
       //si todo marcho bien, enviar a /welcome, sino no existe un usario con esos datos
-      this.props.sendQuestion(this.state).then(
+      this.props.sendQuestionHotSpot(this.state).then(
         res => this.context.router.push("questions"),
         err =>
           this.setState({
@@ -64,6 +65,7 @@ class HotSpot extends Component {
   }
 
   render() {
+    const { errors, isLoading } = this.state;
     return (
       <div className="">
         <div className="mx-auto size70">
@@ -74,7 +76,9 @@ class HotSpot extends Component {
               <label className="control-label">interaction id</label>
               <input
                 type="text"
-                className="form-control"
+                className={classnames("form-control", {
+                  "is-invalid": errors.interactionId
+                })}
                 name="interactionId"
                 onChange={this.handleChange}
                 value={this.state.interactionId}
@@ -84,7 +88,9 @@ class HotSpot extends Component {
               <label className="control-label ">pregunta</label>
               <input
                 type="text"
-                className="form-control"
+                className={classnames("form-control", {
+                  "is-invalid": errors.text
+                })}
                 name="text"
                 onChange={this.handleChange}
                 value={this.state.text}
@@ -101,7 +107,9 @@ class HotSpot extends Component {
                   </div>
                   <input
                     type="text"
-                    className="form-control"
+                    className={classnames("form-control", {
+                      "is-invalid": errors.hotspotInstanceName1
+                    })}
                     name="hotspotInstanceName1"
                     placeholder="hotspot instance name 1"
                     onChange={this.handleChange}
@@ -109,7 +117,9 @@ class HotSpot extends Component {
                   />
                   <input
                     type="text"
-                    className="form-control"
+                    className={classnames("form-control", {
+                      "is-invalid": errors.hotspotInstanceName2
+                    })}
                     name="hotspotInstanceName2"
                     placeholder="hotspot instance name 2"
                     onChange={this.handleChange}
@@ -117,7 +127,9 @@ class HotSpot extends Component {
                   />
                   <input
                     type="text"
-                    className="form-control"
+                    className={classnames("form-control", {
+                      "is-invalid": errors.hotspotInstanceName3
+                    })}
                     name="hotspotInstanceName3"
                     placeholder="hotspot instance name 3"
                     onChange={this.handleChange}
@@ -125,7 +137,9 @@ class HotSpot extends Component {
                   />
                   <input
                     type="text"
-                    className="form-control"
+                    className={classnames("form-control", {
+                      "is-invalid": errors.hotspotInstanceName4
+                    })}
                     name="hotspotInstanceName4"
                     placeholder="hotspot instance name 4"
                     onChange={this.handleChange}
