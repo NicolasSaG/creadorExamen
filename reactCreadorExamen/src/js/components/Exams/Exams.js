@@ -26,10 +26,10 @@ class Exams extends Component {
       selectedExam: i
     });
   };
-  onOpenModExam = i => {
+  onOpenModBorrar = i => {
     console.log(i);
     this.setState({
-      openModExam: true,
+      openModBorrar: true,
       selectedExam: i
     });
   };
@@ -95,7 +95,7 @@ class Exams extends Component {
             </button>
             <button
               className="btn btn-danger btn-cool"
-              onClick={() => this.onOpenModExam(element)}
+              onClick={() => this.onOpenModBorrar(element)}
             >
               eliminar
             </button>
@@ -156,6 +156,82 @@ class Exams extends Component {
             ? console.log("no data")
             : this.createTable()}
         </table>
+        <div>
+          {Object.keys(this.state.selectedExam).length === 0 ? (
+            console.log("Se cambiará la pregunta" + this.state.selectedExam)
+          ) : (
+            <Modal
+              isOpen={this.state.openModExam}
+              contentLabel="Mod Examen"
+              ariaHideApp={false}
+            >
+              <form
+                action="http://localhost:8080/creadorExamen/ServletModExam"
+                method="post"
+              >
+                <h1 className="text-center">Modificar Examen</h1>
+                <div className="form-group">
+                  <input
+                    type="hidden"
+                    name="id"
+                    defaultValue={this.state.selectedExam.id}
+                  />
+                </div>
+                <div className="form-group  text-right">
+                  <input
+                    type="submit"
+                    value="Modificar Examen"
+                    className="btn btn-primary"
+                  />
+                  <button className="btn btn-info">Options</button>
+                  <button className="btn btn-info">Assets</button>
+                  <button
+                    onClick={this.onCloseModExamen}
+                    className="btn btn-danger"
+                  >
+                    Cancelar
+                  </button>
+                </div>
+              </form>
+            </Modal>
+          )}
+        </div>
+        <div>
+          {Object.keys(this.state.selectedExam).length === 0 ? (
+            console.log("BorrarPegunta")
+          ) : (
+            <Modal
+              isOpen={this.state.openModBorrar}
+              contentLabel="BorrarExamen"
+              ariaHideApp={false}
+              className="BorrarPopUp"
+            >
+              Estas Seguro de Borrar el Examen Con id{" "}
+              {this.state.selectedExam.id}
+              <form
+                action="http://localhost:8080/creadorExamen/ServletBorrarExamen"
+                method="post"
+              >
+                <input
+                  type="submit"
+                  value="Borrar Examen"
+                  className="btn btn-primary"
+                />
+                <input
+                  type="hidden"
+                  name="idExam"
+                  defaultValue={this.state.selectedExam.id}
+                />
+                <button
+                  onClick={this.onCloseModBorrar}
+                  className="btn btn-danger"
+                >
+                  Cancelar
+                </button>
+              </form>
+            </Modal>
+          )}
+        </div>
       </div>
     );
   }
