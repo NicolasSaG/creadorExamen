@@ -26,10 +26,10 @@ class Exams extends Component {
       selectedExam: i
     });
   };
-  onOpenModExam = i => {
+  onOpenModBorrar = i => {
     console.log(i);
     this.setState({
-      openModExam: true,
+      openModBorrar: true,
       selectedExam: i
     });
   };
@@ -95,7 +95,7 @@ class Exams extends Component {
             </button>
             <button
               className="btn btn-danger btn-cool"
-              onClick={() => this.onOpenModExam(element)}
+              onClick={() => this.onOpenModBorrar(element)}
             >
               eliminar
             </button>
@@ -156,6 +156,178 @@ class Exams extends Component {
             ? console.log("no data")
             : this.createTable()}
         </table>
+        <div>
+          {Object.keys(this.state.selectedExam).length === 0 ? (
+            console.log("Se cambiará la pregunta" + this.state.selectedExam)
+          ) : (
+            <Modal
+              isOpen={this.state.openModExam}
+              contentLabel="Modificar Examen"
+              ariaHideApp={false}
+            >
+              <form
+                action="http://localhost:8080/creadorExamen/ServletModExam"
+                method="post"
+              >
+                <h1 className="text-center">Modificar Examen</h1>
+                <div className="form-group">
+                  <input
+                    type="hidden"
+                    name="id"
+                    defaultValue={this.state.selectedExam.id}
+                  />
+                  Título del Exámen
+                  <input
+                    type="text"
+                    className="group-control texto-caja"
+                    name="texto"
+                    onChange={this.handleChange}
+                    defaultValue={this.state.selectedExam.text}
+                  />
+                </div>
+                <div className="row">
+                  <div className="col">
+                    <div className="form-group">
+                      <div className="text-center">
+                        <label className="control-label ">Pregunta</label>
+                      </div>
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="Pregunta0"
+                        onChange={this.handleChange}
+                        defaultValue={this.state.selectedExam.pregunta[0]}
+                      />
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="Pregunta1"
+                        onChange={this.handleChange}
+                        defaultValue={this.state.selectedExam.pregunta[1]}
+                      />
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="Pregunta2"
+                        onChange={this.handleChange}
+                        defaultValue={this.state.selectedExam.pregunta[2]}
+                      />
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="Pregunta3"
+                        onChange={this.handleChange}
+                        defaultValue={this.state.selectedExam.pregunta[3]}
+                      />
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="Pregunta4"
+                        onChange={this.handleChange}
+                        defaultValue={this.state.selectedExam.pregunta[4]}
+                      />
+                    </div>
+                  </div>
+                  <div className="col">
+                    <div className="form-group">
+                      <div className="text-center">
+                        <label className="control-label">Pregunta</label>
+                      </div>
+
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="Pregunta5"
+                        onChange={this.handleChange}
+                        defaultValue={this.state.selectedExam.pregunta[5]}
+                      />
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="Pregunta6"
+                        onChange={this.handleChange}
+                        defaultValue={this.state.selectedExam.pregunta[6]}
+                      />
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="Pregunta7"
+                        onChange={this.handleChange}
+                        defaultValue={this.state.selectedExam.pregunta[7]}
+                      />
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="Pregunta8"
+                        onChange={this.handleChange}
+                        defaultValue={this.state.selectedExam.pregunta[8]}
+                      />
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="Pregunta9"
+                        onChange={this.handleChange}
+                        defaultValue={this.state.selectedExam.pregunta[9]}
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="form-group  text-right">
+                  <input
+                    type="submit"
+                    value="Modificar Examen"
+                    className="btn btn-primary"
+                  />
+                  <button className="btn btn-info">Options</button>
+                  <button className="btn btn-info">Assets</button>
+                  <button
+                    onClick={this.onCloseModExamen}
+                    className="btn btn-danger"
+                  >
+                    Cancelar
+                  </button>
+                </div>
+              </form>
+              *Ingresa el id de la pregunta
+            </Modal>
+          )}
+        </div>
+        <div>
+          {Object.keys(this.state.selectedExam).length === 0 ? (
+            console.log("BorrarPegunta")
+          ) : (
+            <Modal
+              isOpen={this.state.openModBorrar}
+              contentLabel="BorrarExamen"
+              ariaHideApp={false}
+              className="BorrarPopUp"
+            >
+              Estas Seguro de Borrar el Examen Con id{" "}
+              {this.state.selectedExam.id}
+              <form
+                action="http://localhost:8080/creadorExamen/ServletBorrarExamen"
+                method="post"
+              >
+                <input
+                  type="submit"
+                  value="Borrar Examen"
+                  className="btn btn-primary"
+                />
+                <input
+                  type="hidden"
+                  name="idExam"
+                  defaultValue={this.state.selectedExam.id}
+                />
+                <button
+                  onClick={this.onCloseModBorrar}
+                  className="btn btn-danger"
+                >
+                  Cancelar
+                </button>
+              </form>
+            </Modal>
+          )}
+        </div>
       </div>
     );
   }

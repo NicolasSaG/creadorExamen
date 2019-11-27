@@ -1,20 +1,42 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<!--Cada Examen TIENE que contar con 10 preguntas-->
 <exams> 
     <exam id="1" text="Exame1">
         <pregunta>1</pregunta>
         <pregunta>2</pregunta>
         <pregunta>3</pregunta>
+        <pregunta>4</pregunta>
+        <pregunta>5</pregunta>
+        <pregunta>6</pregunta>
+        <pregunta>7</pregunta>
+        <pregunta>8</pregunta>
+        <pregunta>9</pregunta>
+        <pregunta>10</pregunta>
     </exam>
     <exam id="2" text="Examen2">
-        <pregunta>1</pregunta>
-        <pregunta>2</pregunta>
-        <pregunta>3</pregunta>
+        <pregunta>31</pregunta>
+        <pregunta>32</pregunta>
+        <pregunta>23</pregunta>
+        <pregunta>34</pregunta>
+        <pregunta>35</pregunta>
+        <pregunta>36</pregunta>
+        <pregunta>54</pregunta>
+        <pregunta>38</pregunta>
+        <pregunta>39</pregunta>
+        <pregunta>50</pregunta>
     </exam>
         
     <exam id="3" text="Examen3">
-        <pregunta>1</pregunta>
-        <pregunta>2</pregunta>
-        <pregunta>3</pregunta>
+        <pregunta>11</pregunta>
+        <pregunta>12</pregunta>
+        <pregunta>13</pregunta>
+        <pregunta>14</pregunta>
+        <pregunta>15</pregunta>
+        <pregunta>16</pregunta>
+        <pregunta>17</pregunta>
+        <pregunta>18</pregunta>
+        <pregunta>19</pregunta>
+        <pregunta>20</pregunta>
     </exam>
 
 </exams>
