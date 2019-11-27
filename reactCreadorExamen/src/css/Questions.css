@@ -106,3 +106,9 @@ table {
   text-align: center;
   padding: 5%;
 }
+
+.form-control {
+  max-width: 50px;
+  position: relative;
+  left: 320px;
+}

@@ -28,6 +28,10 @@
         <servlet-name>ExamServlet</servlet-name>
         <servlet-class>exams.ExamServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletModExam</servlet-name>
+        <servlet-class>exams.ServletModExam</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -52,9 +56,13 @@
         <servlet-name>ServletBorrarExamen</servlet-name>
         <url-pattern>/ServletBorrarExamen</url-pattern>
     </servlet-mapping>
-     <servlet-mapping>
+    <servlet-mapping>
         <servlet-name>ExamServlet</servlet-name>
         <url-pattern>/ExamServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletModExam</servlet-name>
+        <url-pattern>/ServletModExam</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

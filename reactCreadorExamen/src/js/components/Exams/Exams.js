@@ -162,7 +162,7 @@ class Exams extends Component {
           ) : (
             <Modal
               isOpen={this.state.openModExam}
-              contentLabel="Mod Examen"
+              contentLabel="Modificar Examen"
               ariaHideApp={false}
             >
               <form
@@ -176,6 +176,93 @@ class Exams extends Component {
                     name="id"
                     defaultValue={this.state.selectedExam.id}
                   />
+                </div>
+                <div className="row">
+                  <div className="col">
+                    <div className="form-group">
+                      <div className="text-center">
+                        <label className="control-label ">Pregunta</label>
+                      </div>
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="Pregunta0"
+                        onChange={this.handleChange}
+                        defaultValue={this.state.selectedExam.pregunta[0]}
+                      />
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="Pregunta1"
+                        onChange={this.handleChange}
+                        defaultValue={this.state.selectedExam.pregunta[1]}
+                      />
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="Pregunta2"
+                        onChange={this.handleChange}
+                        defaultValue={this.state.selectedExam.pregunta[2]}
+                      />
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="Pregunta3"
+                        onChange={this.handleChange}
+                        defaultValue={this.state.selectedExam.pregunta[3]}
+                      />
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="Pregunta4"
+                        onChange={this.handleChange}
+                        defaultValue={this.state.selectedExam.pregunta[4]}
+                      />
+                    </div>
+                  </div>
+                  <div className="col">
+                    <div className="form-group">
+                      <div className="text-center">
+                        <label className="control-label">Pregunta</label>
+                      </div>
+
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="Pregunta5"
+                        onChange={this.handleChange}
+                        defaultValue={this.state.selectedExam.pregunta[5]}
+                      />
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="Pregunta6"
+                        onChange={this.handleChange}
+                        defaultValue={this.state.selectedExam.pregunta[6]}
+                      />
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="Pregunta7"
+                        onChange={this.handleChange}
+                        defaultValue={this.state.selectedExam.pregunta[7]}
+                      />
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="Pregunta8"
+                        onChange={this.handleChange}
+                        defaultValue={this.state.selectedExam.pregunta[8]}
+                      />
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="Pregunta9"
+                        onChange={this.handleChange}
+                        defaultValue={this.state.selectedExam.pregunta[9]}
+                      />
+                    </div>
+                  </div>
                 </div>
                 <div className="form-group  text-right">
                   <input
@@ -193,6 +280,7 @@ class Exams extends Component {
                   </button>
                 </div>
               </form>
+              *Ingresa el id de la pregunta
             </Modal>
           )}
         </div>
