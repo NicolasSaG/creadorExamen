@@ -10,6 +10,7 @@ import requireNoAuth from "./js/components/authenticate/NoAuthenticate";
 import Question from "./js/components/Questions/Question";
 import HotSpot from "./js/components/Questions/HotSpot";
 import Exams from "./js/components/Exams/Exams";
+import NewExam from "./js/components/Exams/NewExam";
 
 export default (
   //espeficacion de rutas de la aplicacion
@@ -20,6 +21,7 @@ export default (
     <Route path="questions" component={requireAuth(Questions)} />
     <Route path="dragndrop" component={requireAuth(Question)} />
     <Route path="hotspot" component={requireAuth(HotSpot)} />
+    <Route path="newexam" component={requireAuth(NewExam)} />
     <Route path="exams" component={requireAuth(Exams)} />
   </Route>
 );
