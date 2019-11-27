@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logout } from "./../../actions/loginAction";
+import Dropdown from "react-bootstrap/Dropdown";
 class NavigationBar extends Component {
   logout(event) {
     event.preventDefault();
@@ -33,9 +34,26 @@ class NavigationBar extends Component {
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/type" className="nav-link">
-              Nueva Pregunta
-            </Link>
+            <div>
+              <Dropdown>
+                <Dropdown.Toggle variant="success" id="dropdown-basic">
+                  Nueva pregunta
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu>
+                  <Dropdown.Item href="#">
+                    <Link to="/hotspot" className="">
+                      Nueva Pregunta HotSpot
+                    </Link>
+                  </Dropdown.Item>
+                  <Dropdown.Item href="#">
+                    <Link to="/dragndrop" className="">
+                      Nueva Pregunta Drag n Drop
+                    </Link>
+                  </Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </div>
           </li>
           <li className="nav-item">
             <Link to="/exams" className="nav-link">

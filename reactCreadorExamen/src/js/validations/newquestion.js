@@ -1,7 +1,7 @@
 import Validator from "validator";
 import isEmpty from "lodash/isEmpty";
 
-//validacion del lado del cliente de los datos del formulario para crearpregunta
+//validacion del lado del cliente de los datos del formulario para dragdrop
 export default function validateInput(data) {
   let errors = {}; // aqui se guardan los errores encontrados
 
@@ -34,6 +34,9 @@ export default function validateInput(data) {
   }
   if (Validator.isEmpty(data.targetObject4)) {
     errors.targetObject4 = "target object 4 is required";
+  }
+  if (Validator.isEmpty(data.answer)) {
+    errors.answer = "answer is required";
   }
   return {
     errors,
