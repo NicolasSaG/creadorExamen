@@ -36,7 +36,11 @@ class NavigationBar extends Component {
           <li className="nav-item">
             <div>
               <Dropdown>
-                <Dropdown.Toggle variant="success" id="dropdown-basic">
+                <Dropdown.Toggle
+                  variant="success"
+                  id="dropdown-basic"
+                  className="bg-dark"
+                >
                   Nueva pregunta
                 </Dropdown.Toggle>
 
@@ -54,6 +58,11 @@ class NavigationBar extends Component {
                 </Dropdown.Menu>
               </Dropdown>
             </div>
+          </li>
+          <li className="nav-item">
+            <Link to="/newexam" className="nav-link">
+              Crear Examen
+            </Link>
           </li>
           <li className="nav-item">
             <Link to="/exams" className="nav-link">
