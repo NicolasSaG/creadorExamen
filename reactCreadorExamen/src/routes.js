@@ -11,6 +11,7 @@ import Question from "./js/components/Questions/Question";
 import Type from "./js/components/Type/Type";
 import HotSpot from "./js/components/Questions/HotSpot";
 import Exams from "./js/components/Exams/Exams";
+
 export default (
   //espeficacion de rutas de la aplicacion
   <Route path="/" component={App}>

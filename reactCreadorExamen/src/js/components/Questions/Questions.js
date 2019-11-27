@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-//import "./Questions.css";
 import "./../../../css/Questions.css";
 import axios from "axios";
 import Modal from "react-modal";
