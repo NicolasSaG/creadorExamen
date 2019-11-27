@@ -49,7 +49,9 @@ public class CreateExam extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        JSONArray preguntas;
+        JSONArray preguntas = new JSONArray();
+        String examName = "";
+        String examId = "";
         response.addHeader("Access-Control-Allow-Origin", "*"); 
         response.setContentType("text/plain");
         
@@ -68,29 +70,36 @@ public class CreateExam extends HttpServlet {
             JSONObject jo = (JSONObject) obj; 
             Map questions = ((Map)jo.get("aux"));
             preguntas = (JSONArray) questions.get("questions");
-            for (Object pregunta : preguntas) {
-                System.out.println(pregunta);
-            }
+            examName = questions.get("name").toString();
+            examId = questions.get("id").toString();
+            
+            
         } catch (ParseException ex) {
             //response.getWriter().println("error:" + ex.getMessage());
         }
         
         String ruta = request.getRealPath("/");
-
-        /*try{
+        try{
             SAXBuilder builder = new SAXBuilder();
-            File questions = new File(ruta+"questions.xml");
+            File questions = new File(ruta+"exams.xml");
             Document document = builder.build(questions);
             Element root = document.getRootElement();
-            List lista = root.getChildren("question");
+            List lista = root.getChildren("exam");
             
-            Element newQuestion = new Element("question");
-            
-            
-            root.addContent(newQuestion); 
+            Element newExam = new Element("exam");
+            newExam.setAttribute("id", examId);
+            newExam.setAttribute("text", examName);
+            //crear preguntas
+            Element newQuestion;
+            for (Object pregunta : preguntas) {
+                newQuestion = new Element("pregunta");
+                newQuestion.setText(pregunta.toString());
+                newExam.addContent(newQuestion);
+            }
+            root.addContent(newExam); 
             document.setContent(root);
             try {
-                FileWriter writer = new FileWriter(ruta+"questions.xml");
+                FileWriter writer = new FileWriter(ruta+"exams.xml");
                 XMLOutputter outputter = new XMLOutputter();
                 outputter.setFormat(Format.getPrettyFormat());
                 outputter.output(document, writer);
@@ -103,7 +112,6 @@ public class CreateExam extends HttpServlet {
         }
         catch(JDOMException e){
             //e.printStackTrace();
-        } */ 
-        //response.getWriter().println("datra: //"+data);
+        }  
     }
 }

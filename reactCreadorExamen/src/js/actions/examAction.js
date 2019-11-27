@@ -1,9 +1,10 @@
 import axios from "axios";
 
-export function sendExam(data) {
+export function sendExam(data, name, id) {
   let aux = {};
   aux.questions = data;
-
+  aux.name = name;
+  aux.id = id;
   return dispatch => {
     return axios
       .post(
