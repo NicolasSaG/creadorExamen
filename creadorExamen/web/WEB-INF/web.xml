@@ -21,11 +21,6 @@
         <servlet-class>questions.BorrarPreg</servlet-class>
     </servlet>
     <servlet>
-<<<<<<< HEAD
-        <servlet-name>ExamServlet</servlet-name>
-        <servlet-class>exams.ExamServlet</servlet-class>
-    </servlet>
-=======
         <servlet-name>ServletBorrarExamen</servlet-name>
         <servlet-class>exams.ServletBorrarExamen</servlet-class>
     </servlet>
@@ -37,7 +32,10 @@
         <servlet-name>ServletModExam</servlet-name>
         <servlet-class>exams.ServletModExam</servlet-class>
     </servlet>
->>>>>>> 5798ca65f0accd9927ee303c4905e0a39beedebf
+    <servlet>
+        <servlet-name>CreateExam</servlet-name>
+        <servlet-class>exams.CreateExam</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -59,11 +57,6 @@
         <url-pattern>/BorrarPreg</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-<<<<<<< HEAD
-        <servlet-name>ExamServlet</servlet-name>
-        <url-pattern>/ExamServlet</url-pattern>
-    </servlet-mapping>
-=======
         <servlet-name>ServletBorrarExamen</servlet-name>
         <url-pattern>/ServletBorrarExamen</url-pattern>
     </servlet-mapping>
@@ -75,7 +68,10 @@
         <servlet-name>ServletModExam</servlet-name>
         <url-pattern>/ServletModExam</url-pattern>
     </servlet-mapping>
->>>>>>> 5798ca65f0accd9927ee303c4905e0a39beedebf
+    <servlet-mapping>
+        <servlet-name>CreateExam</servlet-name>
+        <url-pattern>/CreateExam</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
