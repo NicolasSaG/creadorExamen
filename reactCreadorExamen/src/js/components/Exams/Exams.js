@@ -179,7 +179,7 @@ class Exams extends Component {
                   Título del Exámen
                   <input
                     type="text"
-                    className="group-control texto-caja"
+                    className="form-control texto-caja"
                     name="texto"
                     onChange={this.handleChange}
                     defaultValue={this.state.selectedExam.text}

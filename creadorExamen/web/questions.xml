@@ -1,47 +1,87 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<questions> 
-    <question id="1" text="junta lo que tenga que ver" answer="op1-3;op2-4;op3-1;op4-2">
-            <drags>
-                    <option img="anonimo.png">an####s</option>
-                    <option img="iron-man.png">iron man</option>
-                    <option img="scream.png">Scream</option>
-                    <option img="walter-white.png">Walter White</option>
-            </drags>
-            <targets>
-                    <option img="rascacielos.png">rascacielos</option>
-                    <option img="neumatico.png">neumatico</option>
-                    <option img="bong.png">bong</option>
-                    <option img="gordo-cop.png">police</option>
-            </targets>
-    </question>
-    <question id="2" text="pregunta 2222" answer="op1-3;op2-4;op3-1;op4-2">
-	<drags>
-		<option img="presidente2.jpg">Fidel Castro</option>
-		<option img="presidente4.jpg">George W. Bush</option>
-		<option img="presidente3.jpg">Vicente Fox</option>
-		<option img="presidente1.jpg">Ricardo Lagos</option>
-	</drags>
-	<targets>
-		<option img="nacion3.jpg">Mexico</option>
-		<option img="nacion1.jpg">Chile</option>
-		<option img="nacion2.jpg">Cuba</option>
-		<option img="nacion4.jpg">Estados Unidos</option>
-	</targets>
-    </question>
-
-    <question id="3" text="aweaweadasd" answer="op1-3;op2-4;op3-1;op4-2">
-            <drags>
-                    <option img="presidente2.jpg">Fidel Castro</option>
-                    <option img="presidente4.jpg">George W. Bush</option>
-                    <option img="presidente3.jpg">Vicente Fox</option>
-                    <option img="presidente1.jpg">Ricardo Lagos</option>
-            </drags>
-            <targets>
-                    <option img="nacion3.jpg">Mexico</option>
-                    <option img="nacion1.jpg">Chile</option>
-                    <option img="nacion2.jpg">Cuba</option>
-                    <option img="nacion4.jpg">Estados Unidos</option>
-            </targets>
-    </question>
-
+<questions>
+        <question id="1" text="junta lo que tenga que ver" answer="op1-3;op2-4;op3-1;op4-2">
+                <drags>
+                        <option img="anonimo.png">an####s</option>
+                        <option img="iron-man.png">iron man</option>
+                        <option img="scream.png">Scream</option>
+                        <option img="walter-white.png">Walter White</option>
+                </drags>
+                <targets>
+                        <option img="rascacielos.png">rascacielos</option>
+                        <option img="neumatico.png">neumatico</option>
+                        <option img="bong.png">bong</option>
+                        <option img="gordo-cop.png">police</option>
+                </targets>
+        </question>
+        <question id="2" text="Politica" answer="op1-3;op2-4;op3-1;op4-2">
+                <drags>
+                        <option img="presidente2.jpg">Fidel Castro</option>
+                        <option img="presidente4.jpg">George W. Bush</option>
+                        <option img="presidente3.jpg">Vicente Fox</option>
+                        <option img="presidente1.jpg">Ricardo Lagos</option>
+                </drags>
+                <targets>
+                        <option img="nacion3.jpg">Mexico</option>
+                        <option img="nacion1.jpg">Chile</option>
+                        <option img="nacion2.jpg">Cuba</option>
+                        <option img="nacion4.jpg">Estados Unidos</option>
+                </targets>
+        </question>
+        <question id="3" text="Matematicas" answer="op1-3;op2-4;op3-1;op4-2">
+                <drags>
+                        <option img="presidente2.jpg">Constante</option>
+                        <option img="presidente4.jpg">X+1=2X</option>
+                        <option img="presidente3.jpg">X=10X-3</option>
+                        <option img="presidente1.jpg">X/2=5</option>
+                </drags>
+                <targets>
+                        <option img="nacion3.jpg">3</option>
+                        <option img="nacion1.jpg">10</option>
+                        <option img="nacion2.jpg">Valor Numerico</option>
+                        <option img="nacion4.jpg">1</option>
+                </targets>
+        </question>
+        <question id="10" text="Biologia" answer="1-4;2-3;3-1:4-2">
+                <drags>
+                        <option img="img1.jpg">Celula</option>
+                        <option img="img2.jpg">Citoplasma</option>
+                        <option img="img3.jpg">Membrana</option>
+                        <option img="img4.jpg">Mitocondria</option>
+                </drags>
+                <targets>
+                        <option img="img1.jpg">Capa que controla la entrada de nutrientes.</option>
+                        <option img="img2.jpg">Genera ATP.</option>
+                        <option img="img3.jpg">Localizada en medio de la menbrana, mantiene a los organulos flotando.</option>
+                        <option img="img4.jpg">La unidad funcional de todo organismo vivo.</option>
+                </targets>
+        </question>
+        <question id="11" text="Historia" answer="1-1;2-4;3-2;4-3">
+                <drags>
+                        <option img="img1.jpg">Primera Guerra Mundial</option>
+                        <option img="img2.jpg">Segunda Guerra Mundial</option>
+                        <option img="img3.jpg">Guerra Civil Rusa</option>
+                        <option img="img4.jpg">Revolucion Mexicana</option>
+                </drags>
+                <targets>
+                        <option img="img1.jpg">1914-1918</option>
+                        <option img="img2.jpg">1917-1923</option>
+                        <option img="img3.jpg">1910-1921</option>
+                        <option img="img4.jpg">1939-1845</option>
+                </targets>
+        </question>
+        <question id="12" text="Quimica" answer="1-3;2-1;3-2;4-4">
+                <drags>
+                        <option img="img1.jpg">Au</option>
+                        <option img="img2.jpg">C</option>
+                        <option img="img3.jpg">K</option>
+                        <option img="img4.jpg">Ag</option>
+                </drags>
+                <targets>
+                        <option img="img1.jpg">Carbon</option>
+                        <option img="img2.jpg">Potasio</option>
+                        <option img="img3.jpg">Oro</option>
+                        <option img="img4.jpg">Plata</option>
+                </targets>
+        </question>
 </questions>
