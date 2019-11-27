@@ -8,7 +8,6 @@ import Questions from "./js/components/Questions/Questions";
 import requireAuth from "./js/components/authenticate/Authenticate";
 import requireNoAuth from "./js/components/authenticate/NoAuthenticate";
 import Question from "./js/components/Questions/Question";
-import Type from "./js/components/Type/Type";
 import HotSpot from "./js/components/Questions/HotSpot";
 import Exams from "./js/components/Exams/Exams";
 
@@ -16,12 +15,11 @@ export default (
   //espeficacion de rutas de la aplicacion
   <Route path="/" component={App}>
     <IndexRoute component={requireNoAuth(Login)} />
-    <Route path="welcome" component={requireAuth(Welcome)} />{" "}
+    <Route path="welcome" component={requireAuth(Welcome)} />
     {/** componente compuesto para mostrar solo si ya se inicio sesion */}
     <Route path="questions" component={requireAuth(Questions)} />
-    <Route path="newquestion" component={requireAuth(Question)} />
+    <Route path="dragndrop" component={requireAuth(Question)} />
     <Route path="hotspot" component={requireAuth(HotSpot)} />
-    <Route path="type" component={requireAuth(Type)} />
     <Route path="exams" component={requireAuth(Exams)} />
   </Route>
 );
