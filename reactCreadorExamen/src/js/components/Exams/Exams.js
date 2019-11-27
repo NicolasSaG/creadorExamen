@@ -193,35 +193,35 @@ class Exams extends Component {
                       </div>
                       <input
                         type="text"
-                        className="form-control"
+                        className="form-control preg"
                         name="Pregunta0"
                         onChange={this.handleChange}
                         defaultValue={this.state.selectedExam.pregunta[0]}
                       />
                       <input
                         type="text"
-                        className="form-control"
+                        className="form-control preg"
                         name="Pregunta1"
                         onChange={this.handleChange}
                         defaultValue={this.state.selectedExam.pregunta[1]}
                       />
                       <input
                         type="text"
-                        className="form-control"
+                        className="form-control preg"
                         name="Pregunta2"
                         onChange={this.handleChange}
                         defaultValue={this.state.selectedExam.pregunta[2]}
                       />
                       <input
                         type="text"
-                        className="form-control"
+                        className="form-control preg"
                         name="Pregunta3"
                         onChange={this.handleChange}
                         defaultValue={this.state.selectedExam.pregunta[3]}
                       />
                       <input
                         type="text"
-                        className="form-control"
+                        className="form-control preg"
                         name="Pregunta4"
                         onChange={this.handleChange}
                         defaultValue={this.state.selectedExam.pregunta[4]}
@@ -236,35 +236,35 @@ class Exams extends Component {
 
                       <input
                         type="text"
-                        className="form-control"
+                        className="form-control preg"
                         name="Pregunta5"
                         onChange={this.handleChange}
                         defaultValue={this.state.selectedExam.pregunta[5]}
                       />
                       <input
                         type="text"
-                        className="form-control"
+                        className="form-control preg"
                         name="Pregunta6"
                         onChange={this.handleChange}
                         defaultValue={this.state.selectedExam.pregunta[6]}
                       />
                       <input
                         type="text"
-                        className="form-control"
+                        className="form-control preg"
                         name="Pregunta7"
                         onChange={this.handleChange}
                         defaultValue={this.state.selectedExam.pregunta[7]}
                       />
                       <input
                         type="text"
-                        className="form-control"
+                        className="form-control preg"
                         name="Pregunta8"
                         onChange={this.handleChange}
                         defaultValue={this.state.selectedExam.pregunta[8]}
                       />
                       <input
                         type="text"
-                        className="form-control"
+                        className="form-control preg"
                         name="Pregunta9"
                         onChange={this.handleChange}
                         defaultValue={this.state.selectedExam.pregunta[9]}
