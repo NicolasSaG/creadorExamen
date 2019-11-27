@@ -20,12 +20,18 @@ class Welcome extends Component {
             </p>
           </li>
           <li>
+            <p>
+              Una vez tengas 10 preguntas puedes ir a la sección de Crear Examen
+              donde puedes integrar una evaluación y resolverla.
+            </p>
+          </li>
+          <li>
             <p>Da click en la sección de Inicio para volver a esta página.</p>
           </li>
           <li>
             <p>
               Si quieres cerrar tu sesión da click en Logout en la barra de
-              navegación
+              navegación.
             </p>
           </li>
         </ul>

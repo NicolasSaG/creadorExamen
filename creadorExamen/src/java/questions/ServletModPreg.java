@@ -76,7 +76,7 @@ public class ServletModPreg extends HttpServlet {
       target.add(targetObject4);
       
       
-      String answer = "";
+      String answer = request.getParameter("answer");
 
  
 
@@ -113,6 +113,9 @@ public class ServletModPreg extends HttpServlet {
          atributo = rootElem.getAttribute("text");
          
          atributo.setValue(text);
+         
+         atributo = rootElem.getAttribute("answer");
+         atributo.setValue(answer);
          
          List<Element> list = rootElem.getChildren();
          

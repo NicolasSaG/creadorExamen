@@ -286,6 +286,14 @@ class Questions extends Component {
                     onChange={this.handleChange}
                     defaultValue={this.state.selectedQuestion.text}
                   />
+                  <label className="control-label ">Respuesta</label>
+                  <input
+                    type="text"
+                    name="answer"
+                    className="form-control"
+                    onChange={this.handleChange}
+                    defaultValue={this.state.selectedQuestion.answer}
+                  />
                 </div>
 
                 <div className="row">
