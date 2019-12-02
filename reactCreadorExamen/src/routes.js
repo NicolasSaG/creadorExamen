@@ -11,6 +11,7 @@ import Question from "./js/components/Questions/Question";
 import HotSpot from "./js/components/Questions/HotSpot";
 import Exams from "./js/components/Exams/Exams";
 import NewExam from "./js/components/Exams/NewExam";
+import Test from "./js/components/Exams/Test";
 
 export default (
   //espeficacion de rutas de la aplicacion
@@ -23,5 +24,6 @@ export default (
     <Route path="hotspot" component={requireAuth(HotSpot)} />
     <Route path="newexam" component={requireAuth(NewExam)} />
     <Route path="exams" component={requireAuth(Exams)} />
+    <Route path="test" component={requireAuth(Test)} />
   </Route>
 );

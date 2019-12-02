@@ -36,8 +36,9 @@ class Exams extends Component {
   onOpenModal = i => {
     this.setState({
       open: true,
-      selectedExam: i // cuando se selecciona una pregunta se guarda en el state
+      selectedExam: i // cuando se selecciona un examen se guarda en el state
     });
+    console.log(this.state.selectedExam);
   };
 
   onCloseModExamen = () => {
@@ -84,20 +85,20 @@ class Exams extends Component {
               className="btn btn-primary btn-cool"
               onClick={() => this.onOpenModal(element)}
             >
-              resolver
+              Resolver
             </button>
 
             <button
               className="btn btn-info btn-cool"
               onClick={() => this.onOpenModExamen(element)}
             >
-              modificar
+              Modificar
             </button>
             <button
               className="btn btn-danger btn-cool"
               onClick={() => this.onOpenModBorrar(element)}
             >
-              eliminar
+              Eliminar
             </button>
           </td>
         );
@@ -322,6 +323,38 @@ class Exams extends Component {
                   onClick={this.onCloseModBorrar}
                   className="btn btn-danger"
                 >
+                  Cancelar
+                </button>
+              </form>
+            </Modal>
+          )}
+        </div>
+        <div>
+          {Object.keys(this.state.selectedExam).length === 0 ? (
+            console.log("Resolver Examen")
+          ) : (
+            <Modal
+              isOpen={this.state.open}
+              contentLabel="Verificacion Res Exam"
+              ariaHideApp={false}
+              className="BorrarPopUp"
+            >
+              Quieres Resolver El examen con id: {this.state.selectedExam.id}
+              <form
+                action="http://localhost:8080/creadorExamen/ServletPedirExamen"
+                method="post"
+              >
+                <input
+                  type="submit"
+                  value="Resolver"
+                  className="btn btn-primary"
+                />
+                <input
+                  type="hidden"
+                  name="idExamen"
+                  defaultValue={this.state.selectedExam.id}
+                />
+                <button onClick={this.onCloseModal} className="btn btn-danger">
                   Cancelar
                 </button>
               </form>
