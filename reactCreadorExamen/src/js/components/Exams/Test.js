@@ -68,7 +68,7 @@ class Test extends Component {
       console.log("no se ha encontrado ningun examen");
     } else {
       let exams = aux["exams"]["exam"];
-      console.log(exams);
+      //console.log(exams);
       //console.log(typeof exams);
       for (let i = 0; i != exams.length; i++) {
         //console.log("imprimeido examenes");
@@ -81,8 +81,8 @@ class Test extends Component {
       }
     }
     //console.log(examen);
-    console.log("las preguntas requeridas son");
-    console.log(idPreg);
+    //console.log("las preguntas requeridas son");
+    //console.log(idPreg);
 
     let arrayPreg = [];
 
@@ -99,16 +99,16 @@ class Test extends Component {
           //ya se pueden buscar preguntas
           for (let a = 0; a != idPreg.length; a++) {
             if (preguntas[i]["id"] == idPreg[a]) {
-              console.log("se ha encontrado una pregunta del examen");
+              //console.log("se ha encontrado una pregunta del examen");
               arrayPreg.push(preguntas[i]);
             }
           }
         }
       }
     }
-    console.log("preg");
+    //console.log("preg");
     //console.log(this.state.allQuestions);
-    console.log(arrayPreg);
+    //console.log(arrayPreg);
 
     //let preg = [];
     let defecto = {

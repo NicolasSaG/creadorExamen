@@ -48,10 +48,12 @@ class MiniQuestion extends Component {
   };
   changeDD(event) {
     this.setState({ userAnswer: event.target.value });
+    console.log(this.state.answer);
   }
 
   handleSubmitDD(event) {
     console.log("Se ha cambiado la respuesta a: " + this.state.userAnswer);
+
     if (this.state.question["answer"] == this.state.userAnswer) {
       console.log("respuesta correcta");
       this.setState({ value: this.state.correcto });
@@ -163,10 +165,13 @@ class MiniQuestion extends Component {
                   type="text"
                   value={this.state.userAnswer}
                   onChange={this.changeDD}
-                  placeholder="ejemplo 1-4;2-3;3-2;4-1"
+                  placeholder="ejemplo 1-0;2-0;3-1;4-1"
+                  className="form-control"
                 />
                 <input type="submit" value="Verificar" />
+                <br />
               </form>
+              <br />
 
               <button onClick={this.onCloseModal}>Cerrar pregunta</button>
             </Modal>
@@ -270,9 +275,12 @@ class MiniQuestion extends Component {
                   value={this.state.userAnswer}
                   onChange={this.changeDD}
                   placeholder="ejemplo 1-0;2-0;3-1;4-1"
+                  className="form-control"
                 />
+                <br />
                 <input type="submit" value="Verificar" />
               </form>
+              <br />
               <button onClick={this.onCloseModal}>Cerrar pregunta</button>
             </Modal>
           )}

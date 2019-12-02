@@ -340,7 +340,7 @@ class Exams extends Component {
               className="BorrarPopUp"
             >
               Quieres Resolver El examen con id: {this.state.selectedExam.id}
-              <form action="http://localhost:3000/test" method="get">
+              <form action="http://localhost:8080/test" method="get">
                 <input
                   type="submit"
                   value="Resolver"
