@@ -54,16 +54,17 @@ class Test extends Component {
   }
 
   render() {
-    console.log("examenes");
-    console.log(this.state.exams);
-    console.log("preguntas");
+    const { open } = this.state;
+    //console.log("examenes");
+    //console.log(this.state.exams);
+    //console.log("preguntas");
     let aux = this.state.allQuestions.questions;
     //aux = aux["question"];
+    //let examenes = JSON.stringify(this.getSelectedExam());
+    //console.log(aux);
+    //console.log(examenes);
 
-    console.log(aux);
-    console.log(typeof aux);
-    /*let examenes = JSON.stringify(this.getSelectedExam());
-    let aux = this.getSelectedExam();
+    /*let aux = this.getSelectedExam();
     console.log(examenes);
     Object.keys(aux).length === 0
       ? console.log("vacio")
@@ -71,24 +72,116 @@ class Test extends Component {
     */
     //console.log(this.state.allQuestions.questions);
 
-    /*const preguntas = (
+    const pregunta = {
+      answer: "1-1;2-4;3-2;4-3",
+      drags: {
+        option: [
+          {
+            img: "img1.jpg",
+            content: "Primera Guerra Mundial"
+          },
+          {
+            img: "img2.jpg",
+            content: "Segunda Guerra Mundial"
+          },
+          {
+            img: "img3.jpg",
+            content: "Guerra Civil Rusa"
+          },
+          {
+            img: "img4.jpg",
+            content: "Revolucion Mexicana"
+          }
+        ]
+      },
+      id: 11,
+      text: "Historia",
+      type: 1,
+      targets: {
+        option: [
+          {
+            img: "img1.jpg",
+            content: "1914-1918"
+          },
+          {
+            img: "img2.jpg",
+            content: "1917-1923"
+          },
+          {
+            img: "img3.jpg",
+            content: "1910-1921"
+          },
+          {
+            img: "img4.jpg",
+            content: "1939-1845"
+          }
+        ]
+      }
+    };
+    const preguntaHotSpot = {
+      answer: "1-1;2-4;3-2;4-3",
+      drags: {
+        option: [
+          {
+            img: "img1.jpg",
+            content: "Primera Guerra Mundial"
+          },
+          {
+            img: "img2.jpg",
+            content: "Segunda Guerra Mundial"
+          },
+          {
+            img: "img3.jpg",
+            content: "Guerra Civil Rusa"
+          },
+          {
+            img: "img4.jpg",
+            content: "Revolucion Mexicana"
+          }
+        ]
+      },
+      id: 11,
+      text: "Historia",
+      type: 2,
+      targets: {
+        option: [
+          {
+            img: "img1.jpg",
+            content: "1914-1918"
+          },
+          {
+            img: "img2.jpg",
+            content: "1917-1923"
+          },
+          {
+            img: "img3.jpg",
+            content: "1910-1921"
+          },
+          {
+            img: "img4.jpg",
+            content: "1939-1845"
+          }
+        ]
+      }
+    };
+    const preguntas = (
       <div>
-        <MiniQuestion question={this.state.questions.questions.question[0]} />
-        <MiniQuestion question={this.state.questions.questions.question[1]} />
-        <MiniQuestion question={this.state.questions.questions.question[2]} />
-        <MiniQuestion question={this.state.questions.questions.question[3]} />
-        <MiniQuestion question={this.state.questions.questions.question[4]} />
-        <MiniQuestion question={this.state.questions.questions.question[5]} />
-        <MiniQuestion question={this.state.questions.questions.question[6]} />
-        <MiniQuestion question={this.state.questions.questions.question[7]} />
-        <MiniQuestion question={this.state.questions.questions.question[8]} />
-        <MiniQuestion question={this.state.questions.questions.question[9]} />
+        <MiniQuestion id="0" question={pregunta} />
+        <MiniQuestion id="1" question={pregunta} />
+        <MiniQuestion id="2" question={pregunta} />
+        <MiniQuestion id="3" question={preguntaHotSpot} />
+        <MiniQuestion id="4" question={pregunta} />
+        <MiniQuestion id="5" question={pregunta} />
+        <MiniQuestion id="6" question={pregunta} />
+        <MiniQuestion id="7" question={pregunta} />
+        <MiniQuestion id="8" question={pregunta} />
+        <MiniQuestion id="9" question={pregunta} />
       </div>
-    );*/
+    );
     return (
       <div>
-        Test
-        <div>{/*console.log(this.state.allQuestions)*/}</div>
+        RESUELVE LAS SIGUIENTES PREGUNTAS
+        {preguntas}
       </div>
     );
   }

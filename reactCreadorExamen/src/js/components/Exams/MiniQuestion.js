@@ -9,20 +9,48 @@ class MiniQuestion extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      type: 0,
+      id: 0,
       question: {},
-      userAnswer: []
+      userAnswer: ""
     };
-    this.bindQuestion(props);
   }
-  bindQuestion(props) {
-    this.setState({ question: "aux" });
+  bindQuestion() {
+    this.setState({ question: this.props.question });
+    this.setState({ id: this.props.id });
+    //this.forceUpdate();
+  }
+  componentDidMount() {
+    this.bindQuestion();
   }
 
   render() {
-    if (this.state.type == 1) return <div>Drag&Drop</div>;
-    else if (this.state.type == 2) return <div>HotSpot</div>;
-    else return <p>Hubo un problema</p>;
+    const { open } = this.state;
+
+    //this.bindQuestion();
+    if (this.state.question["type"] == 1)
+      return (
+        <div>
+          <button>Pregunta {this.state.id} </button>
+          Drag&Drop
+          <br />
+          <br />
+        </div>
+      );
+    else if (this.state.question["type"] == 2)
+      return (
+        <div>
+          <button>Pregunta {this.state.id} </button> HotSpot
+          <br />
+          <br />
+        </div>
+      );
+    else
+      return (
+        <p>
+          Hubo un problema con la pregunta {this.state.id} la cual es de tipo{" "}
+          {this.state.question["type"]}
+        </p>
+      );
   }
 }
 
