@@ -14,10 +14,9 @@ class Test extends Component {
     this.state = {
       selectedExam: {},
       selectedQuestions: {},
-      allQuestions: {},
+      questions: {},
       exams: {}
     };
-    this.componentDidMount = this.componentDidMount.bind(this);
   }
 
   getSelectedExam() {
@@ -26,8 +25,8 @@ class Test extends Component {
     let id = url.split("&");
     id = id[0];
     id = id.split("=")[1];
-    let objetoExamenes = this.state.exams.exams;
-    return objetoExamenes;
+    //console.log(`Se ha elegido el examen ${id}`);
+    return id;
   }
 
   componentDidMount() {
@@ -55,26 +54,23 @@ class Test extends Component {
   }
 
   render() {
-    const { open } = this.state;
-    //console.log("examenes");
+    let numExam = this.getSelectedExam();
     //console.log(this.state.exams);
-    //console.log("preguntas");
     let aux = this.state.exams;
-    let aux2 = aux.exam;
-    console.log(aux2);
-    //aux = aux["question"];
-    //let examenes = JSON.stringify(this.getSelectedExam());
-    console.log(aux);
-    //console.log(examenes);
-
-    /*let aux = this.getSelectedExam();
-    console.log(examenes);
-    Object.keys(aux).length === 0
-      ? console.log("vacio")
-      : console.log("dwefivnocswkjdcnxjin");
-    */
-    //console.log(this.state.allQuestions.questions);
-
+    if (aux === undefined) {
+      console.log("no se ha encontrado nada");
+    }
+    if (aux["exams"] === undefined) {
+      console.log("no se ha encontrado ningun examen");
+    } else {
+      let exams = aux["exams"]["exam"];
+      console.log(exams);
+      //console.log(typeof exams);
+      for (let i = 0; i != exams.length; i++) {
+        //console.log("imprimeido examenes");
+        //console.log(exams[i]);
+      }
+    }
     const pregunta = {
       answer: "1-1;2-4;3-2;4-3",
       drags: {

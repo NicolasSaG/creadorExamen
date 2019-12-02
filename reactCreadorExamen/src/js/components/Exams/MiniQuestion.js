@@ -61,6 +61,8 @@ class MiniQuestion extends Component {
       this.setState({ value: this.state.incorrecto });
       this.forceUpdate();
     }
+    this.changeDD = null;
+    this.setState({ openModal: false });
     event.preventDefault();
   }
 
