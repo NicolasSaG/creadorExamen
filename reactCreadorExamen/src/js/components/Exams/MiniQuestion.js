@@ -309,10 +309,9 @@ class MiniQuestion extends Component {
       );
     } else
       return (
-        <p>
-          Hubo un problema con la pregunta {this.state.id} la cual es de tipo{" "}
-          {this.state.question["type"]}
-        </p>
+        <div>
+          <br />
+        </div>
       );
   }
 }
