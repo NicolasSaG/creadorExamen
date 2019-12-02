@@ -72,6 +72,7 @@ class Questions extends Component {
     );
 
     let tt = [];
+
     if (isArray(this.state.questions.questions.question)) {
       this.state.questions.questions.question.forEach(element => {
         let children = [];
@@ -154,15 +155,7 @@ class Questions extends Component {
     table.push(<tbody>{tt}</tbody>);
     return table;
   }
-  tipo() {
-    if (this.state.selectedQuestion.type == 1) {
-      console.log("preguntaDrag");
-      return <h2>Drag&Drop</h2>;
-    } else {
-      console.log("preguntaHotSpot");
-      return <h2>hotspot</h2>;
-    }
-  }
+
   render() {
     const { open } = this.state;
     return (
@@ -175,11 +168,11 @@ class Questions extends Component {
         </table>
         <div>
           {Object.keys(this.state.selectedQuestion).length === 0 ? (
-            console.log("algo raro")
-          ) : (
+            console.log("ver pregunta")
+          ) : this.state.selectedQuestion.qtype === "dragdrop" ? (
             <Modal
               isOpen={this.state.open}
-              contentLabel="Minimal Modal Example"
+              contentLabel="drag drop"
               ariaHideApp={false}
             >
               <h3>pregunta: {this.state.selectedQuestion.text}</h3>
@@ -262,6 +255,91 @@ class Questions extends Component {
               </div>
               <button onClick={this.onCloseModal}>Cerrar pregunta</button>
             </Modal>
+          ) : (
+            <Modal
+              isOpen={this.state.open}
+              contentLabel="hotspot question"
+              ariaHideApp={false}
+            >
+              <h3>pregunta: {this.state.selectedQuestion.text}</h3>
+              <div className="row">
+                <div className="col">
+                  <div className="form-group">
+                    <div className="text-center">
+                      <label className="control-label ">
+                        hotspot instance name
+                      </label>
+                    </div>
+
+                    <p>
+                      hotspot 1:
+                      {this.state.selectedQuestion.hotsposts.option[0].content}
+                    </p>
+                    <p>
+                      hotspot 2:
+                      {this.state.selectedQuestion.hotsposts.option[1].content}
+                    </p>
+                    <p>
+                      hotspot 3:
+                      {this.state.selectedQuestion.hotsposts.option[2].content}
+                    </p>
+                    <p>
+                      hotspot 4:
+                      {this.state.selectedQuestion.hotsposts.option[3].content}
+                    </p>
+                  </div>
+                </div>
+                <div className="col">
+                  <div className="form-group">
+                    <div className="text-center">
+                      <label className="control-label">Corrects</label>
+                    </div>
+                    <p>
+                      {this.state.selectedQuestion.corrects.option[0].content}
+                      <input
+                        type="checkbox"
+                        readOnly
+                        value={
+                          this.state.selectedQuestion.corrects.option[0].content
+                        }
+                      />
+                    </p>
+                    <p>
+                      {this.state.selectedQuestion.corrects.option[1].content}
+                      <input
+                        type="checkbox"
+                        readOnly
+                        value={
+                          this.state.selectedQuestion.corrects.option[1].content
+                        }
+                      />
+                    </p>
+                    <p>
+                      {this.state.selectedQuestion.corrects.option[2].content}
+                      <input
+                        type="checkbox"
+                        readOnly
+                        value={
+                          this.state.selectedQuestion.corrects.option[2].content
+                        }
+                      />
+                    </p>
+                    <p>
+                      {this.state.selectedQuestion.corrects.option[3].content}
+                      <input
+                        type="checkbox"
+                        readOnly
+                        value={
+                          this.state.selectedQuestion.corrects.option[3].content
+                        }
+                      />
+                      <img></img>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <button onClick={this.onCloseModal}>Cerrar pregunta</button>
+            </Modal>
           )}
         </div>
         <div>
@@ -273,7 +351,6 @@ class Questions extends Component {
               contentLabel="Mod Pregunta"
               ariaHideApp={false}
             >
-              {this.tipo()}
               <form
                 action="http://localhost:8080/creadorExamen/ServletModPreg"
                 method="post"

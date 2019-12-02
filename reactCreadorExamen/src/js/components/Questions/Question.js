@@ -15,6 +15,7 @@ class Question extends Component {
     this.state = {
       interactionId: "",
       text: "",
+      qtype: "dragdrop",
       dragObject1: "",
       dragObject2: "",
       dragObject3: "",

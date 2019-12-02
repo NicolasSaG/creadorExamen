@@ -14,6 +14,7 @@ class HotSpot extends Component {
 
     this.state = {
       interactionId: "",
+      qtype: "hostpot",
       text: "",
       hotspotInstanceName1: "",
       hotspotInstanceName2: "",
@@ -49,7 +50,19 @@ class HotSpot extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    alert("no funciono :(");
+    if (this.isValid()) {
+      this.setState({ errors: {}, isLoading: true });
+      //enviar datos de pregunta a servidor
+      //si todo marcho bien, enviar a /welcome, sino no existe un usario con esos datos
+      this.props.sendQuestionHotSpot(this.state).then(
+        res => this.context.router.push("questions"),
+        err =>
+          this.setState({
+            errors: { form: "problema al crear pregunta" },
+            isLoading: false
+          })
+      );
+    }
   }
 
   render() {
