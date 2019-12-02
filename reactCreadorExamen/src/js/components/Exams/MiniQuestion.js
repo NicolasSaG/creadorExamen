@@ -155,10 +155,13 @@ class MiniQuestion extends Component {
                 </div>
               </div>
               <form onSubmit={this.handleSubmitDD}>
+                Tu Respuesta:
+                <br />
                 <input
                   type="text"
                   value={this.state.userAnswer}
                   onChange={this.changeDD}
+                  placeholder="ejemplo 1-4;2-3;3-2;4-1"
                 />
                 <input type="submit" value="Verificar" />
               </form>
@@ -181,7 +184,6 @@ class MiniQuestion extends Component {
               ariaHideApp={false}
             >
               <h3>pregunta: {this.state.question.text}</h3>
-              <p>answer: {this.state.question.answer}</p>
 
               <div className="row">
                 <div className="col">
@@ -259,10 +261,13 @@ class MiniQuestion extends Component {
                 </div>
               </div>
               <form onSubmit={this.handleSubmitDD}>
+                Tu Respuesta:
+                <br />
                 <input
                   type="text"
                   value={this.state.userAnswer}
                   onChange={this.changeDD}
+                  placeholder="ejemplo 1-0;2-0;3-1;4-1"
                 />
                 <input type="submit" value="Verificar" />
               </form>
@@ -282,7 +287,6 @@ class MiniQuestion extends Component {
           <button onClick={() => this.openModal()} className={this.state.value}>
             Pregunta {this.state.id}{" "}
           </button>
-          Drag&Drop
           {this.displayModal()}
           <br />
           <br />
@@ -296,7 +300,6 @@ class MiniQuestion extends Component {
           <button onClick={() => this.openModal()} className={this.state.value}>
             Pregunta {this.state.id}{" "}
           </button>{" "}
-          HotSpot
           {this.displayModal()}
           <br />
           <br />

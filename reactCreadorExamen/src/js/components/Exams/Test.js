@@ -17,6 +17,7 @@ class Test extends Component {
       allQuestions: {},
       exams: {}
     };
+    this.componentDidMount = this.componentDidMount.bind(this);
   }
 
   getSelectedExam() {
@@ -58,10 +59,12 @@ class Test extends Component {
     //console.log("examenes");
     //console.log(this.state.exams);
     //console.log("preguntas");
-    let aux = this.state.allQuestions.questions;
+    let aux = this.state.exams;
+    let aux2 = aux.exam;
+    console.log(aux2);
     //aux = aux["question"];
     //let examenes = JSON.stringify(this.getSelectedExam());
-    //console.log(aux);
+    console.log(aux);
     //console.log(examenes);
 
     /*let aux = this.getSelectedExam();
@@ -164,23 +167,38 @@ class Test extends Component {
         ]
       }
     };
+
     const preguntas = (
-      <div>
-        <MiniQuestion id="0" question={pregunta} />
-        <MiniQuestion id="1" question={pregunta} />
-        <MiniQuestion id="2" question={pregunta} />
-        <MiniQuestion id="3" question={preguntaHotSpot} />
-        <MiniQuestion id="4" question={pregunta} />
-        <MiniQuestion id="5" question={pregunta} />
-        <MiniQuestion id="6" question={pregunta} />
-        <MiniQuestion id="7" question={pregunta} />
-        <MiniQuestion id="8" question={pregunta} />
-        <MiniQuestion id="9" question={pregunta} />
+      <div className="row">
+        <div className="col">
+          <div className="form-group">
+            <div className="text-center">
+              <MiniQuestion id="0" question={pregunta} />
+              <MiniQuestion id="1" question={pregunta} />
+              <MiniQuestion id="2" question={pregunta} />
+              <MiniQuestion id="3" question={preguntaHotSpot} />
+              <MiniQuestion id="4" question={pregunta} />
+            </div>
+          </div>
+        </div>
+        <div className="col">
+          <div className="form-group">
+            <div className="text-center">
+              <MiniQuestion id="5" question={pregunta} />
+              <MiniQuestion id="6" question={pregunta} />
+              <MiniQuestion id="7" question={pregunta} />
+              <MiniQuestion id="8" question={pregunta} />
+              <MiniQuestion id="9" question={pregunta} />
+            </div>
+          </div>
+        </div>
       </div>
     );
     return (
       <div>
         RESUELVE LAS SIGUIENTES PREGUNTAS
+        <br />
+        <br />
         {preguntas}
       </div>
     );
