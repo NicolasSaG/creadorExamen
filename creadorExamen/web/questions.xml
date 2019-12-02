@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <questions>
-        <question id="1" text="junta lo que tenga que ver" answer="op1-3;op2-4;op3-1;op4-2">
+        <question id="1" text="junta lo que tenga que ver" answer="op1-3;op2-4;op3-1;op4-2" type="1">
                 <drags>
                         <option img="anonimo.png">an####s</option>
                         <option img="iron-man.png">iron man</option>
@@ -14,7 +14,7 @@
                         <option img="gordo-cop.png">police</option>
                 </targets>
         </question>
-        <question id="2" text="Politica" answer="op1-3;op2-4;op3-1;op4-2">
+        <question id="2" text="Politica" answer="op1-3;op2-4;op3-1;op4-2" type="1">
                 <drags>
                         <option img="presidente2.jpg">Fidel Castro</option>
                         <option img="presidente4.jpg">George W. Bush</option>
@@ -28,7 +28,7 @@
                         <option img="nacion4.jpg">Estados Unidos</option>
                 </targets>
         </question>
-        <question id="3" text="Matematicas" answer="op1-3;op2-4;op3-1;op4-2">
+        <question id="3" text="Matematicas" answer="op1-3;op2-4;op3-1;op4-2" type="1">
                 <drags>
                         <option img="presidente2.jpg">Constante</option>
                         <option img="presidente4.jpg">X+1=2X</option>
@@ -56,7 +56,7 @@
                         <option img="img4.jpg">La unidad funcional de todo organismo vivo.</option>
                 </targets>
         </question>
-        <question id="11" text="Historia" answer="1-1;2-4;3-2;4-3">
+        <question id="11" text="Historia" answer="1-1;2-4;3-2;4-3" type="1">
                 <drags>
                         <option img="img1.jpg">Primera Guerra Mundial</option>
                         <option img="img2.jpg">Segunda Guerra Mundial</option>
@@ -70,7 +70,7 @@
                         <option img="img4.jpg">1939-1845</option>
                 </targets>
         </question>
-        <question id="12" text="Quimica" answer="1-3;2-1;3-2;4-4">
+        <question id="12" text="Quimica" answer="1-3;2-1;3-2;4-4" type="1">
                 <drags>
                         <option img="img1.jpg">Au</option>
                         <option img="img2.jpg">C</option>

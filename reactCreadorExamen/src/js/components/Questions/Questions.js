@@ -154,7 +154,15 @@ class Questions extends Component {
     table.push(<tbody>{tt}</tbody>);
     return table;
   }
-
+  tipo() {
+    if (this.state.selectedQuestion.type == 1) {
+      console.log("preguntaDrag");
+      return <h2>Drag&Drop</h2>;
+    } else {
+      console.log("preguntaHotSpot");
+      return <h2>hotspot</h2>;
+    }
+  }
   render() {
     const { open } = this.state;
     return (
@@ -265,6 +273,7 @@ class Questions extends Component {
               contentLabel="Mod Pregunta"
               ariaHideApp={false}
             >
+              {this.tipo()}
               <form
                 action="http://localhost:8080/creadorExamen/ServletModPreg"
                 method="post"

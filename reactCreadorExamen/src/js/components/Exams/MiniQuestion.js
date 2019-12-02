@@ -20,8 +20,8 @@ class MiniQuestion extends Component {
   }
 
   render() {
-    if (this.state == 1) return <div>Drag&Drop</div>;
-    else if (this.state == 2) return <div>HotSpot</div>;
+    if (this.state.type == 1) return <div>Drag&Drop</div>;
+    else if (this.state.type == 2) return <div>HotSpot</div>;
     else return <p>Hubo un problema</p>;
   }
 }

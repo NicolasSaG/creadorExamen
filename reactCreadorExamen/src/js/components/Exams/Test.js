@@ -17,8 +17,6 @@ class Test extends Component {
       allQuestions: {},
       exams: {}
     };
-    this.getQuestions();
-    this.getExams();
   }
 
   getSelectedExam() {
@@ -28,12 +26,12 @@ class Test extends Component {
     id = id[0];
     id = id.split("=")[1];
     let objetoExamenes = this.state.exams.exams;
-    //console.log(objetoExamenes);
     return objetoExamenes;
-    //let examenes = objetoExamenes;
-    //console.log(examenes[1]);
+  }
 
-    //console.log(id);
+  componentDidMount() {
+    this.getQuestions();
+    this.getExams();
   }
 
   getQuestions() {
@@ -56,8 +54,22 @@ class Test extends Component {
   }
 
   render() {
-    let Examenes = this.getSelectedExam();
-    //console.log(Examenes["exam"][0]);
+    console.log("examenes");
+    console.log(this.state.exams);
+    console.log("preguntas");
+    let aux = this.state.allQuestions.questions;
+    //aux = aux["question"];
+
+    console.log(aux);
+    console.log(typeof aux);
+    /*let examenes = JSON.stringify(this.getSelectedExam());
+    let aux = this.getSelectedExam();
+    console.log(examenes);
+    Object.keys(aux).length === 0
+      ? console.log("vacio")
+      : console.log("dwefivnocswkjdcnxjin");
+    */
+    //console.log(this.state.allQuestions.questions);
 
     /*const preguntas = (
       <div>
