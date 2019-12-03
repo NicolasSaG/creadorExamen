@@ -58,6 +58,12 @@ class MiniQuestion extends Component {
       console.log("respuesta correcta");
       this.setState({ value: this.state.correcto });
       this.forceUpdate();
+      if (localStorage.getItem("aciertos") != null) {
+        //se enconotro el token
+        let califAux = Number(localStorage.getItem("aciertos"));
+        califAux += 1;
+        localStorage.setItem("aciertos", califAux);
+      }
     } else {
       console.log("respuesta inccorrecta");
       this.setState({ value: this.state.incorrecto });

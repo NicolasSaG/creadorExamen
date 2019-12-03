@@ -6,6 +6,7 @@ import axios from "axios";
 import Modal from "react-modal";
 import { isArray } from "util";
 import MiniQuestion from "./MiniQuestion";
+import Calificacion from "./Calificacion";
 
 class Test extends Component {
   constructor(props) {
@@ -19,6 +20,10 @@ class Test extends Component {
     };
   }
 
+  componentWillUnmount() {
+    localStorage.removeItem("NumPreg");
+    localStorage.setItem("aciertos");
+  }
   getSelectedExam() {
     let url = document.URL.split("?");
     url = url[1];
@@ -106,6 +111,9 @@ class Test extends Component {
         }
       }
     }
+
+    localStorage.setItem("NumPreg", arrayPreg.length);
+    localStorage.setItem("aciertos", 0);
     //console.log("preg");
     //console.log(this.state.allQuestions);
     //console.log(arrayPreg);
@@ -228,6 +236,7 @@ class Test extends Component {
         <br />
         <br />
         {renderizado}
+        <Calificacion />
       </div>
     );
   }
