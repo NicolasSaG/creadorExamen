@@ -19,7 +19,10 @@ class Calificacion extends Component {
   }
 
   render() {
-    if (localStorage.getItem("NumPreg") != null) {
+    if (
+      localStorage.getItem("NumPreg") != null &&
+      localStorage.getItem("aciertos") != null
+    ) {
       return (
         <h3 className="centered">
           ACIERTOS : {localStorage.getItem("aciertos")}/
@@ -27,7 +30,7 @@ class Calificacion extends Component {
         </h3>
       );
     } else {
-      return <h3>Existe un problema con tu calificacion</h3>;
+      return <h3>Existe un problema al revisar tu calificacion</h3>;
     }
   }
 }
