@@ -22,7 +22,7 @@ class Test extends Component {
 
   componentWillUnmount() {
     localStorage.removeItem("NumPreg");
-    localStorage.setItem("aciertos");
+    localStorage.removeItem("aciertos");
   }
   getSelectedExam() {
     let url = document.URL.split("?");

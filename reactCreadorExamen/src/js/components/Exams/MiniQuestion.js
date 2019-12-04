@@ -14,7 +14,7 @@ class MiniQuestion extends Component {
       question: {},
       userAnswer: "",
       answer: "",
-      normal: "btn btn-secondary miniNormal",
+      normal: "btn btn-secondary",
       correcto: "btn btn-success",
       incorrecto: "btn btn-warning",
       value: ""
