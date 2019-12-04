@@ -190,6 +190,8 @@ class Questions extends Component {
                       {this.state.selectedQuestion.drags.option[0].content}
                       <img
                         src={`http://localhost:8080/creadorExamen/images/${this.state.selectedQuestion.drags.option[0].img}`}
+                        width="80"
+                        height="80"
                       ></img>
                     </p>
                     <p>
@@ -197,6 +199,8 @@ class Questions extends Component {
                       {this.state.selectedQuestion.drags.option[1].content}
                       <img
                         src={`http://localhost:8080/creadorExamen/images/${this.state.selectedQuestion.drags.option[1].img}`}
+                        width="80"
+                        height="80"
                       ></img>
                     </p>
                     <p>
@@ -204,6 +208,8 @@ class Questions extends Component {
                       {this.state.selectedQuestion.drags.option[2].content}
                       <img
                         src={`http://localhost:8080/creadorExamen/images/${this.state.selectedQuestion.drags.option[2].img}`}
+                        width="80"
+                        height="80"
                       ></img>
                     </p>
                     <p>
@@ -211,6 +217,8 @@ class Questions extends Component {
                       {this.state.selectedQuestion.drags.option[3].content}
                       <img
                         src={`http://localhost:8080/creadorExamen/images/${this.state.selectedQuestion.drags.option[3].img}`}
+                        width="80"
+                        height="80"
                       ></img>
                     </p>
                   </div>
@@ -227,6 +235,8 @@ class Questions extends Component {
                       {this.state.selectedQuestion.targets.option[0].content}
                       <img
                         src={`http://localhost:8080/creadorExamen/images/${this.state.selectedQuestion.targets.option[0].img}`}
+                        width="80"
+                        height="80"
                       ></img>
                     </p>
                     <p>
@@ -234,6 +244,8 @@ class Questions extends Component {
                       {this.state.selectedQuestion.targets.option[1].content}
                       <img
                         src={`http://localhost:8080/creadorExamen/images/${this.state.selectedQuestion.targets.option[1].img}`}
+                        width="80"
+                        height="80"
                       ></img>
                     </p>
                     <p>
@@ -241,6 +253,8 @@ class Questions extends Component {
                       {this.state.selectedQuestion.targets.option[2].content}
                       <img
                         src={`http://localhost:8080/creadorExamen/images/${this.state.selectedQuestion.targets.option[2].img}`}
+                        width="80"
+                        height="80"
                       ></img>
                     </p>
                     <p>
@@ -248,6 +262,8 @@ class Questions extends Component {
                       {this.state.selectedQuestion.targets.option[3].content}
                       <img
                         src={`http://localhost:8080/creadorExamen/images/${this.state.selectedQuestion.targets.option[3].img}`}
+                        width="80"
+                        height="80"
                       ></img>
                     </p>
                   </div>

@@ -134,6 +134,6 @@ public class ServletModExam extends HttpServlet {
       } catch (IOException e) {
          e.printStackTrace();
       }
-      response.sendRedirect("http://localhost:3000/exams");
+      response.sendRedirect("http://localhost:8080/exams");
    }
 }

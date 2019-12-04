@@ -111,7 +111,7 @@ public class BorrarPreg extends HttpServlet {
       } catch (IOException e) {
          e.printStackTrace();
       }
-      response.sendRedirect("http://localhost:3000/questions");
+      response.sendRedirect("http://localhost:8080/questions");
 
    }
 }
