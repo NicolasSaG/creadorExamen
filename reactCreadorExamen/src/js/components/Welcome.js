@@ -21,8 +21,8 @@ class Welcome extends Component {
           </li>
           <li>
             <p>
-              Una vez tengas 10 preguntas puedes ir a la sección de Crear Examen
-              donde puedes integrar una evaluación y resolverla.
+              Una vez tengas al menos una pregunta puedes ir a la sección de
+              Crear Examen donde puedes integrar una evaluación y resolverla.
             </p>
           </li>
           <li>

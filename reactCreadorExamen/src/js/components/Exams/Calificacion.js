@@ -22,7 +22,7 @@ class Calificacion extends Component {
     if (localStorage.getItem("NumPreg") != null) {
       return (
         <h3 className="centered">
-          RESULTADOS : {localStorage.getItem("aciertos")}/
+          ACIERTOS : {localStorage.getItem("aciertos")}/
           {localStorage.getItem("NumPreg")}
         </h3>
       );
