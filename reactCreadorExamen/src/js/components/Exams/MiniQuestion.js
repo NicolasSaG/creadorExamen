@@ -14,9 +14,9 @@ class MiniQuestion extends Component {
       question: {},
       userAnswer: "",
       answer: "",
-      normal: "btn btn-info btn-cool miniNormal",
-      correcto: "btn btn-info btn-cool miniCorrecto",
-      incorrecto: "btn btn-info btn-cool miniIncorrecto",
+      normal: "btn btn-secondary miniNormal",
+      correcto: "btn btn-success",
+      incorrecto: "btn btn-warning",
       value: ""
     };
     this.changeDD = this.changeDD.bind(this);
@@ -165,7 +165,9 @@ class MiniQuestion extends Component {
                 </div>
               </div>
               <form onSubmit={this.handleSubmitDD}>
+                <br />
                 Tu Respuesta:
+                <br />
                 <br />
                 <input
                   type="text"
@@ -174,7 +176,8 @@ class MiniQuestion extends Component {
                   placeholder="ejemplo 1-0;2-0;3-1;4-1"
                   className="form-control"
                 />
-                <input type="submit" value="Verificar" />
+                <br />
+                <input type="submit" value="Calificar" />
                 <br />
               </form>
               <br />

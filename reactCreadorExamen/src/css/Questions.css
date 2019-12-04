@@ -129,3 +129,7 @@ table {
   max-width: 120px;
   background-color: rgb(218, 13, 13);
 }
+
+.centered {
+  text-align: center;
+}
