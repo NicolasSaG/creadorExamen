@@ -12,10 +12,11 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
@@ -64,73 +65,6 @@ public class CreateQuestion extends HttpServlet {
         
         response.addHeader("Access-Control-Allow-Origin", "*"); 
         response.setContentType("text/plain");
-        
-        
-        boolean isMultipart;
-        String filePath;
-        long maxFileSize = 6 * 1024*1024;
-        int maxMemSize = 6 * 1024*1024;
-        File file ;
-
-        //obtener la ruta del lugar en el que estoy del servidor
-        filePath = request.getRealPath("/"); 
-        isMultipart = ServletFileUpload.isMultipartContent(request);
-        java.io.PrintWriter out = response.getWriter( );
-
-        if( !isMultipart ) {
-            System.out.println("Error con multiparte");
-            return;
-        }
-  
-        DiskFileItemFactory factory = new DiskFileItemFactory();
-
-        // maximum size that will be stored in memory
-        factory.setSizeThreshold(maxMemSize);
-
-        // Location to save data that is larger than maxMemSize.
-        factory.setRepository(new File(filePath));
-
-        // Create a new file upload handler
-        ServletFileUpload upload = new ServletFileUpload(factory);
-
-        // maximum file size to be uploaded.
-        upload.setSizeMax( maxFileSize );
-
-        try { 
-            // Parse the request to get file items.
-            List fileItems = upload.parseRequest(request);
-
-            // Process the uploaded file items
-            Iterator i = fileItems.iterator();
-
-
-            while ( i.hasNext () ) {
-                FileItem fi = (FileItem)i.next();
-                if ( !fi.isFormField () ) {
-                    // Get the uploaded file parameters
-                    String fieldName = fi.getFieldName();
-                    String fileName = fi.getName();
-                    String contentType = fi.getContentType();
-                    boolean isInMemory = fi.isInMemory();
-                    long sizeInBytes = fi.getSize();
-
-                    // Write the file
-                    if( fileName.lastIndexOf("\\") >= 0 ) {
-                       file = new File( filePath + fileName.substring( fileName.lastIndexOf("\\"))) ;
-                    } else {
-                       file = new File( filePath + fileName.substring(fileName.lastIndexOf("\\")+1)) ;
-                    }
-                    fi.write( file ) ;
-                    System.out.println("Archivo subido: " + fileName);
-                }
-            }
-           
-        } catch(Exception ex) {
-            System.out.println(ex);
-        }
-
-        
-        
         //convertir body de request en string
         StringBuilder buffer = new StringBuilder();
         BufferedReader reader = request.getReader();

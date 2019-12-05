@@ -6,6 +6,8 @@ import PropTypes from "prop-types";
 import classnames from "classnames";
 import { connect } from "react-redux";
 import { sendQuestion } from "../../actions/questionAction";
+
+import { sendFilesDragDrop } from "../../actions/questionAction";
 import validateInput from "../../validations/newquestion";
 
 class Question extends Component {
@@ -38,6 +40,7 @@ class Question extends Component {
   handleChange(event) {
     this.setState({ [event.target.name]: event.target.value });
   }
+
   handleFileChange(event) {
     this.setState({ file: event.target.files[0] });
   }
@@ -59,7 +62,18 @@ class Question extends Component {
       //si todo marcho bien, enviar a /welcome, sino no existe un usario con esos datos
 
       this.props.sendQuestion(this.state).then(
-        res => this.context.router.push("questions"),
+        res => {
+          this.props.sendFilesDragDrop(this.state).then(
+            res => {
+              this.context.router.push("questions");
+            },
+            err =>
+              this.setState({
+                errors: { form: "problema al subir archivos" },
+                isLoading: false
+              })
+          );
+        },
         err =>
           this.setState({
             errors: { form: "problema al crear pregunta" },
@@ -229,11 +243,12 @@ class Question extends Component {
 }
 
 Question.propTypes = {
-  sendQuestion: PropTypes.func.isRequired
+  sendQuestion: PropTypes.func.isRequired,
+  sendFilesDragDrop: PropTypes.func.isRequired
 };
 
 Question.contextTypes = {
   router: PropTypes.object.isRequired
 };
 
-export default connect(null, { sendQuestion })(Question);
+export default connect(null, { sendQuestion, sendFilesDragDrop })(Question);
