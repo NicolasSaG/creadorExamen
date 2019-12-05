@@ -6,6 +6,7 @@
 package files;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Iterator;
@@ -17,6 +18,12 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.jdom.Document;
+import org.jdom.Element;
+import org.jdom.JDOMException;
+import org.jdom.input.SAXBuilder;
+import org.jdom.output.Format;
+import org.jdom.output.XMLOutputter;
 
 /**
  *
@@ -33,6 +40,13 @@ public class ManageFilesDD extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, java.io.IOException {
    
+        
+        String ruta = request.getRealPath("/");
+        String nom = "";
+        
+        
+      //leer arhcivo de preguntas, obtener la ultima, jalar nombres de archivos y ponerselos en el archivo xml,
+      //guardarlos despues
       // Check that we have a file upload request
       
       //obtener la ruta del lugar en el que estoy del servidor
@@ -45,7 +59,7 @@ public class ManageFilesDD extends HttpServlet {
           System.out.println("Server: error, archivo multiparte");
          return;
       }
-  
+                
       DiskFileItemFactory factory = new DiskFileItemFactory();
    
       // maximum size that will be stored in memory
@@ -76,20 +90,55 @@ public class ManageFilesDD extends HttpServlet {
                String contentType = fi.getContentType();
                boolean isInMemory = fi.isInMemory();
                long sizeInBytes = fi.getSize();
-            
+               nom = fileName;
                // Write the file
                if( fileName.lastIndexOf("\\") >= 0 ) {
-                  file = new File( filePath + fileName.substring( fileName.lastIndexOf("\\"))) ;
+                  file = new File( filePath + "images"+ fileName.substring( fileName.lastIndexOf("\\"))) ;
                } else {
-                  file = new File( filePath + fileName.substring(fileName.lastIndexOf("\\")+1)) ;
+                  file = new File( filePath +"images"+ fileName.substring(fileName.lastIndexOf("\\")+1)) ;
                }
                fi.write( file ) ;
+               nom = fileName;
                 System.out.println("Archivo subido: " + fileName);
             }
          }
          } catch(Exception ex) {
             System.out.println(ex);
          }
+      
+      try{
+            SAXBuilder builder = new SAXBuilder();
+            File questions = new File(ruta+"questions.xml");
+            Document document = builder.build(questions);
+            Element root = document.getRootElement();
+            List lista = root.getChildren("question");
+                //leer todos los usuarios del archivo
+            Element lastQuestion =(Element)lista.get(lista.size()-1);
+            List<Element> listDrag = lastQuestion.getChildren("drags");
+            Element drags =  listDrag.get(0);
+            List<Element> dragsList =  drags.getChildren();
+            System.out.println("elementos en drag: "+ listDrag.size());
+            System.out.println("elementos dentro de drags: "+ dragsList.size());
+            for (int i = 0; i < dragsList.size(); i++) {       
+                
+                Element option = dragsList.get(i);
+                option.setAttribute("src", nom);
+            }
+            try {
+                FileWriter writer = new FileWriter(ruta+"questions.xml");
+                XMLOutputter outputter = new XMLOutputter();
+                outputter.setFormat(Format.getPrettyFormat());
+                outputter.output(document, writer);
+                //outputter.output(document, System.out);
+                writer.close(); // close writer
+            } catch (IOException e) {
+                e.printStackTrace();
+            } 
+        }
+        catch(JDOMException e){
+            //e.printStackTrace();
+        }
+      
       }
       
       public void doGet(HttpServletRequest request, HttpServletResponse response)

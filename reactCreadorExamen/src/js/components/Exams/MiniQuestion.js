@@ -100,7 +100,7 @@ class MiniQuestion extends Component {
                       drag option 1:{" "}
                       {this.state.question.drags.option[0].content}
                       <img
-                        src={`http://localhost:8080/creadorExamen/images/${this.state.question.drags.option[0].img}`}
+                        src={`http://localhost:8080/images/${this.state.question.drags.option[0].img}`}
                         alt=" "
                         onDrag={() => {
                           console.log("se ha seleccionado la img 1");
@@ -113,7 +113,7 @@ class MiniQuestion extends Component {
                       drag option 2:
                       {this.state.question.drags.option[1].content}
                       <img
-                        src={`http://localhost:8080/creadorExamen/images/${this.state.question.drags.option[1].img}`}
+                        src={`http://localhost:8080/images/${this.state.question.drags.option[1].img}`}
                         alt=" "
                         width="80"
                         height="80"
@@ -123,7 +123,7 @@ class MiniQuestion extends Component {
                       drag option 3:
                       {this.state.question.drags.option[2].content}
                       <img
-                        src={`http://localhost:8080/creadorExamen/images/${this.state.question.drags.option[2].img}`}
+                        src={`http://localhost:8080/images/${this.state.question.drags.option[2].img}`}
                         alt=" "
                         width="80"
                         height="80"
@@ -133,7 +133,7 @@ class MiniQuestion extends Component {
                       drag option 4:
                       {this.state.question.drags.option[3].content}
                       <img
-                        src={`http://localhost:8080/creadorExamen/images/${this.state.question.drags.option[3].img}`}
+                        src={`http://localhost:8080/images/${this.state.question.drags.option[3].img}`}
                         alt=" "
                         width="80"
                         height="80"
@@ -152,7 +152,7 @@ class MiniQuestion extends Component {
                       target option 1:
                       {this.state.question.targets.option[0].content}
                       <img
-                        src={`http://localhost:8080/creadorExamen/images/${this.state.question.targets.option[0].img}`}
+                        src={`http://localhost:8080/images/${this.state.question.targets.option[0].img}`}
                         alt=" "
                         width="80"
                         height="80"
@@ -162,7 +162,7 @@ class MiniQuestion extends Component {
                       target option 2:
                       {this.state.question.targets.option[1].content}
                       <img
-                        src={`http://localhost:8080/creadorExamen/images/${this.state.question.targets.option[1].img}`}
+                        src={`http://localhost:8080/images/${this.state.question.targets.option[1].img}`}
                         alt=" "
                         width="80"
                         height="80"
@@ -172,7 +172,7 @@ class MiniQuestion extends Component {
                       target option 3:
                       {this.state.question.targets.option[2].content}
                       <img
-                        src={`http://localhost:8080/creadorExamen/images/${this.state.question.targets.option[2].img}`}
+                        src={`http://localhost:8080/images/${this.state.question.targets.option[2].img}`}
                         alt=" "
                         width="80"
                         height="80"
@@ -182,7 +182,7 @@ class MiniQuestion extends Component {
                       target option 4:
                       {this.state.question.targets.option[3].content}
                       <img
-                        src={`http://localhost:8080/creadorExamen/images/${this.state.question.targets.option[3].img}`}
+                        src={`http://localhost:8080/images/${this.state.question.targets.option[3].img}`}
                         alt=" "
                         width="80"
                         height="80"
@@ -239,7 +239,7 @@ class MiniQuestion extends Component {
                       drag option 1:{" "}
                       {this.state.question.drags.option[0].content}
                       <img
-                        src={`http://localhost:8080/creadorExamen/images/${this.state.question.drags.option[0].img}`}
+                        src={`http://localhost:8080/images/${this.state.question.drags.option[0].img}`}
                         alt=" "
                         width="80"
                         height="80"
@@ -249,7 +249,7 @@ class MiniQuestion extends Component {
                       drag option 2:
                       {this.state.question.drags.option[1].content}
                       <img
-                        src={`http://localhost:8080/creadorExamen/images/${this.state.question.drags.option[1].img}`}
+                        src={`http://localhost:8080/images/${this.state.question.drags.option[1].img}`}
                         alt=" "
                         width="80"
                         height="80"
@@ -259,7 +259,7 @@ class MiniQuestion extends Component {
                       drag option 3:
                       {this.state.question.drags.option[2].content}
                       <img
-                        src={`http://localhost:8080/creadorExamen/images/${this.state.question.drags.option[2].img}`}
+                        src={`http://localhost:8080/images/${this.state.question.drags.option[2].img}`}
                         alt=" "
                         width="80"
                         height="80"
@@ -269,7 +269,7 @@ class MiniQuestion extends Component {
                       drag option 4:
                       {this.state.question.drags.option[3].content}
                       <img
-                        src={`http://localhost:8080/creadorExamen/images/${this.state.question.drags.option[3].img}`}
+                        src={`http://localhost:8080/images/${this.state.question.drags.option[3].img}`}
                         alt=" "
                         width="80"
                         height="80"
@@ -288,7 +288,7 @@ class MiniQuestion extends Component {
                       target option 1:
                       {this.state.question.targets.option[0].content}
                       <img
-                        src={`http://localhost:8080/creadorExamen/images/${this.state.question.targets.option[0].img}`}
+                        src={`http://localhost:8080/images/${this.state.question.targets.option[0].img}`}
                         alt=" "
                         width="80"
                         height="80"
@@ -298,7 +298,7 @@ class MiniQuestion extends Component {
                       target option 2:
                       {this.state.question.targets.option[1].content}
                       <img
-                        src={`http://localhost:8080/creadorExamen/images/${this.state.question.targets.option[1].img}`}
+                        src={`http://localhost:8080/images/${this.state.question.targets.option[1].img}`}
                         alt=" "
                         width="80"
                         height="80"
@@ -308,7 +308,7 @@ class MiniQuestion extends Component {
                       target option 3:
                       {this.state.question.targets.option[2].content}
                       <img
-                        src={`http://localhost:8080/creadorExamen/images/${this.state.question.targets.option[2].img}`}
+                        src={`http://localhost:8080/images/${this.state.question.targets.option[2].img}`}
                         alt=" "
                         width="80"
                         height="80"
@@ -318,7 +318,7 @@ class MiniQuestion extends Component {
                       target option 4:
                       {this.state.question.targets.option[3].content}
                       <img
-                        src={`http://localhost:8080/creadorExamen/images/${this.state.question.targets.option[3].img}`}
+                        src={`http://localhost:8080/images/${this.state.question.targets.option[3].img}`}
                         alt=" "
                         width="80"
                         height="80"

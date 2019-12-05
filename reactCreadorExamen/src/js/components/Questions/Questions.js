@@ -19,11 +19,11 @@ class Questions extends Component {
     this.getTable();
   }
   onOpenModPregunta = i => {
-    console.log(i);
     this.setState({
       openModPreg: true,
       selectedQuestion: i
     });
+    console.log(this.selectedQuestion.type);
   };
   onOpenModBorrar = i => {
     console.log(i);
@@ -50,7 +50,7 @@ class Questions extends Component {
   };
 
   getTable() {
-    axios.get("http://localhost:8080/creadorExamen/QuestionsServlet").then(
+    axios.get("http://localhost:8080/QuestionsServlet").then(
       res => {
         var aux = res.data;
         this.setState({ questions: aux });
@@ -169,7 +169,7 @@ class Questions extends Component {
         <div>
           {Object.keys(this.state.selectedQuestion).length === 0 ? (
             console.log("ver pregunta")
-          ) : this.state.selectedQuestion.qtype === "dragdrop" ? (
+          ) : (
             <Modal
               isOpen={this.state.open}
               contentLabel="drag drop"
@@ -189,7 +189,7 @@ class Questions extends Component {
                       drag option 1:{" "}
                       {this.state.selectedQuestion.drags.option[0].content}
                       <img
-                        src={`http://localhost:8080/creadorExamen/images/${this.state.selectedQuestion.drags.option[0].img}`}
+                        src={`http://localhost:8080/images/${this.state.selectedQuestion.drags.option[0].src}`}
                         width="80"
                         height="80"
                       ></img>
@@ -198,7 +198,7 @@ class Questions extends Component {
                       drag option 2:
                       {this.state.selectedQuestion.drags.option[1].content}
                       <img
-                        src={`http://localhost:8080/creadorExamen/images/${this.state.selectedQuestion.drags.option[1].img}`}
+                        src={`http://localhost:8080/images/${this.state.selectedQuestion.drags.option[1].src}`}
                         width="80"
                         height="80"
                       ></img>
@@ -207,7 +207,7 @@ class Questions extends Component {
                       drag option 3:
                       {this.state.selectedQuestion.drags.option[2].content}
                       <img
-                        src={`http://localhost:8080/creadorExamen/images/${this.state.selectedQuestion.drags.option[2].img}`}
+                        src={`http://localhost:8080/images/${this.state.selectedQuestion.drags.option[2].src}`}
                         width="80"
                         height="80"
                       ></img>
@@ -216,7 +216,7 @@ class Questions extends Component {
                       drag option 4:
                       {this.state.selectedQuestion.drags.option[3].content}
                       <img
-                        src={`http://localhost:8080/creadorExamen/images/${this.state.selectedQuestion.drags.option[3].img}`}
+                        src={`http://localhost:8080/images/${this.state.selectedQuestion.drags.option[3].src}`}
                         width="80"
                         height="80"
                       ></img>
@@ -234,7 +234,7 @@ class Questions extends Component {
                       target option 1:
                       {this.state.selectedQuestion.targets.option[0].content}
                       <img
-                        src={`http://localhost:8080/creadorExamen/images/${this.state.selectedQuestion.targets.option[0].img}`}
+                        src={`http://localhost:8080/images/${this.state.selectedQuestion.targets.option[0].src}`}
                         width="80"
                         height="80"
                       ></img>
@@ -243,7 +243,7 @@ class Questions extends Component {
                       target option 2:
                       {this.state.selectedQuestion.targets.option[1].content}
                       <img
-                        src={`http://localhost:8080/creadorExamen/images/${this.state.selectedQuestion.targets.option[1].img}`}
+                        src={`http://localhost:8080/images/${this.state.selectedQuestion.targets.option[1].src}`}
                         width="80"
                         height="80"
                       ></img>
@@ -252,7 +252,7 @@ class Questions extends Component {
                       target option 3:
                       {this.state.selectedQuestion.targets.option[2].content}
                       <img
-                        src={`http://localhost:8080/creadorExamen/images/${this.state.selectedQuestion.targets.option[2].img}`}
+                        src={`http://localhost:8080/images/${this.state.selectedQuestion.targets.option[2].src}`}
                         width="80"
                         height="80"
                       ></img>
@@ -261,95 +261,10 @@ class Questions extends Component {
                       target option 4:
                       {this.state.selectedQuestion.targets.option[3].content}
                       <img
-                        src={`http://localhost:8080/creadorExamen/images/${this.state.selectedQuestion.targets.option[3].img}`}
+                        src={`http://localhost:8080/images/${this.state.selectedQuestion.targets.option[3].src}`}
                         width="80"
                         height="80"
                       ></img>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <button onClick={this.onCloseModal}>Cerrar pregunta</button>
-            </Modal>
-          ) : (
-            <Modal
-              isOpen={this.state.open}
-              contentLabel="hotspot question"
-              ariaHideApp={false}
-            >
-              <h3>pregunta: {this.state.selectedQuestion.text}</h3>
-              <div className="row">
-                <div className="col">
-                  <div className="form-group">
-                    <div className="text-center">
-                      <label className="control-label ">
-                        hotspot instance name
-                      </label>
-                    </div>
-
-                    <p>
-                      hotspot 1:
-                      {this.state.selectedQuestion.hotsposts.option[0].content}
-                    </p>
-                    <p>
-                      hotspot 2:
-                      {this.state.selectedQuestion.hotsposts.option[1].content}
-                    </p>
-                    <p>
-                      hotspot 3:
-                      {this.state.selectedQuestion.hotsposts.option[2].content}
-                    </p>
-                    <p>
-                      hotspot 4:
-                      {this.state.selectedQuestion.hotsposts.option[3].content}
-                    </p>
-                  </div>
-                </div>
-                <div className="col">
-                  <div className="form-group">
-                    <div className="text-center">
-                      <label className="control-label">Corrects</label>
-                    </div>
-                    <p>
-                      {this.state.selectedQuestion.corrects.option[0].content}
-                      <input
-                        type="checkbox"
-                        readOnly
-                        value={
-                          this.state.selectedQuestion.corrects.option[0].content
-                        }
-                      />
-                    </p>
-                    <p>
-                      {this.state.selectedQuestion.corrects.option[1].content}
-                      <input
-                        type="checkbox"
-                        readOnly
-                        value={
-                          this.state.selectedQuestion.corrects.option[1].content
-                        }
-                      />
-                    </p>
-                    <p>
-                      {this.state.selectedQuestion.corrects.option[2].content}
-                      <input
-                        type="checkbox"
-                        readOnly
-                        value={
-                          this.state.selectedQuestion.corrects.option[2].content
-                        }
-                      />
-                    </p>
-                    <p>
-                      {this.state.selectedQuestion.corrects.option[3].content}
-                      <input
-                        type="checkbox"
-                        readOnly
-                        value={
-                          this.state.selectedQuestion.corrects.option[3].content
-                        }
-                      />
-                      <img></img>
                     </p>
                   </div>
                 </div>
@@ -367,10 +282,7 @@ class Questions extends Component {
               contentLabel="Mod Pregunta"
               ariaHideApp={false}
             >
-              <form
-                action="http://localhost:8080/creadorExamen/ServletModPreg"
-                method="post"
-              >
+              <form action="http://localhost:8080/ServletModPreg" method="post">
                 <h1 className="text-center">Modificar Pregunta</h1>
                 <div className="form-group">
                   <input
@@ -521,10 +433,7 @@ class Questions extends Component {
             >
               Estas Seguro de Borrar la Pregunta Con id{" "}
               {this.state.selectedQuestion.id}
-              <form
-                action="http://localhost:8080/creadorExamen/BorrarPreg"
-                method="post"
-              >
+              <form action="http://localhost:8080/BorrarPreg" method="post">
                 <input
                   type="submit"
                   value="Borrar Pregunta"

@@ -120,30 +120,23 @@ public class ServletModPreg extends HttpServlet {
          List<Element> list = rootElem.getChildren();
          
 
-         for (int temp = 0; temp < list.size(); temp++) {
-            
+         for (int temp = 0; temp < list.size(); temp++) {       
             Element pregunta = list.get(temp);
             List<Element> objetos = pregunta.getChildren();
             for(int seleccion = 0; seleccion < objetos.size(); seleccion++ ){
                 Element dragsTargets = objetos.get(seleccion);
                 String sal= dragsTargets.toString();
-            
                 if(temp == 0){
                     //si son drags
-
                     dragsTargets.setText(drags.get(seleccion));   
                 }
                 else if(temp == 1){
                     //si son targets
-
                     //out.println(seleccion);
                     dragsTargets.setText(target.get(seleccion));
                 }
                     
-            }
-                
-            
-                
+            }      
          }
          
 
@@ -152,7 +145,7 @@ public class ServletModPreg extends HttpServlet {
                 XMLOutputter outputter = new XMLOutputter();
                 outputter.setFormat(Format.getPrettyFormat());
                 outputter.output(document, writer);
-                outputter.output(document, System.out);
+                //outputter.output(document, System.out);
                 writer.close(); // close writer
             } catch (IOException e) {
                 e.printStackTrace();

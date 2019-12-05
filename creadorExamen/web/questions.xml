@@ -4,90 +4,90 @@
         <question id="1" text="junta lo que tenga que ver" answer="1-3;2-4;3-1;4-2" type="1">
 
                 <drags>
-                        <option img="anonimo.png">an####s</option>
-                        <option img="iron-man.png">iron man</option>
-                        <option img="scream.png">Scream</option>
-                        <option img="walter-white.png">Walter White</option>
+                        <option src="anonimo.png">an####s</option>
+                        <option src="iron-man.png">iron man</option>
+                        <option src="scream.png">Scream</option>
+                        <option src="walter-white.png">Walter White</option>
                 </drags>
                 <targets>
-                        <option img="rascacielos.png">rascacielos</option>
-                        <option img="neumatico.png">neumatico</option>
-                        <option img="bong.png">bong</option>
-                        <option img="gordo-cop.png">police</option>
+                        <option src="rascacielos.png">rascacielos</option>
+                        <option src="neumatico.png">neumatico</option>
+                        <option src="bong.png">bong</option>
+                        <option src="gordo-cop.png">police</option>
                 </targets>
         </question>
 
         <question id="2" text="Politica" answer="1-3;2-4;3-1;4-2" type="1">
                 <drags>
-                        <option img="FidelCastro.jpg">Fidel Castro</option>
-                        <option img="Bush.jpg">George W. Bush</option>
-                        <option img="Fox.jpg">Vicente Fox</option>
-                        <option img="RicardoLagos.jpg">Ricardo Lagos</option>
+                        <option src="FidelCastro.jpg">Fidel Castro</option>
+                        <option src="Bush.jpg">George W. Bush</option>
+                        <option src="Fox.jpg">Vicente Fox</option>
+                        <option src="RicardoLagos.jpg">Ricardo Lagos</option>
                 </drags>
                 <targets>
-                        <option img="Mexico.png">Mexico</option>
-                        <option img="Chile.png">Chile</option>
-                        <option img="Cuba.jpg">Cuba</option>
-                        <option img="USA.jpg">Estados Unidos</option>
+                        <option src="Mexico.png">Mexico</option>
+                        <option src="Chile.png">Chile</option>
+                        <option src="Cuba.jpg">Cuba</option>
+                        <option src="USA.jpg">Estados Unidos</option>
                 </targets>
         </question>
 
         <question id="3" text="Matematicas" answer="1-3;2-4;3-1;4-2" type="1">
 
                 <drags>
-                        <option img="presidente2.jpg">Constante</option>
-                        <option img="presidente4.jpg">X+1=2X</option>
-                        <option img="presidente3.jpg">X=10X-3</option>
-                        <option img="presidente1.jpg">X/2=5</option>
+                        <option src="presidente2.jpg">Constante</option>
+                        <option src="presidente4.jpg">X+1=2X</option>
+                        <option src="presidente3.jpg">X=10X-3</option>
+                        <option src="presidente1.jpg">X/2=5</option>
                 </drags>
                 <targets>
-                        <option img="nacion3.jpg">3</option>
-                        <option img="nacion1.jpg">10</option>
-                        <option img="nacion2.jpg">Valor Numerico</option>
-                        <option img="nacion4.jpg">1</option>
+                        <option src="nacion3.jpg">3</option>
+                        <option src="nacion1.jpg">10</option>
+                        <option src="nacion2.jpg">Valor Numerico</option>
+                        <option src="nacion4.jpg">1</option>
                 </targets>
         </question>
 
         <question id="10" text="Biologia" answer="1-4;2-3;3-1;4-2" type="1">
                 <drags>
-                        <option img="celula.jpg">Celula</option>
-                        <option img="citoplasma.jpg">Citoplasma</option>
-                        <option img="membrana.jpg">Membrana</option>
-                        <option img="mitocondria.jpg">Mitocondria</option>
+                        <option src="celula.jpg">Celula</option>
+                        <option src="citoplasma.jpg">Citoplasma</option>
+                        <option src="membrana.jpg">Membrana</option>
+                        <option src="mitocondria.jpg">Mitocondria</option>
                 </drags>
                 <targets>
-                        <option img="img1.jpg">Capa que controla la entrada de nutrientes.</option>
-                        <option img="img2.jpg">Genera ATP.</option>
-                        <option img="img3.jpg">Localizada en medio de la menbrana, mantiene a los organulos flotando.</option>
-                        <option img="img4.jpg">La unidad funcional de todo organismo vivo.</option>
+                        <option src="img1.jpg">Capa que controla la entrada de nutrientes.</option>
+                        <option src="img2.jpg">Genera ATP.</option>
+                        <option src="img3.jpg">Localizada en medio de la menbrana, mantiene a los organulos flotando.</option>
+                        <option src="img4.jpg">La unidad funcional de todo organismo vivo.</option>
                 </targets>
         </question>
-        <question id="11" text="Historia" answer="1-1;2-4;3-2;4-3" qtype="dragdrop">
+        <question id="11" text="Historia" answer="1-1;2-4;3-2;4-3" type="1">
                 <drags>
-                        <option img="ww1.jpg">Primera Guerra Mundial</option>
-                        <option img="hittler.jpg">Segunda Guerra Mundial</option>
-                        <option img="lennin.jpg">Guerra Civil Rusa</option>
-                        <option img="villa.jpg">Revolucion Mexicana</option>
+                        <option src="ww1.jpg">Primera Guerra Mundial</option>
+                        <option src="hittler.jpg">Segunda Guerra Mundial</option>
+                        <option src="lennin.jpg">Guerra Civil Rusa</option>
+                        <option src="villa.jpg">Revolucion Mexicana</option>
                 </drags>
                 <targets>
-                        <option img="img1.jpg">1914-1918</option>
-                        <option img="img2.jpg">1917-1923</option>
-                        <option img="img3.jpg">1910-1921</option>
-                        <option img="img4.jpg">1939-1845</option>
+                        <option src="img1.jpg">1914-1918</option>
+                        <option src="img2.jpg">1917-1923</option>
+                        <option src="img3.jpg">1910-1921</option>
+                        <option src="img4.jpg">1939-1845</option>
                 </targets>
         </question>
-        <question id="12" text="Quimica" answer="1-3;2-1;3-2;4-4" qtype="dragdrop">
+        <question id="12" text="Quimica" answer="1-3;2-1;3-2;4-4" qtype="1">
                 <drags>
-                        <option img="img1.jpg">Au</option>
-                        <option img="img2.jpg">C</option>
-                        <option img="img3.jpg">K</option>
-                        <option img="img4.jpg">Ag</option>
+                        <option src="img1.jpg">Au</option>
+                        <option src="img2.jpg">C</option>
+                        <option src="img3.jpg">K</option>
+                        <option src="img4.jpg">Ag</option>
                 </drags>
                 <targets>
-                        <option img="img1.jpg">Carbon</option>
-                        <option img="img2.jpg">Potasio</option>
-                        <option img="img3.jpg">Oro</option>
-                        <option img="img4.jpg">Plata</option>
+                        <option src="img1.jpg">Carbon</option>
+                        <option src="img2.jpg">Potasio</option>
+                        <option src="img3.jpg">Oro</option>
+                        <option src="img4.jpg">Plata</option>
                 </targets>
         </question>
 </questions>

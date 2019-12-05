@@ -113,21 +113,21 @@ public class CreateQuestion extends HttpServlet {
             Element newDrag = new Element("drags");
             Element option;
             option = new Element("option").setText(dragObject1);
-            option.setAttribute("img", "img1.jpg");
+            option.setAttribute("src", "#");
             newDrag.addContent(option);
             
             option = new Element("option").setText(dragObject2);
-            option.setAttribute("img", "img2.jpg");
+            option.setAttribute("src", "#");
             newDrag.addContent(option);
             
             
             option = new Element("option").setText(dragObject3);
-            option.setAttribute("img", "img3.jpg");
+            option.setAttribute("src", "#");
             newDrag.addContent(option);
             
             
             option = new Element("option").setText(dragObject4);
-            option.setAttribute("img", "img4.jpg");
+            option.setAttribute("src", "#");
             newDrag.addContent(option);
             newQuestion.addContent(newDrag);
             //fin drags
@@ -135,34 +135,35 @@ public class CreateQuestion extends HttpServlet {
             //crear targets
             Element newTarget = new Element("targets");
             option = new Element("option").setText(targetObject1);
-            option.setAttribute("img", "img1.jpg");
+            option.setAttribute("src", "#");
             newTarget.addContent(option);
             
             option = new Element("option").setText(targetObject2);
-            option.setAttribute("img", "img2.jpg");
+            option.setAttribute("src", "#");
             newTarget.addContent(option);
             
             
             option = new Element("option").setText(targetObject3);
-            option.setAttribute("img", "img3.jpg");
+            option.setAttribute("src", "#");
             newTarget.addContent(option);
             
             
             option = new Element("option").setText(targetObject4);
-            option.setAttribute("img", "img4.jpg");
+            option.setAttribute("src", "#");
             newTarget.addContent(option);
             
             newQuestion.addContent(newTarget);
             //fin targets
-            
+            System.out.println(root.getContentSize());
             root.addContent(newQuestion); 
             document.setContent(root);
+            System.out.println(root.getContentSize());
             try {
                 FileWriter writer = new FileWriter(ruta+"questions.xml");
                 XMLOutputter outputter = new XMLOutputter();
                 outputter.setFormat(Format.getPrettyFormat());
                 outputter.output(document, writer);
-                outputter.output(document, System.out);
+                //outputter.output(document, System.out);
                 writer.close(); // close writer
             } catch (IOException e) {
                 e.printStackTrace();
