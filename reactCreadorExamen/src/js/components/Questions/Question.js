@@ -15,7 +15,7 @@ class Question extends Component {
     super(props);
 
     this.state = {
-      file: null,
+      files: {},
       interactionId: "",
       text: "",
       qtype: "dragdrop",
@@ -42,7 +42,9 @@ class Question extends Component {
   }
 
   handleFileChange(event) {
-    this.setState({ file: event.target.files[0] });
+    let f = this.state.files;
+    f[event.target.name] = event.target.files[0];
+    this.setState({ files: f });
   }
 
   //funcion que valida que los estados no esten vacios
@@ -102,7 +104,6 @@ class Question extends Component {
                 onChange={this.handleChange}
                 value={this.state.interactionId}
               />
-              <input type="file" name="file" onChange={this.handleFileChange} />
             </div>
             <div className="form-group">
               <label className="control-label ">pregunta</label>
@@ -134,6 +135,12 @@ class Question extends Component {
                     value={this.state.dragObject1}
                   />
                   <input
+                    type="file"
+                    name="file1"
+                    id="0"
+                    onChange={this.handleFileChange}
+                  />
+                  <input
                     type="text"
                     className={classnames("form-control", {
                       "is-invalid": errors.dragObject2
@@ -142,6 +149,12 @@ class Question extends Component {
                     placeholder="drag object 2"
                     onChange={this.handleChange}
                     value={this.state.dragObject2}
+                  />
+                  <input
+                    type="file"
+                    name="file2"
+                    id="1"
+                    onChange={this.handleFileChange}
                   />
                   <input
                     type="text"
@@ -154,6 +167,12 @@ class Question extends Component {
                     value={this.state.dragObject3}
                   />
                   <input
+                    type="file"
+                    name="file3"
+                    id="2"
+                    onChange={this.handleFileChange}
+                  />
+                  <input
                     type="text"
                     className={classnames("form-control", {
                       "is-invalid": errors.dragObject4
@@ -162,6 +181,12 @@ class Question extends Component {
                     placeholder="drag object 4"
                     onChange={this.handleChange}
                     value={this.state.dragObject4}
+                  />
+                  <input
+                    type="file"
+                    name="file4"
+                    id="3"
+                    onChange={this.handleFileChange}
                   />
                 </div>
               </div>
@@ -181,6 +206,12 @@ class Question extends Component {
                     value={this.state.targetObject1}
                   />
                   <input
+                    type="file"
+                    name="file5"
+                    id="4"
+                    onChange={this.handleFileChange}
+                  />
+                  <input
                     type="text"
                     className={classnames("form-control", {
                       "is-invalid": errors.targetObject2
@@ -189,6 +220,12 @@ class Question extends Component {
                     placeholder="target object 2"
                     onChange={this.handleChange}
                     value={this.state.targetObject2}
+                  />
+                  <input
+                    type="file"
+                    name="file6"
+                    id="5"
+                    onChange={this.handleFileChange}
                   />
                   <input
                     type="text"
@@ -201,6 +238,12 @@ class Question extends Component {
                     value={this.state.targetObject3}
                   />
                   <input
+                    type="file"
+                    name="file7"
+                    id="6"
+                    onChange={this.handleFileChange}
+                  />
+                  <input
                     type="text"
                     className={classnames("form-control", {
                       "is-invalid": errors.targetObject4
@@ -209,6 +252,12 @@ class Question extends Component {
                     placeholder="target object 4"
                     onChange={this.handleChange}
                     value={this.state.targetObject4}
+                  />
+                  <input
+                    type="file"
+                    name="file8"
+                    id="7"
+                    onChange={this.handleFileChange}
                   />
                 </div>
               </div>

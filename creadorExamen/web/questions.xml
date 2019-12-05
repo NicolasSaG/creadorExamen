@@ -76,7 +76,7 @@
                         <option src="img4.jpg">1939-1845</option>
                 </targets>
         </question>
-        <question id="12" text="Quimica" answer="1-3;2-1;3-2;4-4" qtype="1">
+        <question id="12" text="Quimica" answer="1-3;2-1;3-2;4-4" type="1">
                 <drags>
                         <option src="img1.jpg">Au</option>
                         <option src="img2.jpg">C</option>

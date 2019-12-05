@@ -21,7 +21,10 @@ export function sendQuestion(data) {
 
 export function sendFilesDragDrop(data) {
   let formData = new FormData();
-  formData.append("file", data.file, data.file.name);
+  const array = Object.values(data.files);
+  for (let i = 0; i < 8; i++) {
+    formData.append("file", array[i], array[i].name);
+  }
   console.log("subiendo archivos...");
   return dispatch => {
     return axios

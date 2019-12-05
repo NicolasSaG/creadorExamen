@@ -43,9 +43,9 @@ public class ManageFilesDD extends HttpServlet {
         
         String ruta = request.getRealPath("/");
         String nom = "";
-        
-        
-      //leer arhcivo de preguntas, obtener la ultima, jalar nombres de archivos y ponerselos en el archivo xml,
+        String nombres [] = new String[8];
+        int countNombres = 0;
+      //leer arhcivo dei preguntas, obtener la ultima, jalar nombres de archivos y ponerselos en el archivo xml,
       //guardarlos despues
       // Check that we have a file upload request
       
@@ -93,13 +93,16 @@ public class ManageFilesDD extends HttpServlet {
                nom = fileName;
                // Write the file
                if( fileName.lastIndexOf("\\") >= 0 ) {
-                  file = new File( filePath + "images"+ fileName.substring( fileName.lastIndexOf("\\"))) ;
+                    file = new File( filePath +"images\\"+ fileName.substring( fileName.lastIndexOf("\\"))) ;
                } else {
-                  file = new File( filePath +"images"+ fileName.substring(fileName.lastIndexOf("\\")+1)) ;
+                   
+                    file = new File( filePath +"images\\"+ fileName.substring(fileName.lastIndexOf("\\")+1)) ;
                }
                fi.write( file ) ;
                nom = fileName;
-                System.out.println("Archivo subido: " + fileName);
+               nombres[countNombres] = fileName;
+               countNombres++;
+                System.out.println("Archivo subido: " +  fileName);
             }
          }
          } catch(Exception ex) {
@@ -117,13 +120,19 @@ public class ManageFilesDD extends HttpServlet {
             List<Element> listDrag = lastQuestion.getChildren("drags");
             Element drags =  listDrag.get(0);
             List<Element> dragsList =  drags.getChildren();
-            System.out.println("elementos en drag: "+ listDrag.size());
-            System.out.println("elementos dentro de drags: "+ dragsList.size());
             for (int i = 0; i < dragsList.size(); i++) {       
-                
                 Element option = dragsList.get(i);
-                option.setAttribute("src", nom);
+                option.setAttribute("src", nombres[i]);
             }
+           
+            List<Element> listTarget = lastQuestion.getChildren("targets");
+            Element targets =  listTarget.get(0);
+            List<Element> targetsList =  targets.getChildren();
+            for (int i = 0; i < targetsList.size(); i++) {       
+                Element option = targetsList.get(i);
+                option.setAttribute("src", nombres[i+4]);
+            }
+            
             try {
                 FileWriter writer = new FileWriter(ruta+"questions.xml");
                 XMLOutputter outputter = new XMLOutputter();
