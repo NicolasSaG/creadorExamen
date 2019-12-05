@@ -13,6 +13,7 @@ class Question extends Component {
     super(props);
 
     this.state = {
+      file: null,
       interactionId: "",
       text: "",
       qtype: "dragdrop",
@@ -30,11 +31,15 @@ class Question extends Component {
     };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleFileChange = this.handleFileChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
     this.setState({ [event.target.name]: event.target.value });
+  }
+  handleFileChange(event) {
+    this.setState({ file: event.target.files[0] });
   }
 
   //funcion que valida que los estados no esten vacios
@@ -52,6 +57,7 @@ class Question extends Component {
       this.setState({ errors: {}, isLoading: true });
       //enviar datos de pregunta a servidor
       //si todo marcho bien, enviar a /welcome, sino no existe un usario con esos datos
+
       this.props.sendQuestion(this.state).then(
         res => this.context.router.push("questions"),
         err =>
@@ -82,6 +88,7 @@ class Question extends Component {
                 onChange={this.handleChange}
                 value={this.state.interactionId}
               />
+              <input type="file" name="file" onChange={this.handleFileChange} />
             </div>
             <div className="form-group">
               <label className="control-label ">pregunta</label>
