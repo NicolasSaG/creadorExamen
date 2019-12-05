@@ -50,7 +50,7 @@ class Questions extends Component {
   };
 
   getTable() {
-    axios.get("http://localhost:8080/QuestionsServlet").then(
+    axios.get("http://localhost:8080/creadorExamen/QuestionsServlet").then(
       res => {
         var aux = res.data;
         this.setState({ questions: aux });

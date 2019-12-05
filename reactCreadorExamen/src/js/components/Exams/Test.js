@@ -40,7 +40,7 @@ class Test extends Component {
   }
 
   getQuestions() {
-    axios.get("http://localhost:8080/QuestionsServlet").then(
+    axios.get("http://localhost:8080/creadorExamen/QuestionsServlet").then(
       res => {
         var aux = res.data;
         this.setState({ questions: aux });
@@ -49,7 +49,7 @@ class Test extends Component {
     );
   }
   getExams() {
-    axios.get("http://localhost:8080/ExamServlet").then(
+    axios.get("http://localhost:8080/creadorExamen/ExamServlet").then(
       res => {
         var aux1 = res.data;
         this.setState({ exams: aux1 });

@@ -8,7 +8,7 @@ export function sendExam(data, name, id) {
   return dispatch => {
     return axios
       .post(
-        "http://localhost:8080/CreateExam",
+        "http://localhost:8080/creadorExamen/CreateExam",
         { aux },
         {
           headers: {

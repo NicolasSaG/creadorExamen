@@ -23,7 +23,7 @@ export function login(userData) {
     //enviar peticion post al servlet
     return axios
       .post(
-        "http://localhost:8080/Login",
+        "http://localhost:8080/creadorExamen/Login",
         { userData },
         {
           headers: {

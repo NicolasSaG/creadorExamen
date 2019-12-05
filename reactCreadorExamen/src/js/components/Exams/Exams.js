@@ -52,7 +52,7 @@ class Exams extends Component {
   };
 
   getTable() {
-    axios.get("http://localhost:8080/ExamServlet").then(
+    axios.get("http://localhost:8080/creadorExamen/ExamServlet").then(
       res => {
         var aux = res.data;
         this.setState({ exams: aux });
@@ -166,7 +166,10 @@ class Exams extends Component {
               contentLabel="Modificar Examen"
               ariaHideApp={false}
             >
-              <form action="http://localhost:8080/ServletModExam" method="post">
+              <form
+                action="http://localhost:8080/creadorExamen/ServletModExam"
+                method="post"
+              >
                 <h1 className="text-center">Modificar Examen</h1>
                 <div className="form-group">
                   <input
@@ -303,7 +306,7 @@ class Exams extends Component {
               Estas Seguro de Borrar el Examen Con id{" "}
               {this.state.selectedExam.id}
               <form
-                action="http://localhost:8080/ServletBorrarExamen"
+                action="http://localhost:8080/creadorExamen/ServletBorrarExamen"
                 method="post"
               >
                 <input
@@ -337,7 +340,10 @@ class Exams extends Component {
               className="BorrarPopUp"
             >
               Quieres Resolver El examen con id: {this.state.selectedExam.id}
-              <form action="http://localhost:8080/test" method="get">
+              <form
+                action="http://localhost:8080/creadorExamen/test"
+                method="get"
+              >
                 <input
                   type="submit"
                   value="Resolver"
