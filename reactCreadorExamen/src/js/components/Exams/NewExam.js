@@ -208,28 +208,28 @@ class NewExam extends Component {
                       drag option 1:{" "}
                       {this.state.selectedQuestion.drags.option[0].content}
                       <img
-                        src={`http://localhost:8080/creadorExamen/images/${this.state.selectedQuestion.drags.option[0].img}`}
+                        src={`http://localhost:8080/creadorExamen/images/${this.state.selectedQuestion.drags.option[0].src}`}
                       ></img>
                     </p>
                     <p>
                       drag option 2:
                       {this.state.selectedQuestion.drags.option[1].content}
                       <img
-                        src={`http://localhost:8080/creadorExamen/images/${this.state.selectedQuestion.drags.option[1].img}`}
+                        src={`http://localhost:8080/creadorExamen/images/${this.state.selectedQuestion.drags.option[1].src}`}
                       ></img>
                     </p>
                     <p>
                       drag option 3:
                       {this.state.selectedQuestion.drags.option[2].content}
                       <img
-                        src={`http://localhost:8080/creadorExamen/images/${this.state.selectedQuestion.drags.option[2].img}`}
+                        src={`http://localhost:8080/creadorExamen/images/${this.state.selectedQuestion.drags.option[2].src}`}
                       ></img>
                     </p>
                     <p>
                       drag option 4:
                       {this.state.selectedQuestion.drags.option[3].content}
                       <img
-                        src={`http://localhost:8080/creadorExamen/images/${this.state.selectedQuestion.drags.option[3].img}`}
+                        src={`http://localhost:8080/creadorExamen/images/${this.state.selectedQuestion.drags.option[3].src}`}
                       ></img>
                     </p>
                   </div>
@@ -245,28 +245,28 @@ class NewExam extends Component {
                       target option 1:
                       {this.state.selectedQuestion.targets.option[0].content}
                       <img
-                        src={`http://localhost:8080/creadorExamen/images/${this.state.selectedQuestion.targets.option[0].img}`}
+                        src={`http://localhost:8080/creadorExamen/images/${this.state.selectedQuestion.targets.option[0].src}`}
                       ></img>
                     </p>
                     <p>
                       target option 2:
                       {this.state.selectedQuestion.targets.option[1].content}
                       <img
-                        src={`http://localhost:8080/creadorExamen/images/${this.state.selectedQuestion.targets.option[1].img}`}
+                        src={`http://localhost:8080/creadorExamen/images/${this.state.selectedQuestion.targets.option[1].src}`}
                       ></img>
                     </p>
                     <p>
                       target option 3:
                       {this.state.selectedQuestion.targets.option[2].content}
                       <img
-                        src={`http://localhost:8080/creadorExamen/images/${this.state.selectedQuestion.targets.option[2].img}`}
+                        src={`http://localhost:8080/creadorExamen/images/${this.state.selectedQuestion.targets.option[2].src}`}
                       ></img>
                     </p>
                     <p>
                       target option 4:
                       {this.state.selectedQuestion.targets.option[3].content}
                       <img
-                        src={`http://localhost:8080/creadorExamen/images/${this.state.selectedQuestion.targets.option[3].img}`}
+                        src={`http://localhost:8080/creadorExamen/images/${this.state.selectedQuestion.targets.option[3].src}`}
                       ></img>
                     </p>
                   </div>
