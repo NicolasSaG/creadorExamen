@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 //import "./Questions.css";
+import PropTypes from "prop-types";
 import "./../../../css/Questions.css";
 import axios from "axios";
 import Modal from "react-modal";
@@ -337,7 +338,14 @@ class Exams extends Component {
               className="BorrarPopUp"
             >
               Quieres Resolver El examen con id: {this.state.selectedExam.id}
-              <form action="http://localhost:8080/test" method="get">
+              <form
+                onSubmit={() =>
+                  this.context.router.push(
+                    "test?idExamen=" + this.state.selectedExam.id + ""
+                  )
+                }
+                method="get"
+              >
                 <input
                   type="submit"
                   value="Resolver"
@@ -359,5 +367,9 @@ class Exams extends Component {
     );
   }
 }
+
+Exams.contextTypes = {
+  router: PropTypes.object.isRequired
+};
 
 export default Exams;
