@@ -4,7 +4,7 @@ export function sendQuestion(data) {
   return dispatch => {
     return axios
       .post(
-        "http://localhost:8080/creadorExamen/CreateQuestion",
+        "http://localhost:8080/CreateQuestion",
         { data },
         {
           headers: {
@@ -28,7 +28,7 @@ export function sendFilesDragDrop(data) {
   console.log("subiendo archivos...");
   return dispatch => {
     return axios
-      .post("http://localhost:8080/creadorExamen/ManageFilesDD", formData)
+      .post("http://localhost:8080/ManageFilesDD", formData)
       .then(res => {
         console.log("archivos guardados en xml");
       });
@@ -39,7 +39,7 @@ export function sendQuestionHotSpot(data) {
   return dispatch => {
     return axios
       .post(
-        "http://localhost:8080/creadorExamen/CreateHotSpotQuestion",
+        "http://localhost:8080/CreateHotSpotQuestion",
         { data },
         {
           headers: {

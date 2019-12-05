@@ -50,7 +50,7 @@ class Questions extends Component {
   };
 
   getTable() {
-    axios.get("http://localhost:8080/creadorExamen/QuestionsServlet").then(
+    axios.get("http://localhost:8080/QuestionsServlet").then(
       res => {
         var aux = res.data;
         this.setState({ questions: aux });
@@ -189,7 +189,7 @@ class Questions extends Component {
                       drag option 1:{" "}
                       {this.state.selectedQuestion.drags.option[0].content}
                       <img
-                        src={`images/${this.state.selectedQuestion.drags.option[0].src}`}
+                        src={`http://localhost:8080/images/${this.state.selectedQuestion.drags.option[0].src}`}
                         width="80"
                         height="80"
                       ></img>
@@ -198,7 +198,7 @@ class Questions extends Component {
                       drag option 2:
                       {this.state.selectedQuestion.drags.option[1].content}
                       <img
-                        src={`images/${this.state.selectedQuestion.drags.option[1].src}`}
+                        src={`http://localhost:8080/images/${this.state.selectedQuestion.drags.option[1].src}`}
                         width="80"
                         height="80"
                       ></img>
@@ -207,7 +207,7 @@ class Questions extends Component {
                       drag option 3:
                       {this.state.selectedQuestion.drags.option[2].content}
                       <img
-                        src={`images/${this.state.selectedQuestion.drags.option[2].src}`}
+                        src={`http://localhost:8080/images/${this.state.selectedQuestion.drags.option[2].src}`}
                         width="80"
                         height="80"
                       ></img>
@@ -216,7 +216,7 @@ class Questions extends Component {
                       drag option 4:
                       {this.state.selectedQuestion.drags.option[3].content}
                       <img
-                        src={`images/${this.state.selectedQuestion.drags.option[3].src}`}
+                        src={`http://localhost:8080/images/${this.state.selectedQuestion.drags.option[3].src}`}
                         width="80"
                         height="80"
                       ></img>
@@ -234,7 +234,7 @@ class Questions extends Component {
                       target option 1:
                       {this.state.selectedQuestion.targets.option[0].content}
                       <img
-                        src={`images/${this.state.selectedQuestion.targets.option[0].src}`}
+                        src={`http://localhost:8080/images/${this.state.selectedQuestion.targets.option[0].src}`}
                         width="80"
                         height="80"
                       ></img>
@@ -243,7 +243,7 @@ class Questions extends Component {
                       target option 2:
                       {this.state.selectedQuestion.targets.option[1].content}
                       <img
-                        src={`images/${this.state.selectedQuestion.targets.option[1].src}`}
+                        src={`http://localhost:8080/images/${this.state.selectedQuestion.targets.option[1].src}`}
                         width="80"
                         height="80"
                       ></img>
@@ -252,7 +252,7 @@ class Questions extends Component {
                       target option 3:
                       {this.state.selectedQuestion.targets.option[2].content}
                       <img
-                        src={`images/${this.state.selectedQuestion.targets.option[2].src}`}
+                        src={`http://localhost:8080/images/${this.state.selectedQuestion.targets.option[2].src}`}
                         width="80"
                         height="80"
                       ></img>
@@ -261,7 +261,7 @@ class Questions extends Component {
                       target option 4:
                       {this.state.selectedQuestion.targets.option[3].content}
                       <img
-                        src={`images/${this.state.selectedQuestion.targets.option[3].src}`}
+                        src={`http://localhost:8080/images/${this.state.selectedQuestion.targets.option[3].src}`}
                         width="80"
                         height="80"
                       ></img>
