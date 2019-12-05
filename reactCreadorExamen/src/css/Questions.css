@@ -133,3 +133,41 @@ table {
 .centered {
   text-align: center;
 }
+
+.dragArea {
+  padding: 25px 0px 0px 0px;
+  text-align: center;
+  display: inline-block;
+  position: inherit;
+  min-height: 79px;
+  max-width: 79px;
+  min-width: 79px;
+}
+.dropArea {
+  border: 1px solid black;
+  border-radius: 20px;
+  min-height: 80px;
+  max-width: 80px;
+  min-width: 80px;
+  text-align: center;
+  padding: 25px 0px 0px 0px;
+  display: inline-block;
+}
+.DD1,
+.DD2,
+.DD3,
+.DD4 {
+  border: 1px solid blueviolet;
+  text-align: center;
+  min-width: 700px;
+  min-height: 90px;
+  justify-content: center;
+}
+.formRes {
+  min-width: 700px;
+}
+.tablaRelacional {
+  position: absolute;
+  top: 90px;
+  left: 30%;
+}
