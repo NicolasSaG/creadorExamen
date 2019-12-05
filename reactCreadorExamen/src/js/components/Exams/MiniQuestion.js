@@ -102,6 +102,9 @@ class MiniQuestion extends Component {
                       <img
                         src={`http://localhost:8080/creadorExamen/images/${this.state.question.drags.option[0].img}`}
                         alt=" "
+                        onDrag={() => {
+                          console.log("se ha seleccionado la img 1");
+                        }}
                         width="80"
                         height="80"
                       ></img>

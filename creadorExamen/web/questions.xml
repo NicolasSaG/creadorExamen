@@ -42,7 +42,7 @@
                         <option img="nacion4.jpg">1</option>
                 </targets>
         </question>
-        <question id="10" text="Biologia" answer="1-4;2-3;3-1:4-2" type="1">
+        <question id="10" text="Biologia" answer="1-4;2-3;3-1;4-2" type="1">
                 <drags>
                         <option img="celula.jpg">Celula</option>
                         <option img="citoplasma.jpg">Citoplasma</option>
@@ -58,10 +58,10 @@
         </question>
         <question id="11" text="Historia" answer="1-1;2-4;3-2;4-3" type="1">
                 <drags>
-                        <option img="img1.jpg">Primera Guerra Mundial</option>
-                        <option img="img2.jpg">Segunda Guerra Mundial</option>
-                        <option img="img3.jpg">Guerra Civil Rusa</option>
-                        <option img="img4.jpg">Revolucion Mexicana</option>
+                        <option img="ww1.jpg">Primera Guerra Mundial</option>
+                        <option img="hittler.jpg">Segunda Guerra Mundial</option>
+                        <option img="lennin.jpg">Guerra Civil Rusa</option>
+                        <option img="villa.jpg">Revolucion Mexicana</option>
                 </drags>
                 <targets>
                         <option img="img1.jpg">1914-1918</option>
