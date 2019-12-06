@@ -5,6 +5,9 @@ import "./../../../css/Questions.css";
 import axios from "axios";
 import Modal from "react-modal";
 import { isArray } from "util";
+import classnames from "classnames";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 class Exams extends Component {
   constructor(props) {
@@ -18,7 +21,14 @@ class Exams extends Component {
       openModBorrar: false
     };
     this.getTable();
+    this.onSubmitResolver = this.onSubmitResolver.bind(this);
   }
+  onSubmitResolver(event) {
+    event.preventDefault();
+    console.log("se resolverá el examen");
+    this.context.router.push("test?idExamen=" + this.state.selectedExam.id);
+  }
+
   onOpenModExamen = i => {
     console.log(i);
     this.setState({
@@ -337,7 +347,7 @@ class Exams extends Component {
               className="BorrarPopUp"
             >
               Quieres Resolver El examen con id: {this.state.selectedExam.id}
-              <form action="http://localhost:8080/test" method="get">
+              <form onSubmit={this.onSubmitResolver}>
                 <input
                   type="submit"
                   value="Resolver"
@@ -360,4 +370,8 @@ class Exams extends Component {
   }
 }
 
-export default Exams;
+Exams.contextTypes = {
+  router: PropTypes.object.isRequired
+};
+
+export default connect(null)(Exams);
