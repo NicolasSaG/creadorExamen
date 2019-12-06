@@ -330,7 +330,7 @@ class MiniQuestion extends Component {
                   </div>
                 </div>
               </div>
-
+              {this.displayFormHS()}
               <br />
               <button onClick={this.onCloseModal}>Cerrar pregunta</button>
             </Modal>
