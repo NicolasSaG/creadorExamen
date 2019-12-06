@@ -8,8 +8,6 @@ import Modal from "react-modal";
 import { isArray } from "util";
 import classnames from "classnames";
 import { connect } from "react-redux";
-import PropTypes from "prop-types";
-
 class Exams extends Component {
   constructor(props) {
     super(props);
@@ -375,8 +373,4 @@ Exams.contextTypes = {
   router: PropTypes.object.isRequired
 };
 
-<<<<<<< HEAD
-export default Exams;
-=======
 export default connect(null)(Exams);
->>>>>>> 1706ee75bfd775322ffbc720b4f80febc7c1592a
