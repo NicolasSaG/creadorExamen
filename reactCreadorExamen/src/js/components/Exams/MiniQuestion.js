@@ -17,7 +17,12 @@ class MiniQuestion extends Component {
       normal: "btn btn-secondary",
       correcto: "btn btn-success",
       incorrecto: "btn btn-warning",
-      value: ""
+      drop1: "",
+      drop2: "",
+      drop3: "",
+      drop4: "",
+      value: "",
+      checked: 0
     };
     this.changeDD = this.changeDD.bind(this);
     this.handleSubmitDD = this.handleSubmitDD.bind(this);
@@ -52,26 +57,38 @@ class MiniQuestion extends Component {
   }
 
   handleSubmitDD(event) {
-    console.log("Se ha cambiado la respuesta a: " + this.state.userAnswer);
+    if (this.state.checked == 0) {
+      console.log("Se ha cambiado la respuesta a: " + this.state.userAnswer);
+      console.log(
+        `${this.state.drop1};${this.state.drop2};${this.state.drop3};${this.state.drop4}`
+      );
 
-    if (this.state.question["answer"] == this.state.userAnswer) {
-      console.log("respuesta correcta");
-      this.setState({ value: this.state.correcto });
-      this.forceUpdate();
-      if (localStorage.getItem("aciertos") != null) {
-        //se enconotro el token
-        let califAux = Number(localStorage.getItem("aciertos"));
-        califAux += 1;
-        localStorage.setItem("aciertos", califAux);
+      let respuestaDD = `${this.state.drop1};${this.state.drop2};${this.state.drop3};${this.state.drop4}`;
+
+      if (this.state.question["answer"] == respuestaDD) {
+        console.log("respuesta correcta");
+        this.setState({ value: this.state.correcto });
+        this.forceUpdate();
+
+        if (localStorage.getItem("aciertos") != null) {
+          //se enconotro el token
+          let califAux = Number(localStorage.getItem("aciertos"));
+          califAux += 1;
+          localStorage.setItem("aciertos", califAux);
+        }
+      } else {
+        console.log("respuesta inccorrecta");
+        this.setState({ value: this.state.incorrecto });
+        this.forceUpdate();
       }
+      this.setState({ checked: 1 });
+      this.setState({ openModal: false });
+      event.preventDefault();
     } else {
-      console.log("respuesta inccorrecta");
-      this.setState({ value: this.state.incorrecto });
-      this.forceUpdate();
+      console.log("ya se ha revisado esta respuesta");
+      this.setState({ openModal: false });
+      event.preventDefault();
     }
-    this.changeDD = null;
-    this.setState({ openModal: false });
-    event.preventDefault();
   }
 
   displayModal() {
@@ -191,22 +208,8 @@ class MiniQuestion extends Component {
                   </div>
                 </div>
               </div>
-              <form onSubmit={this.handleSubmitDD}>
-                <br />
-                Tu Respuesta:
-                <br />
-                <br />
-                <input
-                  type="text"
-                  value={this.state.userAnswer}
-                  onChange={this.changeDD}
-                  placeholder="ejemplo 1-0;2-0;3-1;4-1"
-                  className="form-control"
-                />
-                <br />
-                <input type="submit" value="Calificar" />
-                <br />
-              </form>
+              {this.displayFormDD()}
+
               <br />
 
               <button onClick={this.onCloseModal}>Cerrar pregunta</button>
@@ -327,19 +330,7 @@ class MiniQuestion extends Component {
                   </div>
                 </div>
               </div>
-              <form onSubmit={this.handleSubmitDD}>
-                Tu Respuesta:
-                <br />
-                <input
-                  type="text"
-                  value={this.state.userAnswer}
-                  onChange={this.changeDD}
-                  placeholder="ejemplo 1-0;2-0;3-1;4-1"
-                  className="form-control"
-                />
-                <br />
-                <input type="submit" value="Verificar" />
-              </form>
+
               <br />
               <button onClick={this.onCloseModal}>Cerrar pregunta</button>
             </Modal>
@@ -348,21 +339,189 @@ class MiniQuestion extends Component {
       );
     }
   }
+  displayFormHS() {
+    <div>
+      <form onSubmit={this.handleSubmitDD}>
+        Tu Respuesta:
+        <br />
+        <input
+          type="text"
+          value={this.state.userAnswer}
+          onChange={this.changeDD}
+          placeholder="ejemplo 1-0;2-0;3-1;4-1"
+          className="form-control"
+        />
+        <br />
+        <input type="submit" value="Verificar" />
+      </form>
+    </div>;
+  }
+  displayFormDD() {
+    return (
+      <div className="formRes">
+        <form onSubmit={this.handleSubmitDD}>
+          <br />
+          <br />
+          <input type="submit" value="Calificar" />
+          <br />
+          <table align="center" className="tablaRelacional">
+            <tbody>
+              <tr>
+                <td>
+                  <div className="dragArea">
+                    <p
+                      id="drag1"
+                      draggable="true"
+                      onDragStart={event => {
+                        event.dataTransfer.setData("Text", event.target.id);
+                      }}
+                    >
+                      Drag1
+                    </p>
+                  </div>
+                </td>
+                <td>
+                  <div className="dragArea"></div>
+                </td>
+                <td>
+                  <div
+                    id="drop1"
+                    className="dropArea"
+                    onDrop={event => {
+                      var data = event.dataTransfer.getData("Text");
+                      event.target.appendChild(document.getElementById(data));
+                      event.preventDefault();
+                      data = data.split("drag")[1];
+                      console.log(`${data}-1`);
+                      this.setState({ drop1: `${data}-1` });
+                      //console.log(data);
+                    }}
+                    onDragOver={event => event.preventDefault()}
+                  ></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div className="dragArea">
+                    <p
+                      id="drag2"
+                      draggable="true"
+                      onDragStart={event => {
+                        event.dataTransfer.setData("Text", event.target.id);
+                      }}
+                    >
+                      Drag2
+                    </p>
+                  </div>
+                </td>
+                <td>
+                  <div className="dragArea"></div>
+                </td>
+                <td>
+                  <div
+                    id="drop2"
+                    className="dropArea"
+                    onDrop={event => {
+                      var data = event.dataTransfer.getData("Text");
+                      event.target.appendChild(document.getElementById(data));
+                      event.preventDefault();
+                      data = data.split("drag")[1];
+                      console.log(`${data}-2`);
+                      this.setState({ drop2: `${data}-2` });
+                    }}
+                    onDragOver={event => event.preventDefault()}
+                  ></div>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <div className="dragArea">
+                    <p
+                      id="drag3"
+                      draggable="true"
+                      onDragStart={event => {
+                        event.dataTransfer.setData("Text", event.target.id);
+                      }}
+                    >
+                      Drag3
+                    </p>
+                  </div>
+                </td>
+                <td>
+                  <div className="dragArea"></div>
+                </td>
+                <td>
+                  <div
+                    id="drop3"
+                    className="dropArea"
+                    onDrop={event => {
+                      var data = event.dataTransfer.getData("Text");
+                      event.target.appendChild(document.getElementById(data));
+                      event.preventDefault();
+                      data = data.split("drag")[1];
+                      console.log(`${data}-3`);
+                      this.setState({ drop3: `${data}-3` });
+                    }}
+                    onDragOver={event => event.preventDefault()}
+                  ></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div className="dragArea">
+                    <p
+                      id="drag4"
+                      draggable="true"
+                      onDragStart={event => {
+                        event.dataTransfer.setData("Text", event.target.id);
+                      }}
+                    >
+                      Drag4
+                    </p>
+                  </div>
+                </td>
+                <td>
+                  <div className="dragArea"></div>
+                </td>
+                <td>
+                  <div
+                    id="drop4"
+                    className="dropArea"
+                    onDrop={event => {
+                      var data = event.dataTransfer.getData("Text");
+                      event.target.appendChild(document.getElementById(data));
+                      event.preventDefault();
+                      data = data.split("drag")[1];
+                      console.log(`${data}-4`);
+                      this.setState({ drop4: `${data}-4` });
+                    }}
+                    onDragOver={event => event.preventDefault()}
+                  ></div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+      </div>
+    );
+  }
   render() {
     const { open } = this.state;
     //this.bindQuestion();
-    if (this.state.question["type"] == 1)
+    if (this.state.question["type"] == 1) {
       return (
         <div>
           <button onClick={() => this.openModal()} className={this.state.value}>
             Pregunta {this.state.id}{" "}
           </button>
           {this.displayModal()}
+
           <br />
           <br />
         </div>
       );
-    else if (this.state.question["type"] == 2) {
+    } else if (this.state.question["type"] == 2) {
       let respuesta = this.state.question["answer"];
       console.log(respuesta);
       return (
@@ -375,12 +534,13 @@ class MiniQuestion extends Component {
           <br />
         </div>
       );
-    } else
+    } else {
       return (
         <div>
           <br />
         </div>
       );
+    }
   }
 }
 
