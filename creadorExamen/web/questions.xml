@@ -42,7 +42,7 @@
                         <option src="img4.jpg">1</option>
                 </targets>
         </question>
-        <question id="10" text="Biologia" answer="3-1;4-2;2-3;1-4" type="1">
+        <question id="4" text="Biologia" answer="3-1;4-2;2-3;1-4" type="1">
                 <drags>
                         <option src="celula.jpg">Celula</option>
                         <option src="citoplasma.jpg">Citoplasma</option>
@@ -56,7 +56,7 @@
                         <option src="img4.jpg">La unidad funcional de todo organismo vivo.</option>
                 </targets>
         </question>
-        <question id="11" text="Historia" answer="1-1;3-2;4-3;2-4" type="1">
+        <question id="5" text="Historia" answer="1-1;3-2;4-3;2-4" type="1">
                 <drags>
                         <option src="ww1.jpg">Primera Guerra Mundial</option>
                         <option src="hittler.jpg">Segunda Guerra Mundial</option>
@@ -70,8 +70,7 @@
                         <option src="img4.jpg">1939-1845</option>
                 </targets>
         </question>
-
-        <question id="12" text="Quimica" answer="1-3;2-1;3-2;4-4" type="1">
+        <question id="6" text="Quimica" answer="2-1;3-2;1-3;4-4" type="1">
 
                 <drags>
                         <option src="img1.jpg">Au</option>
@@ -86,4 +85,19 @@
                         <option src="img4.jpg">Plata</option>
                 </targets>
         </question>
+        <question id="7" text="Marca las causas de la WW1" qtype="hostpot" type="2" answer="1-1;2-0;3-0;4-0">
+                <hotsposts>
+                        <option src="img1.jpg">Asesinato de Francisco Fernando</option>
+                        <option src="img1.jpg">Caida del Muro de Berlin</option>
+                        <option src="img1.jpg">Guerra Fria</option>
+                        <option src="img1.jpg">Asesinato de Francisco Franco</option>
+                </hotsposts>
+                <corrects>
+                        <option>true</option>
+                        <option>false</option>
+                        <option>false</option>
+                        <option>false</option>
+                </corrects>
+  </question>
+        
 </questions>
