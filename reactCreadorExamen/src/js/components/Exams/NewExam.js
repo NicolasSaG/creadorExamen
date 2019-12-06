@@ -187,11 +187,11 @@ class NewExam extends Component {
         ></input>
         <div>
           {Object.keys(this.state.selectedQuestion).length === 0 ? (
-            console.log("error en pregunta seleccionada")
-          ) : (
+            console.log("ver pregunta")
+          ) : this.state.selectedQuestion.type === 1 ? (
             <Modal
               isOpen={this.state.open}
-              contentLabel="Minimal Modal Example"
+              contentLabel="drag drop"
               ariaHideApp={false}
             >
               <h3>pregunta: {this.state.selectedQuestion.text}</h3>
@@ -209,6 +209,8 @@ class NewExam extends Component {
                       {this.state.selectedQuestion.drags.option[0].content}
                       <img
                         src={`http://localhost:8080/images/${this.state.selectedQuestion.drags.option[0].src}`}
+                        width="80"
+                        height="80"
                       ></img>
                     </p>
                     <p>
@@ -216,6 +218,8 @@ class NewExam extends Component {
                       {this.state.selectedQuestion.drags.option[1].content}
                       <img
                         src={`http://localhost:8080/images/${this.state.selectedQuestion.drags.option[1].src}`}
+                        width="80"
+                        height="80"
                       ></img>
                     </p>
                     <p>
@@ -223,6 +227,8 @@ class NewExam extends Component {
                       {this.state.selectedQuestion.drags.option[2].content}
                       <img
                         src={`http://localhost:8080/images/${this.state.selectedQuestion.drags.option[2].src}`}
+                        width="80"
+                        height="80"
                       ></img>
                     </p>
                     <p>
@@ -230,6 +236,8 @@ class NewExam extends Component {
                       {this.state.selectedQuestion.drags.option[3].content}
                       <img
                         src={`http://localhost:8080/images/${this.state.selectedQuestion.drags.option[3].src}`}
+                        width="80"
+                        height="80"
                       ></img>
                     </p>
                   </div>
@@ -246,6 +254,8 @@ class NewExam extends Component {
                       {this.state.selectedQuestion.targets.option[0].content}
                       <img
                         src={`http://localhost:8080/images/${this.state.selectedQuestion.targets.option[0].src}`}
+                        width="80"
+                        height="80"
                       ></img>
                     </p>
                     <p>
@@ -253,6 +263,8 @@ class NewExam extends Component {
                       {this.state.selectedQuestion.targets.option[1].content}
                       <img
                         src={`http://localhost:8080/images/${this.state.selectedQuestion.targets.option[1].src}`}
+                        width="80"
+                        height="80"
                       ></img>
                     </p>
                     <p>
@@ -260,6 +272,8 @@ class NewExam extends Component {
                       {this.state.selectedQuestion.targets.option[2].content}
                       <img
                         src={`http://localhost:8080/images/${this.state.selectedQuestion.targets.option[2].src}`}
+                        width="80"
+                        height="80"
                       ></img>
                     </p>
                     <p>
@@ -267,7 +281,98 @@ class NewExam extends Component {
                       {this.state.selectedQuestion.targets.option[3].content}
                       <img
                         src={`http://localhost:8080/images/${this.state.selectedQuestion.targets.option[3].src}`}
+                        width="80"
+                        height="80"
                       ></img>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <button onClick={this.onCloseModal}>Cerrar pregunta</button>
+            </Modal>
+          ) : (
+            <Modal
+              isOpen={this.state.open}
+              contentLabel="hotspot"
+              ariaHideApp={false}
+            >
+              <h3>pregunta: {this.state.selectedQuestion.text}</h3>
+
+              <div className="row">
+                <div className="col">
+                  <div className="form-group">
+                    <div className="text-center">
+                      <label className="control-label ">
+                        hotspot instance name
+                      </label>
+                    </div>
+
+                    <p>
+                      hotspot instance name 1:
+                      {this.state.selectedQuestion.hotsposts.option[0].content}
+                      <img
+                        src={`http://localhost:8080/images/anonimo.jp`}
+                        width="80"
+                        height="80"
+                      ></img>
+                    </p>
+                    <p>
+                      hotspot instance name 2:
+                      {this.state.selectedQuestion.hotsposts.option[1].content}
+                      <img
+                        src={`http://localhost:8080/images/anonimo.jp`}
+                        width="80"
+                        height="80"
+                      ></img>
+                    </p>
+                    <p>
+                      hotspot instance name 3:
+                      {this.state.selectedQuestion.hotsposts.option[2].content}
+                      <img
+                        src={`http://localhost:8080/images/anonimo.jp`}
+                        width="80"
+                        height="80"
+                      ></img>
+                    </p>
+                    <p>
+                      hotspot instance name 4:
+                      {this.state.selectedQuestion.hotsposts.option[3].content}
+                      <img
+                        src={`http://localhost:8080/images/anonimo.jp`}
+                        width="80"
+                        height="80"
+                      ></img>
+                    </p>
+                  </div>
+                </div>
+                <div className="col">
+                  <div className="form-group">
+                    <div className="text-center">
+                      <label className="control-label">Answers</label>
+                    </div>
+                    <p>
+                      <input
+                        type="checkbox"
+                        checked={this.state.selectedQuestion.corrects.option[0]}
+                      ></input>
+                    </p>
+                    <p>
+                      <input
+                        type="checkbox"
+                        checked={this.state.selectedQuestion.corrects.option[1]}
+                      ></input>
+                    </p>
+                    <p>
+                      <input
+                        type="checkbox"
+                        checked={this.state.selectedQuestion.corrects.option[2]}
+                      ></input>
+                    </p>
+                    <p>
+                      <input
+                        type="checkbox"
+                        checked={this.state.selectedQuestion.corrects.option[3]}
+                      ></input>
                     </p>
                   </div>
                 </div>
