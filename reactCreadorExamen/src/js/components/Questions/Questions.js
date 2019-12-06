@@ -17,6 +17,14 @@ class Questions extends Component {
       openModBorrar: false
     };
     this.getTable();
+    this.handleCheckChange = this.handleCheckChange.bind(this);
+  }
+
+  handleCheckChange(event) {
+    let actualQuestion = this.state.selectedQuestion;
+    const i = parseInt(event.target.id) - 1;
+    actualQuestion.corrects.option[i] = event.target.checked;
+    this.setState({ selectedQuestion: actualQuestion });
   }
   onOpenModPregunta = i => {
     this.setState({
@@ -514,7 +522,7 @@ class Questions extends Component {
               contentLabel="Mod Pregunta"
               ariaHideApp={false}
             >
-              <form action="ServletModPreg" method="post">
+              <form action="ServletModPregHot" method="post">
                 <h1 className="text-center">Modificar Pregunta</h1>
                 <div className="form-group">
                   <input
@@ -591,7 +599,13 @@ class Questions extends Component {
                       <p>
                         <input
                           type="checkbox"
+                          name="correct1"
+                          id="1"
+                          onChange={this.handleCheckChange}
                           checked={
+                            this.state.selectedQuestion.corrects.option[0]
+                          }
+                          defaultValue={
                             this.state.selectedQuestion.corrects.option[0]
                           }
                         ></input>
@@ -599,7 +613,13 @@ class Questions extends Component {
                       <p>
                         <input
                           type="checkbox"
+                          name="correct2"
+                          id="2"
+                          onChange={this.handleCheckChange}
                           checked={
+                            this.state.selectedQuestion.corrects.option[1]
+                          }
+                          defaultValue={
                             this.state.selectedQuestion.corrects.option[1]
                           }
                         ></input>
@@ -607,7 +627,13 @@ class Questions extends Component {
                       <p>
                         <input
                           type="checkbox"
+                          name="correct3"
+                          id="3"
+                          onChange={this.handleCheckChange}
                           checked={
+                            this.state.selectedQuestion.corrects.option[2]
+                          }
+                          defaultValue={
                             this.state.selectedQuestion.corrects.option[2]
                           }
                         ></input>
@@ -615,7 +641,13 @@ class Questions extends Component {
                       <p>
                         <input
                           type="checkbox"
+                          name="correct4"
+                          id="4"
+                          onChange={this.handleCheckChange}
                           checked={
+                            this.state.selectedQuestion.corrects.option[3]
+                          }
+                          defaultValue={
                             this.state.selectedQuestion.corrects.option[3]
                           }
                         ></input>
