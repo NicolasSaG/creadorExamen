@@ -15,6 +15,7 @@ class HotSpot extends Component {
     this.state = {
       interactionId: "",
       qtype: "2",
+      files: {},
       text: "",
       hotspotInstanceName1: "",
       hotspotInstanceName2: "",
@@ -117,6 +118,12 @@ class HotSpot extends Component {
                     value={this.state.hotspotInstanceName1}
                   />
                   <input
+                    type="file"
+                    name="file1"
+                    id="0"
+                    onChange={this.handleFileChange}
+                  />
+                  <input
                     type="text"
                     className={classnames("form-control", {
                       "is-invalid": errors.hotspotInstanceName2
@@ -125,6 +132,12 @@ class HotSpot extends Component {
                     placeholder="hotspot instance name 2"
                     onChange={this.handleChange}
                     value={this.state.hotspotInstanceName2}
+                  />
+                  <input
+                    type="file"
+                    name="file2"
+                    id="1"
+                    onChange={this.handleFileChange}
                   />
                   <input
                     type="text"
@@ -137,6 +150,12 @@ class HotSpot extends Component {
                     value={this.state.hotspotInstanceName3}
                   />
                   <input
+                    type="file"
+                    name="file3"
+                    id="2"
+                    onChange={this.handleFileChange}
+                  />
+                  <input
                     type="text"
                     className={classnames("form-control", {
                       "is-invalid": errors.hotspotInstanceName4
@@ -145,6 +164,12 @@ class HotSpot extends Component {
                     placeholder="hotspot instance name 4"
                     onChange={this.handleChange}
                     value={this.state.hotspotInstanceName4}
+                  />
+                  <input
+                    type="file"
+                    name="file4"
+                    id="3"
+                    onChange={this.handleFileChange}
                   />
                 </div>
               </div>

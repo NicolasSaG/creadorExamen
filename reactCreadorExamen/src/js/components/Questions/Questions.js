@@ -290,7 +290,7 @@ class Questions extends Component {
 
                     <p>
                       hotspot instance name 1:
-                      {this.state.selectedQuestion.hotsposts.option[0].content}
+                      {this.state.selectedQuestion.hotsposts.option[0]}
                       <img
                         src={`http://localhost:8080/images/anonimo.jp`}
                         width="80"
@@ -299,7 +299,7 @@ class Questions extends Component {
                     </p>
                     <p>
                       hotspot instance name 2:
-                      {this.state.selectedQuestion.hotsposts.option[1].content}
+                      {this.state.selectedQuestion.hotsposts.option[1]}
                       <img
                         src={`http://localhost:8080/images/anonimo.jp`}
                         width="80"
@@ -308,7 +308,7 @@ class Questions extends Component {
                     </p>
                     <p>
                       hotspot instance name 3:
-                      {this.state.selectedQuestion.hotsposts.option[2].content}
+                      {this.state.selectedQuestion.hotsposts.option[2]}
                       <img
                         src={`http://localhost:8080/images/anonimo.jp`}
                         width="80"
@@ -317,7 +317,7 @@ class Questions extends Component {
                     </p>
                     <p>
                       hotspot instance name 4:
-                      {this.state.selectedQuestion.hotsposts.option[3].content}
+                      {this.state.selectedQuestion.hotsposts.option[3]}
                       <img
                         src={`http://localhost:8080/images/anonimo.jp`}
                         width="80"
@@ -542,6 +542,7 @@ class Questions extends Component {
                           hotspot instance name
                         </label>
                       </div>
+
                       <input
                         type="text"
                         className="form-control"
@@ -549,7 +550,6 @@ class Questions extends Component {
                         onChange={this.handleChange}
                         defaultValue={
                           this.state.selectedQuestion.hotsposts.option[0]
-                            .content
                         }
                       />
                       <input
@@ -559,7 +559,6 @@ class Questions extends Component {
                         onChange={this.handleChange}
                         defaultValue={
                           this.state.selectedQuestion.hotsposts.option[1]
-                            .content
                         }
                       />
                       <input
@@ -569,7 +568,6 @@ class Questions extends Component {
                         onChange={this.handleChange}
                         defaultValue={
                           this.state.selectedQuestion.hotsposts.option[2]
-                            .content
                         }
                       />
                       <input
@@ -579,16 +577,13 @@ class Questions extends Component {
                         onChange={this.handleChange}
                         defaultValue={
                           this.state.selectedQuestion.hotsposts.option[3]
-                            .content
                         }
                       />
                     </div>
                   </div>
                   <div className="col">
                     <div className="form-group">
-                      <div className="text-center">
-                        <label className="control-label">Answers</label>
-                      </div>
+                      <div className="text-center">correctas</div>
                       <p>
                         <input
                           type="checkbox"
