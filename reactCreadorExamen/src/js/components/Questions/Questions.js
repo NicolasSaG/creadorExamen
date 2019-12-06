@@ -169,7 +169,7 @@ class Questions extends Component {
         <div>
           {Object.keys(this.state.selectedQuestion).length === 0 ? (
             console.log("ver pregunta")
-          ) : (
+          ) : this.state.selectedQuestion.type === 1 ? (
             <Modal
               isOpen={this.state.open}
               contentLabel="drag drop"
@@ -271,12 +271,101 @@ class Questions extends Component {
               </div>
               <button onClick={this.onCloseModal}>Cerrar pregunta</button>
             </Modal>
+          ) : (
+            <Modal
+              isOpen={this.state.open}
+              contentLabel="hotspot"
+              ariaHideApp={false}
+            >
+              <h3>pregunta: {this.state.selectedQuestion.text}</h3>
+
+              <div className="row">
+                <div className="col">
+                  <div className="form-group">
+                    <div className="text-center">
+                      <label className="control-label ">
+                        hotspot instance name
+                      </label>
+                    </div>
+
+                    <p>
+                      hotspot instance name 1:
+                      {this.state.selectedQuestion.hotsposts.option[0].content}
+                      <img
+                        src={`http://localhost:8080/images/anonimo.jp`}
+                        width="80"
+                        height="80"
+                      ></img>
+                    </p>
+                    <p>
+                      hotspot instance name 2:
+                      {this.state.selectedQuestion.hotsposts.option[1].content}
+                      <img
+                        src={`http://localhost:8080/images/anonimo.jp`}
+                        width="80"
+                        height="80"
+                      ></img>
+                    </p>
+                    <p>
+                      hotspot instance name 3:
+                      {this.state.selectedQuestion.hotsposts.option[2].content}
+                      <img
+                        src={`http://localhost:8080/images/anonimo.jp`}
+                        width="80"
+                        height="80"
+                      ></img>
+                    </p>
+                    <p>
+                      hotspot instance name 4:
+                      {this.state.selectedQuestion.hotsposts.option[3].content}
+                      <img
+                        src={`http://localhost:8080/images/anonimo.jp`}
+                        width="80"
+                        height="80"
+                      ></img>
+                    </p>
+                  </div>
+                </div>
+                <div className="col">
+                  <div className="form-group">
+                    <div className="text-center">
+                      <label className="control-label">Answers</label>
+                    </div>
+                    <p>
+                      <input
+                        type="checkbox"
+                        checked={this.state.selectedQuestion.corrects.option[0]}
+                      ></input>
+                    </p>
+                    <p>
+                      <input
+                        type="checkbox"
+                        checked={this.state.selectedQuestion.corrects.option[1]}
+                      ></input>
+                    </p>
+                    <p>
+                      <input
+                        type="checkbox"
+                        checked={this.state.selectedQuestion.corrects.option[2]}
+                      ></input>
+                    </p>
+                    <p>
+                      <input
+                        type="checkbox"
+                        checked={this.state.selectedQuestion.corrects.option[3]}
+                      ></input>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <button onClick={this.onCloseModal}>Cerrar pregunta</button>
+            </Modal>
           )}
         </div>
         <div>
           {Object.keys(this.state.selectedQuestion).length === 0 ? (
-            console.log("Se cambiará la pregunta" + this.state.selectedQuestion)
-          ) : (
+            console.log("Se cambiará la pregunta")
+          ) : this.state.selectedQuestion.type === 1 ? (
             <Modal
               isOpen={this.state.openModPreg}
               contentLabel="Mod Pregunta"
@@ -399,6 +488,139 @@ class Questions extends Component {
                           this.state.selectedQuestion.targets.option[3].content
                         }
                       />
+                    </div>
+                  </div>
+                </div>
+                <div className="form-group  text-right">
+                  <input
+                    type="submit"
+                    value="Modificar Pregunta"
+                    className="btn btn-primary"
+                  />
+                  <button className="btn btn-info">Options</button>
+                  <button className="btn btn-info">Assets</button>
+                  <button
+                    onClick={this.onCloseModPregunta}
+                    className="btn btn-danger"
+                  >
+                    Cancelar
+                  </button>
+                </div>
+              </form>
+            </Modal>
+          ) : (
+            <Modal
+              isOpen={this.state.openModPreg}
+              contentLabel="Mod Pregunta"
+              ariaHideApp={false}
+            >
+              <form action="ServletModPreg" method="post">
+                <h1 className="text-center">Modificar Pregunta</h1>
+                <div className="form-group">
+                  <input
+                    type="hidden"
+                    name="id"
+                    defaultValue={this.state.selectedQuestion.id}
+                  />
+                </div>
+                <div className="form-group">
+                  <label className="control-label ">pregunta</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    name="text"
+                    onChange={this.handleChange}
+                    defaultValue={this.state.selectedQuestion.text}
+                  />
+                </div>
+
+                <div className="row">
+                  <div className="col">
+                    <div className="form-group">
+                      <div className="text-center">
+                        <label className="control-label ">
+                          hotspot instance name
+                        </label>
+                      </div>
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="hotspotInstanceName1"
+                        onChange={this.handleChange}
+                        defaultValue={
+                          this.state.selectedQuestion.hotsposts.option[0]
+                            .content
+                        }
+                      />
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="hotspotInstanceName2"
+                        onChange={this.handleChange}
+                        defaultValue={
+                          this.state.selectedQuestion.hotsposts.option[1]
+                            .content
+                        }
+                      />
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="hotspotInstanceName3"
+                        onChange={this.handleChange}
+                        defaultValue={
+                          this.state.selectedQuestion.hotsposts.option[2]
+                            .content
+                        }
+                      />
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="hotspotInstanceName4"
+                        onChange={this.handleChange}
+                        defaultValue={
+                          this.state.selectedQuestion.hotsposts.option[3]
+                            .content
+                        }
+                      />
+                    </div>
+                  </div>
+                  <div className="col">
+                    <div className="form-group">
+                      <div className="text-center">
+                        <label className="control-label">Answers</label>
+                      </div>
+                      <p>
+                        <input
+                          type="checkbox"
+                          checked={
+                            this.state.selectedQuestion.corrects.option[0]
+                          }
+                        ></input>
+                      </p>
+                      <p>
+                        <input
+                          type="checkbox"
+                          checked={
+                            this.state.selectedQuestion.corrects.option[1]
+                          }
+                        ></input>
+                      </p>
+                      <p>
+                        <input
+                          type="checkbox"
+                          checked={
+                            this.state.selectedQuestion.corrects.option[2]
+                          }
+                        ></input>
+                      </p>
+                      <p>
+                        <input
+                          type="checkbox"
+                          checked={
+                            this.state.selectedQuestion.corrects.option[3]
+                          }
+                        ></input>
+                      </p>
                     </div>
                   </div>
                 </div>

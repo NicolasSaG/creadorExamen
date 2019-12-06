@@ -14,7 +14,7 @@ class HotSpot extends Component {
 
     this.state = {
       interactionId: "",
-      qtype: "hostpot",
+      qtype: "2",
       text: "",
       hotspotInstanceName1: "",
       hotspotInstanceName2: "",

@@ -124,9 +124,11 @@ public class CreateHotSpotQuestion extends HttpServlet {
             Element newQuestion = new Element("question");
             newQuestion.setAttribute("id", interactionId);
             newQuestion.setAttribute("text", text);
+
             newQuestion.setAttribute("qtype", qtype);
             newQuestion.setAttribute("type", "2");
             newQuestion.setAttribute("answer", answerAtt);
+
             
             //crear hotspot instances
             Element newDrag = new Element("hotsposts");
