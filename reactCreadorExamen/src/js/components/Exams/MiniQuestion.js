@@ -286,15 +286,19 @@ class MiniQuestion extends Component {
             <h3>{this.state.question.text} </h3>
           </label>
         </div>
+
         <div className="row">
           <div className="col">
             <div className="form-group">
-              <label className="control-label">Marca N</label>
-              <br />
-              <p>{this.state.question.hotsposts.option[0].content}</p>
-              <p>{this.state.question.hotsposts.option[1].content}</p>
-              <p>{this.state.question.hotsposts.option[2].content}</p>
-              <p>{this.state.question.hotsposts.option[3].content}</p>
+              <div className="text-center">
+                <label className="control-label">Marca N</label>
+                <br />
+                <p>{this.state.question.hotsposts.option[0]}</p>
+                <p>{this.state.question.hotsposts.option[1]}</p>
+                <p>{this.state.question.hotsposts.option[2]}</p>
+                <p>{this.state.question.hotsposts.option[3]}</p>
+                <p>{this.state.question.hotsposts.option[4]}</p>
+              </div>
             </div>
           </div>
           <div className="col">
@@ -534,7 +538,7 @@ class MiniQuestion extends Component {
       );
     } else if (this.state.question["type"] == 2) {
       let respuesta = this.state.question["answer"];
-      console.log(this.state.question);
+      console.log(respuesta);
       return (
         <div>
           <button onClick={() => this.openModal()} className={this.state.value}>
