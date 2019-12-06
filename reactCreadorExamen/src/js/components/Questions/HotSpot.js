@@ -6,6 +6,9 @@ import classnames from "classnames";
 
 import { connect } from "react-redux";
 import { sendQuestionHotSpot } from "../../actions/questionAction";
+
+import { sendFilesHotSpot } from "../../actions/questionAction";
+
 import validateInput from "../../validations/newhostpot";
 
 class HotSpot extends Component {
@@ -28,11 +31,15 @@ class HotSpot extends Component {
       errors: {},
       isLoading: false
     };
-
+    this.handleFileChange = this.handleFileChange.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
+  handleFileChange(event) {
+    let f = this.state.files;
+    f[event.target.name] = event.target.files[0];
+    this.setState({ files: f });
+  }
   handleChange(event) {
     const value =
       event.target.type === "checkbox"
@@ -55,8 +62,20 @@ class HotSpot extends Component {
       this.setState({ errors: {}, isLoading: true });
       //enviar datos de pregunta a servidor
       //si todo marcho bien, enviar a /welcome, sino no existe un usario con esos datos
+
       this.props.sendQuestionHotSpot(this.state).then(
-        res => this.context.router.push("questions"),
+        res => {
+          this.props.sendFilesHotSpot(this.state).then(
+            res => {
+              this.context.router.push("questions");
+            },
+            err =>
+              this.setState({
+                errors: { form: "problema al subir archivos" },
+                isLoading: false
+              })
+          );
+        },
         err =>
           this.setState({
             errors: { form: "problema al crear pregunta" },
@@ -226,11 +245,14 @@ class HotSpot extends Component {
 }
 
 HotSpot.propTypes = {
-  sendQuestionHotSpot: PropTypes.func.isRequired
+  sendQuestionHotSpot: PropTypes.func.isRequired,
+  sendFilesHotSpot: PropTypes.func.isRequired
 };
 
 HotSpot.contextTypes = {
   router: PropTypes.object.isRequired
 };
 
-export default connect(null, { sendQuestionHotSpot })(HotSpot);
+export default connect(null, { sendQuestionHotSpot, sendFilesHotSpot })(
+  HotSpot
+);

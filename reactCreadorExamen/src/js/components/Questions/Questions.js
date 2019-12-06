@@ -290,36 +290,36 @@ class Questions extends Component {
 
                     <p>
                       hotspot instance name 1:
-                      {this.state.selectedQuestion.hotsposts.option[0]}
+                      {this.state.selectedQuestion.hotsposts.option[0].content}
                       <img
-                        src={`http://localhost:8080/images/anonimo.jp`}
+                        src={`http://localhost:8080/images/${this.state.selectedQuestion.hotsposts.option[0].src}`}
                         width="80"
                         height="80"
                       ></img>
                     </p>
                     <p>
                       hotspot instance name 2:
-                      {this.state.selectedQuestion.hotsposts.option[1]}
+                      {this.state.selectedQuestion.hotsposts.option[1].content}
                       <img
-                        src={`http://localhost:8080/images/anonimo.jp`}
+                        src={`http://localhost:8080/images/${this.state.selectedQuestion.hotsposts.option[1].src}`}
                         width="80"
                         height="80"
                       ></img>
                     </p>
                     <p>
                       hotspot instance name 3:
-                      {this.state.selectedQuestion.hotsposts.option[2]}
+                      {this.state.selectedQuestion.hotsposts.option[2].content}
                       <img
-                        src={`http://localhost:8080/images/anonimo.jp`}
+                        src={`http://localhost:8080/images/${this.state.selectedQuestion.hotsposts.option[2].src}`}
                         width="80"
                         height="80"
                       ></img>
                     </p>
                     <p>
                       hotspot instance name 4:
-                      {this.state.selectedQuestion.hotsposts.option[3]}
+                      {this.state.selectedQuestion.hotsposts.option[3].content}
                       <img
-                        src={`http://localhost:8080/images/anonimo.jp`}
+                        src={`http://localhost:8080/images/${this.state.selectedQuestion.hotsposts.option[3].src}`}
                         width="80"
                         height="80"
                       ></img>
@@ -550,6 +550,7 @@ class Questions extends Component {
                         onChange={this.handleChange}
                         defaultValue={
                           this.state.selectedQuestion.hotsposts.option[0]
+                            .content
                         }
                       />
                       <input
@@ -559,6 +560,7 @@ class Questions extends Component {
                         onChange={this.handleChange}
                         defaultValue={
                           this.state.selectedQuestion.hotsposts.option[1]
+                            .content
                         }
                       />
                       <input
@@ -568,6 +570,7 @@ class Questions extends Component {
                         onChange={this.handleChange}
                         defaultValue={
                           this.state.selectedQuestion.hotsposts.option[2]
+                            .content
                         }
                       />
                       <input
@@ -577,6 +580,7 @@ class Questions extends Component {
                         onChange={this.handleChange}
                         defaultValue={
                           this.state.selectedQuestion.hotsposts.option[3]
+                            .content
                         }
                       />
                     </div>

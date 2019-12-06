@@ -107,6 +107,7 @@ public class CreateQuestion extends HttpServlet {
             Element newQuestion = new Element("question");
             newQuestion.setAttribute("id", interactionId);
             newQuestion.setAttribute("text", text);
+            newQuestion.setAttribute("type", "1");
             newQuestion.setAttribute("answer", answer);
             
             //crear draaags

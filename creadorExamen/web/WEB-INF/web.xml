@@ -44,6 +44,10 @@
         <servlet-name>ManageFilesDD</servlet-name>
         <servlet-class>files.ManageFilesDD</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ManageFilesHS</servlet-name>
+        <servlet-class>files.ManageFilesHS</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -87,6 +91,10 @@
     <servlet-mapping>
         <servlet-name>ManageFilesDD</servlet-name>
         <url-pattern>/ManageFilesDD</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManageFilesHS</servlet-name>
+        <url-pattern>/ManageFilesHS</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

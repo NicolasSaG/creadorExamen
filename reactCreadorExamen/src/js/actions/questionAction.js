@@ -53,3 +53,18 @@ export function sendQuestionHotSpot(data) {
       });
   };
 }
+export function sendFilesHotSpot(data) {
+  let formData = new FormData();
+  const array = Object.values(data.files);
+  for (let i = 0; i < 4; i++) {
+    formData.append("file", array[i], array[i].name);
+  }
+  console.log("subiendo archivos...");
+  return dispatch => {
+    return axios
+      .post("http://localhost:8080/ManageFilesHS", formData)
+      .then(res => {
+        console.log("archivos guardados en xml");
+      });
+  };
+}
