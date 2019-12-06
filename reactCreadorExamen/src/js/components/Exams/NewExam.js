@@ -172,24 +172,20 @@ class NewExam extends Component {
       <div>
         <br></br>
         nombre de examen
-        <br></br>
         <input
           type="text"
           name="examName"
-          className="form-control"
           onChange={this.handleChange}
           required="true"
         ></input>
-        <br></br>
         id de examen
-        <br></br>
         <input
           type="text"
           name="examId"
-          className="form-control"
           onChange={this.handleChange}
           required="true"
         ></input>
+        <br></br>
         <table className="table table-striped table-hover">
           {Object.keys(this.state.questions).length === 0
             ? console.log("no data")
