@@ -18,7 +18,7 @@ class Question extends Component {
       files: {},
       interactionId: "",
       text: "",
-      qtype: "dragdrop",
+      qtype: "1",
       dragObject1: "",
       dragObject2: "",
       dragObject3: "",
