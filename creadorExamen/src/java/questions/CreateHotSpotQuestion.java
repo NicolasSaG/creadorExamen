@@ -58,6 +58,12 @@ public class CreateHotSpotQuestion extends HttpServlet {
         String correct4 = "";
         String qtype = "";
         
+        String mini1 = "";
+        String mini2 = "";
+        String mini3 = "";
+        String mini4 = "";
+        String answerAtt = "";
+        
         response.addHeader("Access-Control-Allow-Origin", "*"); 
         response.setContentType("text/plain");
         
@@ -87,6 +93,21 @@ public class CreateHotSpotQuestion extends HttpServlet {
             correct4 = question.get("correct4").toString();
             qtype = question.get("qtype").toString();
             
+            
+            
+            
+            if(correct1.equals("true")) mini1="1-1;"; 
+            else mini1="1-0;";
+            if(correct2.equals("true")) mini2="2-1;"; 
+            else mini2="2-0;";
+            if(correct3.equals("true")) mini3="3-1;"; 
+            else mini3="3-0;";
+            if(correct4.equals("true")) mini4="4-1" ; 
+            else mini4="4-0" ;
+            
+            answerAtt = "" + mini1+mini2+mini3+mini4;
+            
+            
         } catch (ParseException ex) {
             //response.getWriter().println("error:" + ex.getMessage());
         }
@@ -103,7 +124,11 @@ public class CreateHotSpotQuestion extends HttpServlet {
             Element newQuestion = new Element("question");
             newQuestion.setAttribute("id", interactionId);
             newQuestion.setAttribute("text", text);
-            newQuestion.setAttribute("type", qtype);
+
+            newQuestion.setAttribute("qtype", qtype);
+            newQuestion.setAttribute("type", "2");
+            newQuestion.setAttribute("answer", answerAtt);
+
             
             //crear hotspot instances
             Element newDrag = new Element("hotsposts");
