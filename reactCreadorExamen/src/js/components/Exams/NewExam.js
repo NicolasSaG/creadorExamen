@@ -172,9 +172,24 @@ class NewExam extends Component {
       <div>
         <br></br>
         nombre de examen
-        <input type="text" name="examName" onChange={this.handleChange}></input>
-        id de examn
-        <input type="text" name="examId" onChange={this.handleChange}></input>
+        <br></br>
+        <input
+          type="text"
+          name="examName"
+          className="form-control"
+          onChange={this.handleChange}
+          required="true"
+        ></input>
+        <br></br>
+        id de examen
+        <br></br>
+        <input
+          type="text"
+          name="examId"
+          className="form-control"
+          onChange={this.handleChange}
+          required="true"
+        ></input>
         <table className="table table-striped table-hover">
           {Object.keys(this.state.questions).length === 0
             ? console.log("no data")
@@ -209,6 +224,9 @@ class NewExam extends Component {
                       {this.state.selectedQuestion.drags.option[0].content}
                       <img
                         src={`http://localhost:8080/images/${this.state.selectedQuestion.drags.option[0].src}`}
+                        alt=" "
+                        width="80"
+                        height="80"
                       ></img>
                     </p>
                     <p>
@@ -216,6 +234,9 @@ class NewExam extends Component {
                       {this.state.selectedQuestion.drags.option[1].content}
                       <img
                         src={`http://localhost:8080/images/${this.state.selectedQuestion.drags.option[1].src}`}
+                        alt=" "
+                        width="80"
+                        height="80"
                       ></img>
                     </p>
                     <p>
@@ -223,6 +244,9 @@ class NewExam extends Component {
                       {this.state.selectedQuestion.drags.option[2].content}
                       <img
                         src={`http://localhost:8080/images/${this.state.selectedQuestion.drags.option[2].src}`}
+                        alt=" "
+                        width="80"
+                        height="80"
                       ></img>
                     </p>
                     <p>
@@ -230,6 +254,9 @@ class NewExam extends Component {
                       {this.state.selectedQuestion.drags.option[3].content}
                       <img
                         src={`http://localhost:8080/images/${this.state.selectedQuestion.drags.option[3].src}`}
+                        alt=" "
+                        width="80"
+                        height="80"
                       ></img>
                     </p>
                   </div>
@@ -246,6 +273,9 @@ class NewExam extends Component {
                       {this.state.selectedQuestion.targets.option[0].content}
                       <img
                         src={`http://localhost:8080/images/${this.state.selectedQuestion.targets.option[0].src}`}
+                        alt=" "
+                        width="80"
+                        height="80"
                       ></img>
                     </p>
                     <p>
@@ -253,6 +283,9 @@ class NewExam extends Component {
                       {this.state.selectedQuestion.targets.option[1].content}
                       <img
                         src={`http://localhost:8080/images/${this.state.selectedQuestion.targets.option[1].src}`}
+                        alt=" "
+                        width="80"
+                        height="80"
                       ></img>
                     </p>
                     <p>
@@ -260,6 +293,9 @@ class NewExam extends Component {
                       {this.state.selectedQuestion.targets.option[2].content}
                       <img
                         src={`http://localhost:8080/images/${this.state.selectedQuestion.targets.option[2].src}`}
+                        alt=" "
+                        width="80"
+                        height="80"
                       ></img>
                     </p>
                     <p>
@@ -267,6 +303,9 @@ class NewExam extends Component {
                       {this.state.selectedQuestion.targets.option[3].content}
                       <img
                         src={`http://localhost:8080/images/${this.state.selectedQuestion.targets.option[3].src}`}
+                        alt=" "
+                        width="80"
+                        height="80"
                       ></img>
                     </p>
                   </div>
