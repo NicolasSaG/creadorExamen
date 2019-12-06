@@ -229,7 +229,6 @@ class NewExam extends Component {
                       {this.state.selectedQuestion.drags.option[1].content}
                       <img
                         src={`http://localhost:8080/images/${this.state.selectedQuestion.drags.option[1].src}`}
-                        alt=" "
                         width="80"
                         height="80"
                       ></img>
@@ -239,7 +238,6 @@ class NewExam extends Component {
                       {this.state.selectedQuestion.drags.option[2].content}
                       <img
                         src={`http://localhost:8080/images/${this.state.selectedQuestion.drags.option[2].src}`}
-                        alt=" "
                         width="80"
                         height="80"
                       ></img>
@@ -249,7 +247,6 @@ class NewExam extends Component {
                       {this.state.selectedQuestion.drags.option[3].content}
                       <img
                         src={`http://localhost:8080/images/${this.state.selectedQuestion.drags.option[3].src}`}
-                        alt=" "
                         width="80"
                         height="80"
                       ></img>
@@ -268,7 +265,6 @@ class NewExam extends Component {
                       {this.state.selectedQuestion.targets.option[0].content}
                       <img
                         src={`http://localhost:8080/images/${this.state.selectedQuestion.targets.option[0].src}`}
-                        alt=" "
                         width="80"
                         height="80"
                       ></img>
@@ -278,7 +274,6 @@ class NewExam extends Component {
                       {this.state.selectedQuestion.targets.option[1].content}
                       <img
                         src={`http://localhost:8080/images/${this.state.selectedQuestion.targets.option[1].src}`}
-                        alt=" "
                         width="80"
                         height="80"
                       ></img>
@@ -288,7 +283,6 @@ class NewExam extends Component {
                       {this.state.selectedQuestion.targets.option[2].content}
                       <img
                         src={`http://localhost:8080/images/${this.state.selectedQuestion.targets.option[2].src}`}
-                        alt=" "
                         width="80"
                         height="80"
                       ></img>
@@ -328,7 +322,7 @@ class NewExam extends Component {
                       hotspot instance name 1:
                       {this.state.selectedQuestion.hotsposts.option[0].content}
                       <img
-                        src={`http://localhost:8080/images/anonimo.jp`}
+                        src={`http://localhost:8080/images/${this.state.selectedQuestion.hotsposts.option[0].src}`}
                         width="80"
                         height="80"
                       ></img>
@@ -337,7 +331,7 @@ class NewExam extends Component {
                       hotspot instance name 2:
                       {this.state.selectedQuestion.hotsposts.option[1].content}
                       <img
-                        src={`http://localhost:8080/images/anonimo.jp`}
+                        src={`http://localhost:8080/images/${this.state.selectedQuestion.hotsposts.option[1].src}`}
                         width="80"
                         height="80"
                       ></img>
@@ -346,7 +340,7 @@ class NewExam extends Component {
                       hotspot instance name 3:
                       {this.state.selectedQuestion.hotsposts.option[2].content}
                       <img
-                        src={`http://localhost:8080/images/anonimo.jp`}
+                        src={`http://localhost:8080/images/${this.state.selectedQuestion.hotsposts.option[2].src}`}
                         width="80"
                         height="80"
                       ></img>
@@ -355,7 +349,7 @@ class NewExam extends Component {
                       hotspot instance name 4:
                       {this.state.selectedQuestion.hotsposts.option[3].content}
                       <img
-                        src={`http://localhost:8080/images/anonimo.jp`}
+                        src={`http://localhost:8080/images/${this.state.selectedQuestion.hotsposts.option[3].src}`}
                         width="80"
                         height="80"
                       ></img>
