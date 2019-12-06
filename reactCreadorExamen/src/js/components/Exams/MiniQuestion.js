@@ -286,19 +286,39 @@ class MiniQuestion extends Component {
             <h3>{this.state.question.text} </h3>
           </label>
         </div>
-
         <div className="row">
           <div className="col">
             <div className="form-group">
-              <div className="text-center">
-                <label className="control-label">Marca N</label>
-                <br />
-                <p>{this.state.question.hotsposts.option[0]}</p>
-                <p>{this.state.question.hotsposts.option[1]}</p>
-                <p>{this.state.question.hotsposts.option[2]}</p>
-                <p>{this.state.question.hotsposts.option[3]}</p>
-                <p>{this.state.question.hotsposts.option[4]}</p>
-              </div>
+              <label className="control-label">Marca N</label>
+              <br />
+              <p>{this.state.question.hotsposts.option[0].content}</p>
+              <img
+                src={`http://localhost:8080/images/${this.state.question.hotsposts.option[0].src}`}
+                alt=" "
+                width="80"
+                height="80"
+              ></img>
+              <p>{this.state.question.hotsposts.option[1].content}</p>
+              <img
+                src={`http://localhost:8080/images/${this.state.question.hotsposts.option[1].src}`}
+                alt=" "
+                width="80"
+                height="80"
+              ></img>
+              <p>{this.state.question.hotsposts.option[2].content}</p>
+              <img
+                src={`http://localhost:8080/images/${this.state.question.hotsposts.option[2].src}`}
+                alt=" "
+                width="80"
+                height="80"
+              ></img>
+              <p>{this.state.question.hotsposts.option[3].content}</p>
+              <img
+                src={`http://localhost:8080/images/${this.state.question.hotsposts.option[3].src}`}
+                alt=" "
+                width="80"
+                height="80"
+              ></img>
             </div>
           </div>
           <div className="col">
@@ -321,6 +341,12 @@ class MiniQuestion extends Component {
                   }
                 }}
               />
+              <img
+                src={`http://localhost:8080/images/img1.jpg`}
+                alt=" "
+                width="80"
+                height="80"
+              ></img>
               <input
                 type="checkbox"
                 className="form-control"
@@ -335,6 +361,12 @@ class MiniQuestion extends Component {
                   }
                 }}
               />
+              <img
+                src={`http://localhost:8080/images/img1.jpg`}
+                alt=" "
+                width="80"
+                height="80"
+              ></img>
               <input
                 type="checkbox"
                 className="form-control"
@@ -349,6 +381,12 @@ class MiniQuestion extends Component {
                   }
                 }}
               />
+              <img
+                src={`http://localhost:8080/images/img1.jpg`}
+                alt=" "
+                width="80"
+                height="80"
+              ></img>
               <input
                 type="checkbox"
                 className="form-control"
@@ -538,7 +576,7 @@ class MiniQuestion extends Component {
       );
     } else if (this.state.question["type"] == 2) {
       let respuesta = this.state.question["answer"];
-      console.log(respuesta);
+      console.log(this.state.question);
       return (
         <div>
           <button onClick={() => this.openModal()} className={this.state.value}>
